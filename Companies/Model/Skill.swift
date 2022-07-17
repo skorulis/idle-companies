@@ -5,4 +5,5 @@ import Foundation
 /// Operations that can be done
 public enum Skill {
     case mining
+    case smelting
 }

@@ -18,8 +18,10 @@ extension MiningView: View {
         VStack {
             ForEach(viewModel.availableMining) { type in
                 Button(action: viewModel.onPress(type)) {
-                    MineTypeView(type: type)
-                        .contentShape(Rectangle())
+                    MineTypeView(type: type,
+                                 progress: viewModel.maybeProgress(type)
+                    )
+                    .contentShape(Rectangle())
                 }
             }
         }

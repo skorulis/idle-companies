@@ -22,6 +22,7 @@ private extension IOC {
     
     func registerServices() {
         container.autoregister(OperationService.self, initializer: OperationService.init)
+            .inObjectScope(.container)
     }
     
 }

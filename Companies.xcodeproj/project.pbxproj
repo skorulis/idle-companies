@@ -27,6 +27,9 @@
 		FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3761C2883DEC400AD3647 /* DurationView.swift */; };
 		FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */; };
 		FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376222883F4B700AD3647 /* TaskTiming.swift */; };
+		FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762528840B4C00AD3647 /* InventoryStore.swift */; };
+		FAC3762928840BC000AD3647 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762828840BC000AD3647 /* ItemType.swift */; };
+		FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762A28840F6C00AD3647 /* MiningService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		FAC3761C2883DEC400AD3647 /* DurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationView.swift; sourceTree = "<group>"; };
 		FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgressView.swift; sourceTree = "<group>"; };
 		FAC376222883F4B700AD3647 /* TaskTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTiming.swift; sourceTree = "<group>"; };
+		FAC3762528840B4C00AD3647 /* InventoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryStore.swift; sourceTree = "<group>"; };
+		FAC3762828840BC000AD3647 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
+		FAC3762A28840F6C00AD3647 /* MiningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		FAC375F42883943100AD3647 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3762728840BB600AD3647 /* Item */,
 				FAC376142883CB8000AD3647 /* Operation */,
 				FAC3760B2883A18D00AD3647 /* MiningType.swift */,
 				FAC376102883C8BF00AD3647 /* Skill.swift */,
@@ -149,6 +156,7 @@
 		FAC375F92883943100AD3647 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3762428840B3D00AD3647 /* Inventory */,
 				FAC375FE2883945A00AD3647 /* App */,
 				FAC3760D2883C8AC00AD3647 /* Operation */,
 			);
@@ -186,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC3760E2883C8B500AD3647 /* OperationService.swift */,
+				FAC3762A28840F6C00AD3647 /* MiningService.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -207,6 +216,22 @@
 				FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */,
 			);
 			path = Generic;
+			sourceTree = "<group>";
+		};
+		FAC3762428840B3D00AD3647 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3762528840B4C00AD3647 /* InventoryStore.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		FAC3762728840BB600AD3647 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3762828840BC000AD3647 /* ItemType.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,12 +313,15 @@
 				FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FAC376112883C8BF00AD3647 /* Skill.swift in Sources */,
+				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
 				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
+				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
 				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
+				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,

@@ -10,6 +10,7 @@ final class IOC: IOCService {
         super.init()
         registerViewModels()
         registerServices()
+        registerStores()
     }
     
 }
@@ -22,6 +23,12 @@ private extension IOC {
     
     func registerServices() {
         container.autoregister(OperationService.self, initializer: OperationService.init)
+            .inObjectScope(.container)
+        container.autoregister(MiningService.self, initializer: MiningService.init)
+    }
+    
+    func registerStores() {
+        container.autoregister(InventoryStore.self, initializer: InventoryStore.init)
             .inObjectScope(.container)
     }
     

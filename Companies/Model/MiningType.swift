@@ -32,4 +32,11 @@ public extension MiningType {
         }
     }
     
+    var baseOutput: ItemType {
+        switch self {
+        case .iron: return .ironOre
+        case .gold: return .goldOre
+        }
+    }
+    
 }

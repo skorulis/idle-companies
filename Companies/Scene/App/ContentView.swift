@@ -20,7 +20,23 @@ struct ContentView: View {
 extension ContentView {
     
     var body: some View {
-        MiningView(viewModel: factory.resolve())
+        TabView {
+            operations
+                .tabItem {
+                    Label("Operations", systemImage: "cart.fill")
+                }
+            InventoryView(viewModel: factory.resolve())
+                .tabItem {
+                    Label("Warehouse", systemImage: "bag.circle")
+                }
+        }
+        
+    }
+    
+    private var operations: some View {
+        NavigationView {
+            OperationListView(viewModel: factory.resolve())
+        }
     }
 }
 

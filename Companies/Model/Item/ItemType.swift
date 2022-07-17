@@ -13,3 +13,4 @@ public enum ItemType: String, Codable {
     case goldIngot
     
 }
+

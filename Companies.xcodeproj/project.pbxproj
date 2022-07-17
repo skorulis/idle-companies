@@ -30,6 +30,12 @@
 		FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762528840B4C00AD3647 /* InventoryStore.swift */; };
 		FAC3762928840BC000AD3647 /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762828840BC000AD3647 /* ItemType.swift */; };
 		FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762A28840F6C00AD3647 /* MiningService.swift */; };
+		FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762D2884227200AD3647 /* InventoryView.swift */; };
+		FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3762F2884227B00AD3647 /* InventoryViewModel.swift */; };
+		FAC37632288424C600AD3647 /* ItemCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37631288424C600AD3647 /* ItemCount.swift */; };
+		FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37633288428D600AD3647 /* ItemIconView.swift */; };
+		FAC376372884B43900AD3647 /* OperationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376362884B43900AD3647 /* OperationListView.swift */; };
+		FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376382884B44C00AD3647 /* OperationListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		FAC3762528840B4C00AD3647 /* InventoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryStore.swift; sourceTree = "<group>"; };
 		FAC3762828840BC000AD3647 /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		FAC3762A28840F6C00AD3647 /* MiningService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningService.swift; sourceTree = "<group>"; };
+		FAC3762D2884227200AD3647 /* InventoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryView.swift; sourceTree = "<group>"; };
+		FAC3762F2884227B00AD3647 /* InventoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewModel.swift; sourceTree = "<group>"; };
+		FAC37631288424C600AD3647 /* ItemCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCount.swift; sourceTree = "<group>"; };
+		FAC37633288428D600AD3647 /* ItemIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIconView.swift; sourceTree = "<group>"; };
+		FAC376362884B43900AD3647 /* OperationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationListView.swift; sourceTree = "<group>"; };
+		FAC376382884B44C00AD3647 /* OperationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +122,7 @@
 		FAC375F02883943100AD3647 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3762C2884226200AD3647 /* Inventory */,
 				FAC3760528839EFF00AD3647 /* Operations */,
 				FAC375F12883943100AD3647 /* App */,
 			);
@@ -175,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC3761B2883DEBE00AD3647 /* Generic */,
+				FAC376352884B42F00AD3647 /* List */,
 				FAC3760628839EFF00AD3647 /* Mining */,
 			);
 			path = Operations;
@@ -230,8 +244,28 @@
 			isa = PBXGroup;
 			children = (
 				FAC3762828840BC000AD3647 /* ItemType.swift */,
+				FAC37631288424C600AD3647 /* ItemCount.swift */,
 			);
 			path = Item;
+			sourceTree = "<group>";
+		};
+		FAC3762C2884226200AD3647 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3762D2884227200AD3647 /* InventoryView.swift */,
+				FAC3762F2884227B00AD3647 /* InventoryViewModel.swift */,
+				FAC37633288428D600AD3647 /* ItemIconView.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		FAC376352884B42F00AD3647 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376362884B43900AD3647 /* OperationListView.swift */,
+				FAC376382884B44C00AD3647 /* OperationListViewModel.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,7 +347,12 @@
 				FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FAC376112883C8BF00AD3647 /* Skill.swift in Sources */,
+				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
+				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
+				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
+				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
+				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
 				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
@@ -325,6 +364,7 @@
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
+				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 			);

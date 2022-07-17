@@ -15,17 +15,24 @@ struct MiningView {
 extension MiningView: View {
     
     var body: some View {
-        VStack {
-            ForEach(viewModel.availableMining) { type in
-                Button(action: viewModel.onPress(type)) {
-                    MineTypeView(type: type,
-                                 progress: viewModel.maybeProgress(type)
-                    )
-                    .contentShape(Rectangle())
+        content
+        .navigationTitle("Operations")
+    }
+    
+    private var content: some View {
+        ScrollView {
+            VStack {
+                ForEach(viewModel.availableMining) { type in
+                    Button(action: viewModel.onPress(type)) {
+                        MineTypeView(type: type,
+                                     progress: viewModel.maybeProgress(type)
+                        )
+                        .contentShape(Rectangle())
+                    }
                 }
             }
+            .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
     }
 }
 

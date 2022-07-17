@@ -16,6 +16,15 @@
 		FAC376002883947700AD3647 /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375FF2883947700AD3647 /* IOC.swift */; };
 		FAC37602288394A600AD3647 /* ASKCore in Frameworks */ = {isa = PBXBuildFile; productRef = FAC37601288394A600AD3647 /* ASKCore */; };
 		FAC37604288394A600AD3647 /* ASSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FAC37603288394A600AD3647 /* ASSwiftUI */; };
+		FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760728839F9B00AD3647 /* MiningView.swift */; };
+		FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760928839FA100AD3647 /* MiningViewModel.swift */; };
+		FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760B2883A18D00AD3647 /* MiningType.swift */; };
+		FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760E2883C8B500AD3647 /* OperationService.swift */; };
+		FAC376112883C8BF00AD3647 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376102883C8BF00AD3647 /* Skill.swift */; };
+		FAC376162883CB8000AD3647 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376152883CB8000AD3647 /* Operation.swift */; };
+		FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376172883CB8700AD3647 /* OperationProgress.swift */; };
+		FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376192883DD7700AD3647 /* MineTypeView.swift */; };
+		FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3761C2883DEC400AD3647 /* DurationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +36,15 @@
 		FAC375F62883943100AD3647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAC375F82883943100AD3647 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FAC375FF2883947700AD3647 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FAC3760728839F9B00AD3647 /* MiningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningView.swift; sourceTree = "<group>"; };
+		FAC3760928839FA100AD3647 /* MiningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningViewModel.swift; sourceTree = "<group>"; };
+		FAC3760B2883A18D00AD3647 /* MiningType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningType.swift; sourceTree = "<group>"; };
+		FAC3760E2883C8B500AD3647 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
+		FAC376102883C8BF00AD3647 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		FAC376152883CB8000AD3647 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		FAC376172883CB8700AD3647 /* OperationProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgress.swift; sourceTree = "<group>"; };
+		FAC376192883DD7700AD3647 /* MineTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTypeView.swift; sourceTree = "<group>"; };
+		FAC3761C2883DEC400AD3647 /* DurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +100,7 @@
 		FAC375F02883943100AD3647 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3760528839EFF00AD3647 /* Operations */,
 				FAC375F12883943100AD3647 /* App */,
 			);
 			path = Scene;
@@ -99,6 +118,9 @@
 		FAC375F42883943100AD3647 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FAC376142883CB8000AD3647 /* Operation */,
+				FAC3760B2883A18D00AD3647 /* MiningType.swift */,
+				FAC376102883C8BF00AD3647 /* Skill.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC375FE2883945A00AD3647 /* App */,
+				FAC3760D2883C8AC00AD3647 /* Operation */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -134,6 +157,50 @@
 				FAC375FF2883947700AD3647 /* IOC.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		FAC3760528839EFF00AD3647 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3761B2883DEBE00AD3647 /* Generic */,
+				FAC3760628839EFF00AD3647 /* Mining */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
+		FAC3760628839EFF00AD3647 /* Mining */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3760728839F9B00AD3647 /* MiningView.swift */,
+				FAC3760928839FA100AD3647 /* MiningViewModel.swift */,
+				FAC376192883DD7700AD3647 /* MineTypeView.swift */,
+			);
+			path = Mining;
+			sourceTree = "<group>";
+		};
+		FAC3760D2883C8AC00AD3647 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3760E2883C8B500AD3647 /* OperationService.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		FAC376142883CB8000AD3647 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376152883CB8000AD3647 /* Operation.swift */,
+				FAC376172883CB8700AD3647 /* OperationProgress.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		FAC3761B2883DEBE00AD3647 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3761C2883DEC400AD3647 /* DurationView.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,9 +279,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */,
+				FAC376112883C8BF00AD3647 /* Skill.swift in Sources */,
+				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
+				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
+				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
+				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
+				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
+				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
+				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

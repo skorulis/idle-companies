@@ -6,11 +6,21 @@
 //
 
 import SwiftUI
+import ASKCore
 
 struct ContentView: View {
+    
+    @Environment(\.factory) private var factory
+    
+    
+}
+
+// MARK: - Rendering
+
+extension ContentView {
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        MiningView(viewModel: factory.resolve())
     }
 }
 

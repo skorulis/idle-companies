@@ -39,6 +39,8 @@
 		FAC3763C288547C100AD3647 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC3763B288547C100AD3647 /* fontello.ttf */; };
 		FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3763E28854B6F00AD3647 /* Fonts.swift */; };
 		FAC376412885504600AD3647 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376402885504600AD3647 /* Theme.swift */; };
+		FAC37643288566FF00AD3647 /* Fontello.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37642288566FF00AD3647 /* Fontello.swift */; };
+		FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37644288567FF00AD3647 /* Fontello+Icon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		FAC3763B288547C100AD3647 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
 		FAC3763E28854B6F00AD3647 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FAC376402885504600AD3647 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		FAC37642288566FF00AD3647 /* Fontello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fontello.swift; sourceTree = "<group>"; };
+		FAC37644288567FF00AD3647 /* Fontello+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fontello+Icon.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,8 @@
 			children = (
 				FAC3763E28854B6F00AD3647 /* Fonts.swift */,
 				FAC376402885504600AD3647 /* Theme.swift */,
+				FAC37642288566FF00AD3647 /* Fontello.swift */,
+				FAC37644288567FF00AD3647 /* Fontello+Icon.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -372,8 +378,10 @@
 			files = (
 				FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
+				FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */,
 				FAC376112883C8BF00AD3647 /* Skill.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
+				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,

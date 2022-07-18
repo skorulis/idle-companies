@@ -16,8 +16,7 @@ struct InventoryView {
 extension InventoryView: View {
     
     var body: some View {
-        Text("\u{e800}")
-            .font(ThemeFont.fontello.font(30))
+        Fontello.heart.icon(40)
         grid
     }
     

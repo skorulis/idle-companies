@@ -16,7 +16,6 @@ extension InventoryStore {
     
     func add(item: ItemType, count: Int) {
         inventory[item] = self.count(item: item) + count
-        print(inventory)
     }
     
     func count(item: ItemType) -> Int {

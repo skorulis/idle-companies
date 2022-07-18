@@ -18,7 +18,6 @@ struct OperationProgressView {
         } else {
             _progress = State(wrappedValue: 0)
         }
-        print("Start project \(self.progress)")
     }
 }
 
@@ -72,7 +71,7 @@ private extension OperationProgressView {
             progress = 1
             return
         }
-        print("Animate \(rem)")
+        
         withAnimation(.linear(duration: rem)) {
             progress = 1
         }

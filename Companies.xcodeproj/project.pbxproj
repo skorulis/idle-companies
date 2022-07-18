@@ -36,6 +36,9 @@
 		FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37633288428D600AD3647 /* ItemIconView.swift */; };
 		FAC376372884B43900AD3647 /* OperationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376362884B43900AD3647 /* OperationListView.swift */; };
 		FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376382884B44C00AD3647 /* OperationListViewModel.swift */; };
+		FAC3763C288547C100AD3647 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC3763B288547C100AD3647 /* fontello.ttf */; };
+		FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3763E28854B6F00AD3647 /* Fonts.swift */; };
+		FAC376412885504600AD3647 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376402885504600AD3647 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		FAC37633288428D600AD3647 /* ItemIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIconView.swift; sourceTree = "<group>"; };
 		FAC376362884B43900AD3647 /* OperationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationListView.swift; sourceTree = "<group>"; };
 		FAC376382884B44C00AD3647 /* OperationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationListViewModel.swift; sourceTree = "<group>"; };
+		FAC3763B288547C100AD3647 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
+		FAC3763E28854B6F00AD3647 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FAC376402885504600AD3647 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 				FAC375F52883943100AD3647 /* Resource */,
 				FAC375F02883943100AD3647 /* Scene */,
 				FAC375F92883943100AD3647 /* Service */,
+				FAC3763D28854B6F00AD3647 /* Theme */,
 			);
 			path = Companies;
 			sourceTree = "<group>";
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC375F62883943100AD3647 /* Assets.xcassets */,
+				FAC3763A288547C100AD3647 /* Fonts */,
 				FAC375F72883943100AD3647 /* Preview Content */,
 			);
 			path = Resource;
@@ -268,6 +276,23 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		FAC3763A288547C100AD3647 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3763B288547C100AD3647 /* fontello.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FAC3763D28854B6F00AD3647 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3763E28854B6F00AD3647 /* Fonts.swift */,
+				FAC376402885504600AD3647 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +358,7 @@
 				FAC375FD2883943100AD3647 /* Preview Assets.xcassets in Resources */,
 				FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */,
 				FAC375FC2883943100AD3647 /* Assets.xcassets in Resources */,
+				FAC3763C288547C100AD3647 /* fontello.ttf in Resources */,
 				FAC375EE2883890200AD3647 /* ASKCore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,10 +382,12 @@
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
 				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
+				FAC376412885504600AD3647 /* Theme.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
 				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
+				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,

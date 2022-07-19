@@ -1,0 +1,33 @@
+import SwiftUI
+
+{% macro generate assets %}
+{% for asset in assets %}
+	{% if asset.type == "image" %}
+	case {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = "{{asset.value}}"
+	{% elif asset.items %}
+	{% call generate asset.items %}
+	{% endif %}
+{% endfor %}
+{% endmacro %}
+
+enum ThemeIcon: String {
+	{% for catalog in catalogs %}
+	{% call generate catalog.assets %}
+	{% endfor %}
+}
+
+extension ThemeIcon: View {
+	
+	var body: some View {
+		Image(self.rawValue)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+	}
+    
+    func image(_ size: CGFloat) -> some View {
+        Image(self.rawValue)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: size, height: size)
+    }
+}

@@ -1,5 +1,6 @@
-json:
-  inputs: Config/config.json
+xcassets:
+  inputs:
+    - Companies/Resource/Icons.xcassets
   outputs:
-    templateName: runtime-swift5
-    output: JSON.swift
+    - templatePath: Config/Images.stencil
+      output: Companies/Theme/ThemeIcon.swift

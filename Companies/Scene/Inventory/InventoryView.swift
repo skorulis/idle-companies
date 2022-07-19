@@ -16,7 +16,6 @@ struct InventoryView {
 extension InventoryView: View {
     
     var body: some View {
-        Fontello.heart.icon(40)
         grid
     }
     

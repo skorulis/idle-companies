@@ -23,11 +23,11 @@ extension ContentView {
         TabView {
             operations
                 .tabItem {
-                    Label("Operations", systemImage: "cart.fill")
+                    Label("Operations", systemImage: "power.circle.fill")
                 }
             InventoryView(viewModel: factory.resolve())
                 .tabItem {
-                    Label("Warehouse", systemImage: "bag.circle")
+                    Label("Warehouse", systemImage: "archivebox")
                 }
         }
         

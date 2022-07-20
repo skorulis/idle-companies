@@ -19,10 +19,14 @@ extension DebugView: View {
     var body: some View {
         ScrollView {
             VStack {
-                
+                speed
             }
         }
         .navigationTitle("Debug")
+    }
+    
+    private var speed: some View {
+        Stepper("Speed: \(Int(viewModel.speed))", value: $viewModel.speed)
     }
 }
 

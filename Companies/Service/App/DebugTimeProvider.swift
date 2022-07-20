@@ -9,6 +9,7 @@ final class DebugTimeProvider: PTimeProvider {
     private let real = TimeProvider()
     
     var time: Date { real.time }
+    var speed: TimeInterval = 1
     
 }
 

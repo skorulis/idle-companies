@@ -33,7 +33,12 @@ private extension IOC {
         container.autoregister(MarketingService.self, initializer: MarketingService.init)
         container.autoregister(SmithingService.self, initializer: SmithingService.init)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
+        #if DEBUG
         container.autoregister(PTimeProvider.self, initializer: DebugTimeProvider.init)
+            .inObjectScope(.container)
+        #else
+        container.autoregister(PTimeProvider.self, initializer: TimeProvider.init)
+        #endif
     }
     
     func registerStores() {

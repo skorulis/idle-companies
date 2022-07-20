@@ -22,9 +22,10 @@ extension ContentView {
     var body: some View {
         TabView {
             operations
-                
             inventory
-                
+            #if DEBUG
+            debug
+            #endif
         }
         
     }
@@ -46,6 +47,17 @@ extension ContentView {
             Label("Operations", systemImage: "power.circle.fill")
         }
     }
+    
+    #if DEBUG
+    private var debug: some View {
+        NavigationView {
+            DebugView(viewModel: factory.resolve())
+        }
+        .tabItem {
+            Label("Debug", systemImage: "ladybug.fill")
+        }
+    }
+    #endif
 }
 
 struct ContentView_Previews: PreviewProvider {

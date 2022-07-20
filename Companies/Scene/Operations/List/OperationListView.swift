@@ -52,6 +52,8 @@ extension OperationListView: View {
             MiningView(viewModel: factory.resolve())
         case .smithing:
             SmithingView(viewModel: factory.resolve())
+        case .marketing:
+            MarketingView(viewModel: factory.resolve())
         }
     }
 }

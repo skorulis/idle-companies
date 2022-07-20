@@ -5,6 +5,7 @@ import Foundation
 public enum Operation {
     case mining(_ type: MiningType)
     case smithing(_ recipe: ItemRecipeOperation)
+    case agencyMarketing(_ type: MarketingType)
 }
 
 public extension Operation {
@@ -15,6 +16,8 @@ public extension Operation {
             return .mining
         case .smithing:
             return .smithing
+        case .agencyMarketing:
+            return .marketing
         }
     }
 }

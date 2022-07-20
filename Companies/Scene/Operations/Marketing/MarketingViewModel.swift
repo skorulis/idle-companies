@@ -1,11 +1,11 @@
-//  Created by Alexander Skorulis on 17/7/2022.
+//  Created by Alexander Skorulis on 21/7/2022.
 
 import Combine
 import Foundation
 
-// MARK: - Memory footpring
+// MARK: - Memory footprint
 
-final class MiningViewModel: ObservableObject {
+final class MarketingViewModel: ObservableObject {
     
     private let operations: OperationService
     private var subscribers: Set<AnyCancellable> = []
@@ -18,33 +18,31 @@ final class MiningViewModel: ObservableObject {
             }
             .store(in: &subscribers)
     }
-    
-    
 }
 
 // MARK: - Computed values
 
-extension MiningViewModel {
+extension MarketingViewModel {
     
-    var availableMining: [MiningType] {
-        return [.stone, .iron, .gold]
+    var availableOptions: [MarketingType] {
+        return [.newspaper, .radio]
     }
 }
 
 // MARK: - Logic
 
-extension MiningViewModel {
+extension MarketingViewModel {
     
-    func onPress(_ type: MiningType) -> () -> Void {
+    func onPress(_ type: MarketingType) -> () -> Void {
         return { [unowned self] in
-            self.operations.start(.mining(type))
+            self.operations.start(.agencyMarketing(type))
         }
     }
     
-    func maybeProgress(_ type: MiningType) -> OperationProgress? {
+    func maybeProgress(_ type: MarketingType) -> OperationProgress? {
         return operations.active.first { progress in
             switch progress.operation {
-            case .mining(let opType):
+            case .agencyMarketing(let opType):
                 return opType == type
             default:
                 return false

@@ -22,14 +22,17 @@ private extension IOC {
         container.autoregister(InventoryViewModel.self, initializer: InventoryViewModel.init)
         container.autoregister(OperationListViewModel.self, initializer: OperationListViewModel.init)
         container.autoregister(SmithingViewModel.self, initializer: SmithingViewModel.init)
+        container.autoregister(MarketingViewModel.self, initializer: MarketingViewModel.init)
     }
     
     func registerServices() {
         container.autoregister(OperationService.self, initializer: OperationService.init)
             .inObjectScope(.container)
         container.autoregister(MiningService.self, initializer: MiningService.init)
+        container.autoregister(MarketingService.self, initializer: MarketingService.init)
         container.autoregister(SmithingService.self, initializer: SmithingService.init)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
+        container.autoregister(PTimeProvider.self, initializer: DebugTimeProvider.init)
     }
     
     func registerStores() {

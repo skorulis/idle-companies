@@ -6,6 +6,7 @@ import Foundation
 public enum Skill: String, Identifiable {
     case mining
     case smithing
+    case marketing
     
     public var id: String { rawValue }
 }
@@ -16,6 +17,7 @@ extension Skill {
         switch self {
         case .mining: return "Mining"
         case .smithing: return "Smithing"
+        case .marketing: return "Marketing"
         }
     }
     
@@ -23,6 +25,7 @@ extension Skill {
         switch self {
         case .mining: return .digDug
         case .smithing: return .anvil
+        case .marketing: return .woodenCrate // TODO
         }
     }
     

@@ -1,30 +1,30 @@
-//  Created by Alexander Skorulis on 17/7/2022.
+//  Created by Alexander Skorulis on 21/7/2022.
 
 import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
-struct MiningView {
+struct MarketingView {
     
-    @StateObject var viewModel: MiningViewModel
+    @StateObject var viewModel: MarketingViewModel
 }
 
 // MARK: - Rendering
 
-extension MiningView: View {
+extension MarketingView: View {
     
     var body: some View {
         content
-            .navigationTitle("Mining")
+            .navigationTitle("Marketing")
     }
     
     private var content: some View {
         ScrollView {
             VStack {
-                ForEach(viewModel.availableMining) { type in
+                ForEach(viewModel.availableOptions) { type in
                     Button(action: viewModel.onPress(type)) {
-                        MineTypeView(type: type,
+                        AgencyMarketingTypeView(type: type,
                                      progress: viewModel.maybeProgress(type)
                         )
                         .contentShape(Rectangle())
@@ -38,11 +38,11 @@ extension MiningView: View {
 
 // MARK: - Previews
 
-struct MiningView_Previews: PreviewProvider {
+struct MarketingView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        MiningView(viewModel: ioc.resolve())
+        MarketingView(viewModel: ioc.resolve())
     }
 }
 

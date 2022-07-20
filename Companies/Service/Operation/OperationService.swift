@@ -12,6 +12,7 @@ final class OperationService: ObservableObject {
     
     private lazy var miningService: MiningService = factory.resolve()
     private lazy var smithingService: SmithingService = factory.resolve()
+    private lazy var marketingService: MarketingService = factory.resolve()
     
     public init(factory: PFactory) {
         self.factory = factory
@@ -61,6 +62,8 @@ extension OperationService {
             return miningService.duration(type)
         case .smithing(let recipe):
             return smithingService.duration(recipe)
+        case .agencyMarketing(let type):
+            return marketingService.duration(type)
         }
     }
     
@@ -84,6 +87,8 @@ extension OperationService {
             miningService.onFinish(type)
         case .smithing(let recipe):
             smithingService.onFinish(recipe)
+        case .agencyMarketing(let type):
+            marketingService.onFinish(type)
         }
         self.objectWillChange.send()
     }

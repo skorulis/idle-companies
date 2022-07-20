@@ -5,6 +5,7 @@ import Foundation
 /// A type of mining operation that can be done
 public enum MiningType: String, Identifiable {
     
+    case stone
     case iron
     case gold
     
@@ -20,11 +21,15 @@ public extension MiningType {
             return "Iron"
         case .gold:
             return "Gold"
+        default:
+            return rawValue.capitalized
         }
     }
     
     var baseTime: TimeInterval {
         switch self {
+        case .stone:
+            return 4
         case .iron:
             return 5
         case .gold:
@@ -34,6 +39,7 @@ public extension MiningType {
     
     var baseOutput: ItemType {
         switch self {
+        case .stone: return .stone
         case .iron: return .ironOre
         case .gold: return .goldOre
         }

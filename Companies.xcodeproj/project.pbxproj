@@ -18,7 +18,6 @@
 		FAC37604288394A600AD3647 /* ASSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FAC37603288394A600AD3647 /* ASSwiftUI */; };
 		FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760728839F9B00AD3647 /* MiningView.swift */; };
 		FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760928839FA100AD3647 /* MiningViewModel.swift */; };
-		FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760B2883A18D00AD3647 /* MiningType.swift */; };
 		FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760E2883C8B500AD3647 /* OperationService.swift */; };
 		FAC376112883C8BF00AD3647 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376102883C8BF00AD3647 /* Skill.swift */; };
 		FAC376162883CB8000AD3647 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376152883CB8000AD3647 /* Operation.swift */; };
@@ -57,6 +56,14 @@
 		FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767228880FB900AD3647 /* ItemCountView.swift */; };
 		FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37675288827D500AD3647 /* PKeyValueStore.swift */; };
 		FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */; };
+		FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376792888985900AD3647 /* TimeProvider.swift */; };
+		FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */; };
+		FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767D2888A80B00AD3647 /* MarketingService.swift */; };
+		FAC376802888A85000AD3647 /* MiningType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767F2888A85000AD3647 /* MiningType.swift */; };
+		FAC376822888A85800AD3647 /* MarketingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376812888A85800AD3647 /* MarketingType.swift */; };
+		FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376842888AA2000AD3647 /* MarketingView.swift */; };
+		FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376862888AA2700AD3647 /* MarketingViewModel.swift */; };
+		FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3768A2888AC7200AD3647 /* AgencyMarketingTypeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +87,6 @@
 		FAC375FF2883947700AD3647 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FAC3760728839F9B00AD3647 /* MiningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningView.swift; sourceTree = "<group>"; };
 		FAC3760928839FA100AD3647 /* MiningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningViewModel.swift; sourceTree = "<group>"; };
-		FAC3760B2883A18D00AD3647 /* MiningType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningType.swift; sourceTree = "<group>"; };
 		FAC3760E2883C8B500AD3647 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		FAC376102883C8BF00AD3647 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		FAC376152883CB8000AD3647 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
@@ -120,6 +126,14 @@
 		FAC3767228880FB900AD3647 /* ItemCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountView.swift; sourceTree = "<group>"; };
 		FAC37675288827D500AD3647 /* PKeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKeyValueStore.swift; sourceTree = "<group>"; };
 		FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDefaults.swift; sourceTree = "<group>"; };
+		FAC376792888985900AD3647 /* TimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProvider.swift; sourceTree = "<group>"; };
+		FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTimeProvider.swift; sourceTree = "<group>"; };
+		FAC3767D2888A80B00AD3647 /* MarketingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingService.swift; sourceTree = "<group>"; };
+		FAC3767F2888A85000AD3647 /* MiningType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiningType.swift; sourceTree = "<group>"; };
+		FAC376812888A85800AD3647 /* MarketingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingType.swift; sourceTree = "<group>"; };
+		FAC376842888AA2000AD3647 /* MarketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingView.swift; sourceTree = "<group>"; };
+		FAC376862888AA2700AD3647 /* MarketingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingViewModel.swift; sourceTree = "<group>"; };
+		FAC3768A2888AC7200AD3647 /* AgencyMarketingTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyMarketingTypeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,7 +220,6 @@
 			children = (
 				FAC3762728840BB600AD3647 /* Item */,
 				FAC376142883CB8000AD3647 /* Operation */,
-				FAC3760B2883A18D00AD3647 /* MiningType.swift */,
 				FAC376102883C8BF00AD3647 /* Skill.swift */,
 			);
 			path = Model;
@@ -247,6 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC375FF2883947700AD3647 /* IOC.swift */,
+				FAC376792888985900AD3647 /* TimeProvider.swift */,
+				FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -254,8 +269,9 @@
 		FAC3760528839EFF00AD3647 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
-				FAC3764C2887EACC00AD3647 /* Smithing */,
 				FAC3761B2883DEBE00AD3647 /* Generic */,
+				FAC376832888AA0A00AD3647 /* Marketing */,
+				FAC3764C2887EACC00AD3647 /* Smithing */,
 				FAC376352884B42F00AD3647 /* List */,
 				FAC3760628839EFF00AD3647 /* Mining */,
 			);
@@ -278,6 +294,7 @@
 				FAC3760E2883C8B500AD3647 /* OperationService.swift */,
 				FAC3762A28840F6C00AD3647 /* MiningService.swift */,
 				FAC376552887F04100AD3647 /* SmithingService.swift */,
+				FAC3767D2888A80B00AD3647 /* MarketingService.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -285,6 +302,8 @@
 		FAC376142883CB8000AD3647 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3767F2888A85000AD3647 /* MiningType.swift */,
+				FAC376812888A85800AD3647 /* MarketingType.swift */,
 				FAC376152883CB8000AD3647 /* Operation.swift */,
 				FAC376172883CB8700AD3647 /* OperationProgress.swift */,
 				FAC376222883F4B700AD3647 /* TaskTiming.swift */,
@@ -422,6 +441,16 @@
 			path = Persistence;
 			sourceTree = "<group>";
 		};
+		FAC376832888AA0A00AD3647 /* Marketing */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376842888AA2000AD3647 /* MarketingView.swift */,
+				FAC376862888AA2700AD3647 /* MarketingViewModel.swift */,
+				FAC3768A2888AC7200AD3647 /* AgencyMarketingTypeView.swift */,
+			);
+			path = Marketing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,26 +575,33 @@
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
+				FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */,
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
-				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
 				FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */,
 				FAC376412885504600AD3647 /* Theme.swift in Sources */,
+				FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */,
 				FAC3767128880D0400AD3647 /* RecipeDetailView.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
 				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
+				FAC376802888A85000AD3647 /* MiningType.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
+				FAC376822888A85800AD3647 /* MarketingType.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
+				FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
 				FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */,
+				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
+				FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */,
+				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376562887F04100AD3647 /* SmithingService.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,

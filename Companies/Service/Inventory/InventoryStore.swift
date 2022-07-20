@@ -6,7 +6,19 @@ import Foundation
 
 final class InventoryStore: ObservableObject {
     
-    @Published private(set) var inventory: [ItemType: Int] = [:]
+    @Published private(set) var inventory: [ItemType: Int] {
+        didSet {
+            writeToDisk()
+        }
+    }
+    private let store: PKeyValueStore
+    private static let storageKey = "InventoryStore.storageKey"
+    
+    init(store: PKeyValueStore) {
+        self.store = store
+        let data = Self.readFromDisk(store: store)
+        inventory = data.items
+    }
     
 }
 
@@ -48,4 +60,30 @@ extension InventoryStore {
     func removeAll(items: [ItemCount]) {
         items.forEach { remove(item: $0) }
     }
+}
+
+// MARK: - Inner types
+
+private extension InventoryStore {
+    struct DiskStorage: Codable {
+        let items: [ItemType: Int]
+    }
+}
+
+// MARK: - Private logic
+
+private extension InventoryStore {
+    
+    func writeToDisk() {
+        let storage = DiskStorage(items: inventory)
+        try! store.set(codable: storage, forKey: Self.storageKey)
+    }
+    
+    static func readFromDisk(store: PKeyValueStore) -> DiskStorage {
+        if let item: DiskStorage = try? store.codable(forKey: Self.storageKey) {
+            return item
+        }
+        return DiskStorage(items: [:])
+    }
+    
 }

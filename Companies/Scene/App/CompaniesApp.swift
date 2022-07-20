@@ -11,7 +11,7 @@ import ASKCore
 @main
 struct CompaniesApp: App {
     
-    private let ioc = IOC()
+    private let ioc = IOC(purpose: .normal)
     
     var body: some Scene {
         WindowGroup {

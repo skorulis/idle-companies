@@ -55,6 +55,8 @@
 		FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766E288807E500AD3647 /* RecipeView.swift */; };
 		FAC3767128880D0400AD3647 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767028880D0400AD3647 /* RecipeDetailView.swift */; };
 		FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767228880FB900AD3647 /* ItemCountView.swift */; };
+		FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37675288827D500AD3647 /* PKeyValueStore.swift */; };
+		FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,8 @@
 		FAC3766E288807E500AD3647 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		FAC3767028880D0400AD3647 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		FAC3767228880FB900AD3647 /* ItemCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountView.swift; sourceTree = "<group>"; };
+		FAC37675288827D500AD3647 /* PKeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKeyValueStore.swift; sourceTree = "<group>"; };
+		FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +234,7 @@
 		FAC375F92883943100AD3647 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FAC376742888278800AD3647 /* Persistence */,
 				FAC3762428840B3D00AD3647 /* Inventory */,
 				FAC375FE2883945A00AD3647 /* App */,
 				FAC3760D2883C8AC00AD3647 /* Operation */,
@@ -408,6 +413,15 @@
 			path = Recipe;
 			sourceTree = "<group>";
 		};
+		FAC376742888278800AD3647 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FAC37675288827D500AD3647 /* PKeyValueStore.swift */,
+				FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -527,6 +541,7 @@
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
+				FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
@@ -546,6 +561,7 @@
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
+				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,

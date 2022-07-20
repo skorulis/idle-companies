@@ -6,8 +6,8 @@ import SwinjectAutoregistration
 
 final class IOC: IOCService {
     
-    override init() {
-        super.init()
+    override init(purpose: IOCPurpose = .testing) {
+        super.init(purpose: purpose)
         registerViewModels()
         registerServices()
         registerStores()
@@ -35,6 +35,15 @@ private extension IOC {
     func registerStores() {
         container.autoregister(InventoryStore.self, initializer: InventoryStore.init)
             .inObjectScope(.container)
+        
+        switch purpose {
+        case .testing:
+            container.autoregister(PKeyValueStore.self, initializer: InMemoryDefaults.init)
+                .inObjectScope(.container)
+        case .normal:
+            container.autoregister(PKeyValueStore.self, initializer: UserDefaults.init)
+                .inObjectScope(.container)
+        }
     }
     
 }

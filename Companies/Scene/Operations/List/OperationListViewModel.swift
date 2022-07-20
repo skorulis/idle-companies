@@ -15,7 +15,7 @@ final class OperationListViewModel: ObservableObject {
 extension OperationListViewModel {
     
     var available: [Skill] {
-        return [.mining, .smelting]
+        return [.mining, .smithing]
     }
     
 }

@@ -21,6 +21,7 @@ private extension IOC {
         container.autoregister(MiningViewModel.self, initializer: MiningViewModel.init)
         container.autoregister(InventoryViewModel.self, initializer: InventoryViewModel.init)
         container.autoregister(OperationListViewModel.self, initializer: OperationListViewModel.init)
+        container.autoregister(SmithingViewModel.self, initializer: SmithingViewModel.init)
     }
     
     func registerServices() {

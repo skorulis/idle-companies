@@ -50,8 +50,8 @@ extension OperationListView: View {
         switch skill {
         case .mining:
             MiningView(viewModel: factory.resolve())
-        case .smelting:
-            EmptyView()
+        case .smithing:
+            SmithingView(viewModel: factory.resolve())
         }
     }
 }

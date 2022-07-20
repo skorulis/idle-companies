@@ -43,6 +43,8 @@
 		FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37644288567FF00AD3647 /* Fontello+Icon.swift */; };
 		FAC3764728868C6400AD3647 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC3764628868C6400AD3647 /* Icons.xcassets */; };
 		FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764A2886915B00AD3647 /* ThemeIcon.swift */; };
+		FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764D2887EAD800AD3647 /* SmithingView.swift */; };
+		FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +83,8 @@
 		FAC37644288567FF00AD3647 /* Fontello+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fontello+Icon.swift"; sourceTree = "<group>"; };
 		FAC3764628868C6400AD3647 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAC3764A2886915B00AD3647 /* ThemeIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeIcon.swift; sourceTree = "<group>"; };
+		FAC3764D2887EAD800AD3647 /* SmithingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingView.swift; sourceTree = "<group>"; };
+		FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,7 @@
 		FAC3760528839EFF00AD3647 /* Operations */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3764C2887EACC00AD3647 /* Smithing */,
 				FAC3761B2883DEBE00AD3647 /* Generic */,
 				FAC376352884B42F00AD3647 /* List */,
 				FAC3760628839EFF00AD3647 /* Mining */,
@@ -305,6 +310,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		FAC3764C2887EACC00AD3647 /* Smithing */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3764D2887EAD800AD3647 /* SmithingView.swift */,
+				FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */,
+			);
+			path = Smithing;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,6 +412,7 @@
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
 				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
+				FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */,
 				FAC376412885504600AD3647 /* Theme.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
@@ -409,6 +424,7 @@
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
+				FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 			);

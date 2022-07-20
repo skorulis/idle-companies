@@ -37,14 +37,17 @@ extension SmithingView: View {
             VStack {
                 RecipeDetailView(recipe: recipe, inv: viewModel.inventory)
                 OperationProgressView(timing: viewModel.maybeProgress?.timing)
-                startButton
+                startButton(recipe: recipe)
             }
         }
     }
     
-    private var startButton: some View {
+    private func startButton(recipe: ItemRecipeOperation) -> some View {
         Button(action: viewModel.startSmithing) {
-            Text("Start")
+            HStack {
+                Text("Create")
+                DurationView(time: recipe.baseTime)
+            }
         }
     }
     

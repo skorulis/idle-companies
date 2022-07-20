@@ -7,7 +7,7 @@ import SwiftUI
 
 struct RecipeDetailView {
     let recipe: ItemRecipeOperation
-    let inv: InventoryStore
+    @ObservedObject var inv: InventoryStore
 }
 
 // MARK: - Rendering
@@ -16,14 +16,26 @@ extension RecipeDetailView: View {
     
     var body: some View {
         VStack(spacing: 4) {
+            product
             Text("Requires:")
             inputs
             Text("You have:")
-            counts
+            inputCountsView
         }
     }
     
-    var inputs: some View {
+    private var product: some View {
+        VStack {
+            Text("Produces")
+            HStack {
+                ForEach(outputCounts) { item in
+                    ItemCountView(item: item)
+                }
+            }
+        }
+    }
+    
+    private var inputs: some View {
         HStack {
             ForEach(recipe.recipe.inputs) { item in
                 ItemCountView(item: item)
@@ -31,7 +43,7 @@ extension RecipeDetailView: View {
         }
     }
     
-    var counts: some View {
+    private var inputCountsView: some View {
         HStack {
             ForEach(inputCounts) { item in
                 ItemCountView(item: item)
@@ -47,6 +59,12 @@ extension RecipeDetailView {
     
     var inputCounts: [ItemCount] {
         return recipe.recipe.inputs.map { item in
+            return ItemCount(type: item.type, count: inv.count(item: item.type))
+        }
+    }
+    
+    private var outputCounts: [ItemCount] {
+        return recipe.recipe.outputs.map { item in
             return ItemCount(type: item.type, count: inv.count(item: item.type))
         }
     }

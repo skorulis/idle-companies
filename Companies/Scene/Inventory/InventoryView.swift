@@ -16,7 +16,13 @@ struct InventoryView {
 extension InventoryView: View {
     
     var body: some View {
-        grid
+        ScrollView {
+            VStack {
+                grid
+            }
+        }
+        .navigationTitle("Inventroy")
+        
     }
     
     private var grid: some View {

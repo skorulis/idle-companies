@@ -16,7 +16,7 @@ extension MiningView: View {
     
     var body: some View {
         content
-        .navigationTitle("Operations")
+        .navigationTitle("Mining")
     }
     
     private var content: some View {

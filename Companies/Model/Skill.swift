@@ -19,4 +19,11 @@ extension Skill {
         }
     }
     
+    var icon: ThemeIcon {
+        switch self {
+        case .mining: return .digDug
+        case .smelting: return .anvil
+        }
+    }
+    
 }

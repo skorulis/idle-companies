@@ -14,7 +14,14 @@ struct ItemIconView {
 extension ItemIconView: View {
     
     var body: some View {
-        Image(systemName: "bag.circle")
+        ScrollView {
+            VStack {
+                item.icon.image(28)
+                    .foregroundColor(item.color)
+            }
+        }
+        .navigationTitle("Inventory")
+        
     }
 }
 

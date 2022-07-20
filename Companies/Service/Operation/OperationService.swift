@@ -28,7 +28,7 @@ extension OperationService {
     }
     
     func start(_ op: Operation) {
-        let time: TimeInterval = 1
+        let time: TimeInterval = duration(op)
         self.active.forEach { stop($0) }
         
         let timing = TaskTiming(startTime: Date(), duration: time)
@@ -43,6 +43,20 @@ extension OperationService {
         active = [prog]
     }
     
+    
+}
+
+// MARK: - Private logic
+
+extension OperationService {
+    
+    func duration(_ op: Operation) -> TimeInterval {
+        switch op {
+        case .mining(let type):
+            return miningService.duration(type)
+        }
+    }
+    
     func finish(_ op: Operation) {
         switch op {
         case .mining(let type):
@@ -50,4 +64,5 @@ extension OperationService {
         }
         self.objectWillChange.send()
     }
+    
 }

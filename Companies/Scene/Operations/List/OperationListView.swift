@@ -32,12 +32,16 @@ extension OperationListView: View {
                     operationButton(skill: skill)
                 }
             }
+            .padding(.horizontal, 16)
         }
     }
     
     private func operationButton(skill: Skill) -> some View {
         Button(action: viewModel.show(skill)) {
+            skill.icon.image(24)
             Text(skill.name)
+            Spacer()
+            Image(systemName: "chevron.right")
         }
     }
     

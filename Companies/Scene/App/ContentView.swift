@@ -22,20 +22,28 @@ extension ContentView {
     var body: some View {
         TabView {
             operations
-                .tabItem {
-                    Label("Operations", systemImage: "power.circle.fill")
-                }
-            InventoryView(viewModel: factory.resolve())
-                .tabItem {
-                    Label("Warehouse", systemImage: "archivebox")
-                }
+                
+            inventory
+                
         }
         
+    }
+    
+    private var inventory: some View {
+        NavigationView {
+            InventoryView(viewModel: factory.resolve())
+        }
+        .tabItem {
+            Label("Warehouse", systemImage: "archivebox")
+        }
     }
     
     private var operations: some View {
         NavigationView {
             OperationListView(viewModel: factory.resolve())
+        }
+        .tabItem {
+            Label("Operations", systemImage: "power.circle.fill")
         }
     }
 }

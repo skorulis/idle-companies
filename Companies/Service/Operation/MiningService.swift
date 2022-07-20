@@ -15,4 +15,8 @@ struct MiningService {
         inventory.add(item: item, count: 1)
     }
     
+    func duration(_ type: MiningType) -> TimeInterval {
+        return type.baseTime
+    }
+    
 }

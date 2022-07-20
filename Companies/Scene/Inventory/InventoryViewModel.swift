@@ -26,7 +26,7 @@ extension InventoryViewModel {
     
     var inventory: [ItemCount] {
         return inventoryStore.inventory.map { (item, value) in
-            return ItemCount(item: item, count: value)
+            return ItemCount(type: item, count: value)
         }
     }
     

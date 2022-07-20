@@ -43,7 +43,7 @@ extension InventoryView: View {
     
     private func itemView(_ item: ItemCount) -> some View {
         VStack {
-            ItemIconView(item: item.item)
+            ItemIconView(item: item.type)
             Text("\(item.count)")
         }
     }

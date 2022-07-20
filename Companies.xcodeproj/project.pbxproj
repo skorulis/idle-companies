@@ -45,7 +45,23 @@
 		FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764A2886915B00AD3647 /* ThemeIcon.swift */; };
 		FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764D2887EAD800AD3647 /* SmithingView.swift */; };
 		FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */; };
+		FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376512887ECC400AD3647 /* ItemRecipe.swift */; };
+		FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */; };
+		FAC376562887F04100AD3647 /* SmithingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376552887F04100AD3647 /* SmithingService.swift */; };
+		FAC376592887F07100AD3647 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376582887F07100AD3647 /* RecipeService.swift */; };
+		FAC376612887F2F300AD3647 /* CompaniesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376602887F2F300AD3647 /* CompaniesTests.swift */; };
+		FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAC376622887F2F300AD3647 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAC375D22883888F00AD3647 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAC375D92883888F00AD3647;
+			remoteInfo = Companies;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +101,13 @@
 		FAC3764A2886915B00AD3647 /* ThemeIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeIcon.swift; sourceTree = "<group>"; };
 		FAC3764D2887EAD800AD3647 /* SmithingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingView.swift; sourceTree = "<group>"; };
 		FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingViewModel.swift; sourceTree = "<group>"; };
+		FAC376512887ECC400AD3647 /* ItemRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecipe.swift; sourceTree = "<group>"; };
+		FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecipeOperation.swift; sourceTree = "<group>"; };
+		FAC376552887F04100AD3647 /* SmithingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingService.swift; sourceTree = "<group>"; };
+		FAC376582887F07100AD3647 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
+		FAC3765E2887F2F300AD3647 /* CompaniesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompaniesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAC376602887F2F300AD3647 /* CompaniesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesTests.swift; sourceTree = "<group>"; };
+		FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +120,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC3765B2887F2F300AD3647 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -105,6 +135,7 @@
 			children = (
 				FAC375EB2883890200AD3647 /* Frameworks */,
 				FAC375DC2883888F00AD3647 /* Companies */,
+				FAC3765F2887F2F300AD3647 /* CompaniesTests */,
 				FAC375DB2883888F00AD3647 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC375DA2883888F00AD3647 /* Companies.app */,
+				FAC3765E2887F2F300AD3647 /* CompaniesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -193,6 +225,7 @@
 				FAC3762428840B3D00AD3647 /* Inventory */,
 				FAC375FE2883945A00AD3647 /* App */,
 				FAC3760D2883C8AC00AD3647 /* Operation */,
+				FAC376572887F06C00AD3647 /* Recipe */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -231,6 +264,7 @@
 			children = (
 				FAC3760E2883C8B500AD3647 /* OperationService.swift */,
 				FAC3762A28840F6C00AD3647 /* MiningService.swift */,
+				FAC376552887F04100AD3647 /* SmithingService.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -267,6 +301,8 @@
 			children = (
 				FAC3762828840BC000AD3647 /* ItemType.swift */,
 				FAC37631288424C600AD3647 /* ItemCount.swift */,
+				FAC376512887ECC400AD3647 /* ItemRecipe.swift */,
+				FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -319,6 +355,47 @@
 			path = Smithing;
 			sourceTree = "<group>";
 		};
+		FAC376572887F06C00AD3647 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376582887F07100AD3647 /* RecipeService.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		FAC3765F2887F2F300AD3647 /* CompaniesTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376672887F31D00AD3647 /* Service */,
+				FAC376602887F2F300AD3647 /* CompaniesTests.swift */,
+			);
+			path = CompaniesTests;
+			sourceTree = "<group>";
+		};
+		FAC376672887F31D00AD3647 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376682887F31D00AD3647 /* Operation */,
+				FAC376692887F31D00AD3647 /* Recipe */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		FAC376682887F31D00AD3647 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		FAC376692887F31D00AD3647 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +420,24 @@
 			productReference = FAC375DA2883888F00AD3647 /* Companies.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FAC3765D2887F2F300AD3647 /* CompaniesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAC376642887F2F300AD3647 /* Build configuration list for PBXNativeTarget "CompaniesTests" */;
+			buildPhases = (
+				FAC3765A2887F2F300AD3647 /* Sources */,
+				FAC3765B2887F2F300AD3647 /* Frameworks */,
+				FAC3765C2887F2F300AD3647 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAC376632887F2F300AD3647 /* PBXTargetDependency */,
+			);
+			name = CompaniesTests;
+			productName = CompaniesTests;
+			productReference = FAC3765E2887F2F300AD3647 /* CompaniesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -355,6 +450,10 @@
 				TargetAttributes = {
 					FAC375D92883888F00AD3647 = {
 						CreatedOnToolsVersion = 13.4.1;
+					};
+					FAC3765D2887F2F300AD3647 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = FAC375D92883888F00AD3647;
 					};
 				};
 			};
@@ -372,6 +471,7 @@
 			projectRoot = "";
 			targets = (
 				FAC375D92883888F00AD3647 /* Companies */,
+				FAC3765D2887F2F300AD3647 /* CompaniesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +490,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC3765C2887F2F300AD3647 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -405,9 +512,11 @@
 				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
+				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
+				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FAC3761A2883DD7700AD3647 /* MineTypeView.swift in Sources */,
 				FAC3760C2883A18D00AD3647 /* MiningType.swift in Sources */,
@@ -418,6 +527,7 @@
 				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
 				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
+				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
@@ -425,12 +535,30 @@
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
 				FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */,
+				FAC376562887F04100AD3647 /* SmithingService.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAC3765A2887F2F300AD3647 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAC376612887F2F300AD3647 /* CompaniesTests.swift in Sources */,
+				FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAC376632887F2F300AD3647 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAC375D92883888F00AD3647 /* Companies */;
+			targetProxy = FAC376622887F2F300AD3647 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FAC375E62883889000AD3647 /* Debug */ = {
@@ -605,6 +733,42 @@
 			};
 			name = Release;
 		};
+		FAC376652887F2F300AD3647 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.CompaniesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Companies.app/Companies";
+			};
+			name = Debug;
+		};
+		FAC376662887F2F300AD3647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.CompaniesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Companies.app/Companies";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -622,6 +786,15 @@
 			buildConfigurations = (
 				FAC375E92883889000AD3647 /* Debug */,
 				FAC375EA2883889000AD3647 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAC376642887F2F300AD3647 /* Build configuration list for PBXNativeTarget "CompaniesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAC376652887F2F300AD3647 /* Debug */,
+				FAC376662887F2F300AD3647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

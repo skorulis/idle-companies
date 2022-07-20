@@ -39,4 +39,17 @@ extension ItemType {
         }
     }
     
+    var name: String {
+        switch self {
+        case .ironOre: return "Iron ore"
+        case .goldOre: return "Gold ore"
+        case .ironIngot: return "Iron bar"
+        case .goldIngot: return "Gold bar"
+        }
+    }
+    
+    func bundle(_ count: Int) -> ItemCount {
+        return ItemCount(type: self, count: count)
+    }
+    
 }

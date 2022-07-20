@@ -28,6 +28,8 @@ private extension IOC {
         container.autoregister(OperationService.self, initializer: OperationService.init)
             .inObjectScope(.container)
         container.autoregister(MiningService.self, initializer: MiningService.init)
+        container.autoregister(SmithingService.self, initializer: SmithingService.init)
+        container.autoregister(RecipeService.self, initializer: RecipeService.init)
     }
     
     func registerStores() {

@@ -3,10 +3,10 @@
 import Foundation
 
 struct ItemCount: Identifiable {
-    let item: ItemType
+    let type: ItemType
     let count: Int
     
     var id: String {
-        return "\(item.rawValue)-\(count)"
+        return "\(type.rawValue)-\(count)"
     }
 }

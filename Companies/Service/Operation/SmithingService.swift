@@ -38,17 +38,17 @@ extension SmithingService {
  
     var recipes: [ItemRecipeOperation] {
         return [
-            ironBarRecipe,
-            goldBarRecipe
+            Self.ironBarRecipe,
+            Self.goldBarRecipe
         ]
     }
     
-    var ironBarRecipe: ItemRecipeOperation {
+    static var ironBarRecipe: ItemRecipeOperation {
         let ing = ItemRecipe(inputs: [.init(type: .ironOre, count: 1)], output: .ironBar)
         return .init(recipe: ing, baseTime: 5)
     }
     
-    var goldBarRecipe: ItemRecipeOperation {
+    static var goldBarRecipe: ItemRecipeOperation {
         let ing = ItemRecipe(inputs: [.init(type: .goldOre, count: 2)], output: .goldBar)
         return .init(recipe: ing, baseTime: 10)
     }

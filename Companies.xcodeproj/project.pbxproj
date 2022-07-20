@@ -52,6 +52,9 @@
 		FAC376612887F2F300AD3647 /* CompaniesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376602887F2F300AD3647 /* CompaniesTests.swift */; };
 		FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */; };
 		FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */; };
+		FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766E288807E500AD3647 /* RecipeView.swift */; };
+		FAC3767128880D0400AD3647 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767028880D0400AD3647 /* RecipeDetailView.swift */; };
+		FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767228880FB900AD3647 /* ItemCountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,9 @@
 		FAC376602887F2F300AD3647 /* CompaniesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesTests.swift; sourceTree = "<group>"; };
 		FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTests.swift; sourceTree = "<group>"; };
 		FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingServiceTests.swift; sourceTree = "<group>"; };
+		FAC3766E288807E500AD3647 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		FAC3767028880D0400AD3647 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		FAC3767228880FB900AD3647 /* ItemCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +292,8 @@
 			children = (
 				FAC3761C2883DEC400AD3647 /* DurationView.swift */,
 				FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */,
+				FAC3766E288807E500AD3647 /* RecipeView.swift */,
+				FAC3767028880D0400AD3647 /* RecipeDetailView.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				FAC3762D2884227200AD3647 /* InventoryView.swift */,
 				FAC3762F2884227B00AD3647 /* InventoryViewModel.swift */,
 				FAC37633288428D600AD3647 /* ItemIconView.swift */,
+				FAC3767228880FB900AD3647 /* ItemCountView.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -513,6 +522,7 @@
 				FAC376112883C8BF00AD3647 /* Skill.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
 				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
+				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
@@ -526,11 +536,13 @@
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
 				FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */,
 				FAC376412885504600AD3647 /* Theme.swift in Sources */,
+				FAC3767128880D0400AD3647 /* RecipeDetailView.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC3762B28840F6C00AD3647 /* MiningService.swift in Sources */,
 				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
+				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,

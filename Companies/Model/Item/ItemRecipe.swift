@@ -27,4 +27,8 @@ public struct ItemRecipe {
     
 }
 
-
+extension ItemRecipe: Identifiable {
+    
+    public var id: String { name }
+    
+}

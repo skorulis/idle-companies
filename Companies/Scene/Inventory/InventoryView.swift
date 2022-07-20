@@ -36,17 +36,11 @@ extension InventoryView: View {
                   alignment: .center,
                   spacing: 4) {
             ForEach(viewModel.inventory) { item in
-                itemView(item)
+                ItemCountView(item: item)
             }
         }
     }
     
-    private func itemView(_ item: ItemCount) -> some View {
-        VStack {
-            ItemIconView(item: item.type)
-            Text("\(item.count)")
-        }
-    }
 }
 
 // MARK: - Previews
@@ -55,7 +49,10 @@ struct InventoryView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        InventoryView(viewModel: ioc.resolve())
+        let store = ioc.resolve(InventoryStore.self)
+        store.add(item: .goldBar, count: 5)
+        store.add(item: .ironOre, count: 15)
+        return InventoryView(viewModel: ioc.resolve())
     }
 }
 

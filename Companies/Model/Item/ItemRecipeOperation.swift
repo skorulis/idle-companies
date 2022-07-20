@@ -6,3 +6,8 @@ public struct ItemRecipeOperation {
     public let recipe: ItemRecipe
     public let baseTime: TimeInterval
 }
+
+extension ItemRecipeOperation: Identifiable {
+    
+    public var id: String { recipe.id }
+}

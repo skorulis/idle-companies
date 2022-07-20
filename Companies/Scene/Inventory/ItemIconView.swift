@@ -14,14 +14,8 @@ struct ItemIconView {
 extension ItemIconView: View {
     
     var body: some View {
-        ScrollView {
-            VStack {
-                item.icon.image(28)
-                    .foregroundColor(item.color)
-            }
-        }
-        .navigationTitle("Inventory")
-        
+        item.icon.image(28)
+            .foregroundColor(item.color)
     }
 }
 

@@ -3,26 +3,26 @@
 import Foundation
 
 /// Recipe to make an item
-struct ItemRecipe {
+public struct ItemRecipe {
     
-    let name: String
-    let inputs: [ItemCount]
-    let outputs: [ItemCount]
+    public let name: String
+    public let inputs: [ItemCount]
+    public let outputs: [ItemCount]
     
-    init(name: String, inputs: [ItemCount], outputs: [ItemCount]) {
+    public init(name: String, inputs: [ItemCount], outputs: [ItemCount]) {
         self.name = name
         self.inputs = inputs
         self.outputs = outputs
     }
     
-    init(output: ItemCount, inputs: [ItemCount]) {
+    public init(inputs: [ItemCount], output: ItemCount) {
         self.name = output.type.name
         self.inputs = inputs
         self.outputs = [output]
     }
     
-    init(output: ItemType, inputs: [ItemCount]) {
-        self.init(output: .init(type: output, count: 1), inputs: inputs)
+    public init(inputs: [ItemCount], output: ItemType) {
+        self.init(inputs: inputs, output: .init(type: output, count: 1))
     }
     
 }

@@ -11,6 +11,7 @@ final class OperationService: ObservableObject {
     private let factory: PFactory
     
     private lazy var miningService: MiningService = factory.resolve()
+    private lazy var smithingService: SmithingService = factory.resolve()
     
     public init(factory: PFactory) {
         self.factory = factory
@@ -30,6 +31,10 @@ extension OperationService {
     func start(_ op: Operation) {
         let time: TimeInterval = duration(op)
         self.active.forEach { stop($0) }
+        
+        if !tryStart(op) {
+            return
+        }
         
         let timing = TaskTiming(startTime: Date(), duration: time)
         var prog = OperationProgress(operation: op, timing: timing, lastTick: Date())
@@ -54,13 +59,31 @@ extension OperationService {
         switch op {
         case .mining(let type):
             return miningService.duration(type)
+        case .smithing(let recipe):
+            return smithingService.duration(recipe)
         }
+    }
+    
+    func tryStart(_ op: Operation) -> Bool {
+        switch op {
+        case .smithing(let recipe):
+            do {
+                try smithingService.start(recipe)
+            } catch {
+                return false
+            }
+        default:
+            break // No actions to do
+        }
+        return true
     }
     
     func finish(_ op: Operation) {
         switch op {
         case .mining(let type):
             miningService.onFinish(type)
+        case .smithing(let recipe):
+            smithingService.onFinish(recipe)
         }
         self.objectWillChange.send()
     }

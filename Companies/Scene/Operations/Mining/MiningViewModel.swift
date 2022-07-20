@@ -46,6 +46,8 @@ extension MiningViewModel {
             switch progress.operation {
             case .mining(let opType):
                 return opType == type
+            default:
+                return false
             }
         }
     }

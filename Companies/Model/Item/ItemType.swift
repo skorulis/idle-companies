@@ -10,8 +10,8 @@ public enum ItemType: String, Codable {
     case goldOre
     
     // Ingots
-    case ironIngot
-    case goldIngot
+    case ironBar
+    case goldBar
     
 }
 
@@ -21,7 +21,7 @@ extension ItemType {
         switch self {
         case .ironOre, .goldOre:
             return .ore
-        case .ironIngot, .goldIngot:
+        case .ironBar, .goldBar:
             return .metalBar
         }
     }
@@ -32,9 +32,9 @@ extension ItemType {
             return .gray
         case .goldOre:
             return .yellow
-        case .ironIngot:
+        case .ironBar:
             return .gray
-        case .goldIngot:
+        case .goldBar:
             return .yellow
         }
     }
@@ -43,8 +43,8 @@ extension ItemType {
         switch self {
         case .ironOre: return "Iron ore"
         case .goldOre: return "Gold ore"
-        case .ironIngot: return "Iron bar"
-        case .goldIngot: return "Gold bar"
+        case .ironBar: return "Iron bar"
+        case .goldBar: return "Gold bar"
         }
     }
     

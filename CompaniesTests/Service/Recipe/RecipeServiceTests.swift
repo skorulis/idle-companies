@@ -22,13 +22,13 @@ final class RecipeServiceTests: XCTestCase {
     
     func test_finish() {
         sut.finish(recipe: recipe1)
-        XCTAssertEqual(inv.count(item: .ironIngot), 1)
+        XCTAssertEqual(inv.count(item: .ironBar), 1)
     }
     
     private var recipe1: ItemRecipe {
         return ItemRecipe(name: "TEST",
                           inputs: [ItemType.ironOre.bundle(1)],
-                          outputs: [ItemType.ironIngot.bundle(1)])
+                          outputs: [ItemType.ironBar.bundle(1)])
     }
     
 }

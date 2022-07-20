@@ -30,7 +30,7 @@ extension ItemIconView: View {
 struct ItemIconView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ItemIconView(item: .goldIngot)
+        ItemIconView(item: .goldBar)
     }
 }
 

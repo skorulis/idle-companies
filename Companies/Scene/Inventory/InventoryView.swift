@@ -21,7 +21,7 @@ extension InventoryView: View {
                 grid
             }
         }
-        .navigationTitle("Inventroy")
+        .navigationTitle("Inventory")
         
     }
     

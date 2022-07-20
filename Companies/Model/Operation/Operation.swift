@@ -4,6 +4,7 @@ import Foundation
 
 public enum Operation {
     case mining(_ type: MiningType)
+    case smithing(_ recipe: ItemRecipeOperation)
 }
 
 public extension Operation {
@@ -12,6 +13,8 @@ public extension Operation {
         switch self {
         case .mining:
             return .mining
+        case .smithing:
+            return .smithing
         }
     }
 }

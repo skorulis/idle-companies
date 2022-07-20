@@ -51,6 +51,7 @@
 		FAC376592887F07100AD3647 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376582887F07100AD3647 /* RecipeService.swift */; };
 		FAC376612887F2F300AD3647 /* CompaniesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376602887F2F300AD3647 /* CompaniesTests.swift */; };
 		FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */; };
+		FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		FAC3765E2887F2F300AD3647 /* CompaniesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompaniesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC376602887F2F300AD3647 /* CompaniesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesTests.swift; sourceTree = "<group>"; };
 		FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTests.swift; sourceTree = "<group>"; };
+		FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +386,7 @@
 		FAC376682887F31D00AD3647 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */,
 				FAC376612887F2F300AD3647 /* CompaniesTests.swift in Sources */,
 				FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */,
 			);

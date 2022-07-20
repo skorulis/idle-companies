@@ -2,11 +2,11 @@
 
 import Foundation
 
-struct ItemCount: Identifiable {
-    let type: ItemType
-    let count: Int
+public struct ItemCount: Identifiable {
+    public let type: ItemType
+    public let count: Int
     
-    var id: String {
+    public var id: String {
         return "\(type.rawValue)-\(count)"
     }
 }

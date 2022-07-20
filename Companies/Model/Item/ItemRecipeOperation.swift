@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct ItemRecipeOperation {
-    let recipe: ItemRecipe
-    let baseTime: TimeInterval
+public struct ItemRecipeOperation {
+    public let recipe: ItemRecipe
+    public let baseTime: TimeInterval
 }

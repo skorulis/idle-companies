@@ -31,6 +31,19 @@ extension RecipeService {
         }
     }
     
+    static func randomItem(recipe: ItemRecipe) -> ItemType {
+        let count = recipe.outputCount
+        let choice = Int.random(in: 1...count)
+        var value: Int = 0
+        for item in recipe.outputs {
+            value += item.count
+            if value >= choice {
+                return item.type
+            }
+        }
+        fatalError("Rolled \(choice) for \(recipe.outputs)")
+    }
+    
 }
 
 // MARK: - Inner type

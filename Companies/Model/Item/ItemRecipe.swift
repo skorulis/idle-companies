@@ -35,10 +35,14 @@ extension ItemRecipe: Identifiable {
     
     public var id: String { name }
     
-    var outputPercentages: [ItemPercentage] {
-        let total: Double = outputs.reduce(0) { partialResult, item in
-            return partialResult + Double(item.count)
+    var outputCount: Int {
+        return outputs.reduce(0) { partialResult, item in
+            return partialResult + item.count
         }
+    }
+    
+    var outputPercentages: [ItemPercentage] {
+        let total: Double = Double(outputCount)
         return outputs.map { item in
             return ItemPercentage(type: item.type, percent: Double(item.count) / total)
         }

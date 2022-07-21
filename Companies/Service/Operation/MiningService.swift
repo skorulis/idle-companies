@@ -13,7 +13,7 @@ struct MiningService {
     }
     
     func onFinish(_ place: ItemRecipeOperation) {
-        let item = place.recipe.outputs[0].type
+        let item = RecipeService.randomItem(recipe: place.recipe)
         inventory.add(item: item, count: 1)
     }
     

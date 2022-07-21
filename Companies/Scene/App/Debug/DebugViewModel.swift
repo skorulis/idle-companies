@@ -8,7 +8,8 @@ import Foundation
 
 final class DebugViewModel: ObservableObject {
  
-    let timeProvider: DebugTimeProvider
+    private let timeProvider: DebugTimeProvider
+    private let inventory: InventoryStore
     
     @Published var speed: TimeInterval {
         didSet {
@@ -16,8 +17,11 @@ final class DebugViewModel: ObservableObject {
         }
     }
     
-    init(timeProvider: PTimeProvider) {
+    init(timeProvider: PTimeProvider,
+         inventory: InventoryStore
+    ) {
         self.timeProvider = timeProvider as! DebugTimeProvider
+        self.inventory = inventory
         _speed = Published(wrappedValue: self.timeProvider.speed)
     }
     
@@ -34,6 +38,12 @@ extension DebugViewModel {
 
 extension DebugViewModel {
     
+    func clearInventory() {
+        let items = inventory.inventory
+        for (key, value) in items {
+            inventory.remove(item: ItemCount(type: key, count: value))
+        }
+    }
     
 }
 

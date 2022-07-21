@@ -2,6 +2,8 @@
 
 import Foundation
 
+// MARK: - Memory footprint
+
 /// Recipe to make an item
 public struct ItemRecipe {
     
@@ -27,8 +29,19 @@ public struct ItemRecipe {
     
 }
 
+// MARK: - Logic
+
 extension ItemRecipe: Identifiable {
     
     public var id: String { name }
+    
+    var outputPercentages: [ItemPercentage] {
+        let total: Double = outputs.reduce(0) { partialResult, item in
+            return partialResult + Double(item.count)
+        }
+        return outputs.map { item in
+            return ItemPercentage(type: item.type, percent: Double(item.count) / total)
+        }
+    }
     
 }

@@ -10,6 +10,8 @@ public enum ItemType: String, Codable {
     
     // Ores
     case stone
+    case limestone
+    case coal
     case ironOre
     case goldOre
     
@@ -18,7 +20,8 @@ public enum ItemType: String, Codable {
     case goldBar
     
     // Materials
-    case bricks
+    case brick
+    case concrete
     
 }
 
@@ -27,15 +30,19 @@ extension ItemType {
     var icon: ThemeIcon {
         switch self {
         case .credits:
-            return .woodenCrate
-        case .ironOre, .goldOre:
+            return .moneyStack
+        case .ironOre, .goldOre, .coal:
             return .ore
+        case .limestone:
+            return .stonePile
         case .ironBar, .goldBar:
             return .metalBar
         case .stone:
-            return .woodenCrate
-        case.bricks:
-            return .ore
+            return .stonePile
+        case.brick:
+            return .clayBrick
+        case .concrete:
+            return .concreteBag
         }
     }
     
@@ -43,11 +50,14 @@ extension ItemType {
         switch self {
         case .credits: return .green
         case .stone: return .gray
+        case .limestone: return .white
+        case .coal: return .black
         case .ironOre: return .orange
         case .goldOre: return .yellow
         case .ironBar: return .orange
         case .goldBar: return .yellow
-        case .bricks: return .gray
+        case .brick: return .red
+        case .concrete: return .brown
         }
     }
     

@@ -67,6 +67,9 @@
 		FAC3768D2888B00600AD3647 /* MarketingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3768C2888B00600AD3647 /* MarketingServiceTests.swift */; };
 		FAC376902888B0A800AD3647 /* DebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3768F2888B0A800AD3647 /* DebugView.swift */; };
 		FAC376922888B0B800AD3647 /* DebugViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376912888B0B800AD3647 /* DebugViewModel.swift */; };
+		FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376932889195E00AD3647 /* MiningPlaceView.swift */; };
+		FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3769528891A6C00AD3647 /* ItemPercentage.swift */; };
+		FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3769728891B5500AD3647 /* ItemPercentageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +143,9 @@
 		FAC3768C2888B00600AD3647 /* MarketingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingServiceTests.swift; sourceTree = "<group>"; };
 		FAC3768F2888B0A800AD3647 /* DebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugView.swift; sourceTree = "<group>"; };
 		FAC376912888B0B800AD3647 /* DebugViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewModel.swift; sourceTree = "<group>"; };
+		FAC376932889195E00AD3647 /* MiningPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningPlaceView.swift; sourceTree = "<group>"; };
+		FAC3769528891A6C00AD3647 /* ItemPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPercentage.swift; sourceTree = "<group>"; };
+		FAC3769728891B5500AD3647 /* ItemPercentageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPercentageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +297,7 @@
 				FAC3760728839F9B00AD3647 /* MiningView.swift */,
 				FAC3760928839FA100AD3647 /* MiningViewModel.swift */,
 				FAC376192883DD7700AD3647 /* MineTypeView.swift */,
+				FAC376932889195E00AD3647 /* MiningPlaceView.swift */,
 			);
 			path = Mining;
 			sourceTree = "<group>";
@@ -344,6 +351,7 @@
 				FAC37631288424C600AD3647 /* ItemCount.swift */,
 				FAC376512887ECC400AD3647 /* ItemRecipe.swift */,
 				FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */,
+				FAC3769528891A6C00AD3647 /* ItemPercentage.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -355,6 +363,7 @@
 				FAC3762F2884227B00AD3647 /* InventoryViewModel.swift */,
 				FAC37633288428D600AD3647 /* ItemIconView.swift */,
 				FAC3767228880FB900AD3647 /* ItemCountView.swift */,
+				FAC3769728891B5500AD3647 /* ItemPercentageView.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -584,7 +593,9 @@
 				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
+				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
+				FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
 				FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */,
@@ -617,6 +628,7 @@
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
+				FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */,
 				FAC376502887EAE400AD3647 /* SmithingViewModel.swift in Sources */,
 				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
 				FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */,

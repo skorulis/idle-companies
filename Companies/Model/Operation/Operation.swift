@@ -3,7 +3,7 @@
 import Foundation
 
 public enum Operation {
-    case mining(_ type: MiningType)
+    case mining(_ type: ItemRecipeOperation)
     case smithing(_ recipe: ItemRecipeOperation)
     case agencyMarketing(_ type: MarketingType)
 }

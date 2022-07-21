@@ -25,7 +25,7 @@ extension Skill {
         switch self {
         case .mining: return .digDug
         case .smithing: return .anvil
-        case .marketing: return .woodenCrate // TODO
+        case .marketing: return .virtualMarker
         }
     }
     

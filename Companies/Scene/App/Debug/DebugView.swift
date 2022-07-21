@@ -20,6 +20,7 @@ extension DebugView: View {
         ScrollView {
             VStack {
                 speed
+                clearButton
             }
         }
         .navigationTitle("Debug")
@@ -27,6 +28,12 @@ extension DebugView: View {
     
     private var speed: some View {
         Stepper("Speed: \(Int(viewModel.speed))", value: $viewModel.speed)
+    }
+    
+    private var clearButton: some View {
+        Button(action: viewModel.clearInventory) {
+            Text("Clear inventory")
+        }
     }
 }
 

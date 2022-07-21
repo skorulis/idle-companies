@@ -47,18 +47,11 @@ extension MineTypeView: View {
 
 struct MineTypeView_Previews: PreviewProvider {
     
-    private static var progress: OperationProgress {
-        return .init(operation: .mining(.gold),
-                     timing: .init(startTime: Date(), duration: 5),
-                     lastTick: Date()
-        )
-    }
-    
     static var previews: some View {
         VStack {
             MineTypeView(type: .gold, progress: nil)
             
-            MineTypeView(type: .gold, progress: progress)
+            MineTypeView(type: .gold, progress: nil)
         }
     }
 }

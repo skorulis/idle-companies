@@ -2,10 +2,17 @@ import SwiftUI
 
 
 enum ThemeIcon: String {
+	case atom = "atom"
+	case clayBrick = "clay-brick"
+	case concreteBag = "concrete-bag"
 	case metalBar = "metal-bar"
+	case moneyStack = "money-stack"
 	case ore = "ore"
+	case stoneBlock = "stone-block"
+	case stonePile = "stone-pile"
 	case anvil = "anvil"
 	case digDug = "dig-dug"
+	case virtualMarker = "virtual-marker"
 	case factory = "factory"
 	case woodenCrate = "wooden-crate"
 }

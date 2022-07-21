@@ -22,13 +22,14 @@ extension MiningView: View {
     private var content: some View {
         ScrollView {
             VStack {
-                ForEach(viewModel.availableMining) { type in
-                    Button(action: viewModel.onPress(type)) {
-                        MineTypeView(type: type,
-                                     progress: viewModel.maybeProgress(type)
-                        )
+                ForEach(viewModel.availableMining) { place in
+                    Button(action: viewModel.onPress(place)) {
+                        MiningPlaceView(recipe: place,
+                                        progress: viewModel.maybeProgress(place))
                         .contentShape(Rectangle())
                     }
+
+                    
                 }
             }
             .padding(.horizontal, 16)

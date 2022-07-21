@@ -6,8 +6,10 @@ import Foundation
 public enum MiningType: String, Identifiable {
     
     case stone
+    case coal
     case iron
     case gold
+    
     
     public var id: String { rawValue }
     
@@ -30,6 +32,8 @@ public extension MiningType {
         switch self {
         case .stone:
             return 4
+        case .coal:
+            return 6
         case .iron:
             return 5
         case .gold:
@@ -40,6 +44,7 @@ public extension MiningType {
     var baseOutput: ItemType {
         switch self {
         case .stone: return .stone
+        case .coal: return .coal
         case .iron: return .ironOre
         case .gold: return .goldOre
         }

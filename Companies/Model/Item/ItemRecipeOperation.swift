@@ -5,6 +5,7 @@ import Foundation
 public struct ItemRecipeOperation {
     public let recipe: ItemRecipe
     public let baseTime: TimeInterval
+    public var outputsArePercentages: Bool = false
 }
 
 extension ItemRecipeOperation: Identifiable {

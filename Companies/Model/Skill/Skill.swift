@@ -3,7 +3,7 @@
 import Foundation
 
 /// Operations that can be done
-public enum Skill: String, Identifiable {
+public enum Skill: String, Identifiable, Codable {
     case mining
     case smithing
     case marketing

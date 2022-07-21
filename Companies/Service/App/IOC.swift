@@ -44,6 +44,8 @@ private extension IOC {
     func registerStores() {
         container.autoregister(InventoryStore.self, initializer: InventoryStore.init)
             .inObjectScope(.container)
+        container.autoregister(SkillStore.self, initializer: SkillStore.init)
+            .inObjectScope(.container)
         
         switch purpose {
         case .testing:

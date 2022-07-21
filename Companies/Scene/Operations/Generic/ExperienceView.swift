@@ -1,23 +1,28 @@
-//  Created by Alexander Skorulis on 17/7/2022.
+//
+//  ExperienceView.swift
+//  Companies
+//
+//  Created by Alexander Skorulis on 22/7/2022.
+//
 
 import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
-struct DurationView {
+struct ExperienceView {
     
-    let time: TimeInterval
+    let xp: Int64
 }
 
 // MARK: - Rendering
 
-extension DurationView: View {
+extension ExperienceView: View {
     
     var body: some View {
         VStack {
-            Image(systemName: "clock.arrow.circlepath")
-            Text("\(time, specifier: "%.1f")s")
+            Image(systemName: "arrowtriangle.up.fill")
+            Text("\(xp)")
         }
         .padding(2)
         .frame(minWidth: 40)
@@ -30,10 +35,13 @@ extension DurationView: View {
 
 // MARK: - Previews
 
-struct DurationView_Previews: PreviewProvider {
+struct ExperienceView_Previews: PreviewProvider {
     
     static var previews: some View {
-        DurationView(time: 10)
+        VStack {
+            ExperienceView(xp: 100)
+            ExperienceView(xp: 10)
+        }
     }
 }
 

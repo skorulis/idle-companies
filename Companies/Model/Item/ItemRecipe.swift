@@ -36,13 +36,17 @@ extension ItemRecipe: Identifiable {
     public var id: String { name }
     
     var outputCount: Int {
+        return Self.outputCount(outputs)
+    }
+    
+    static func outputCount(_ outputs: [ItemCount]) -> Int {
         return outputs.reduce(0) { partialResult, item in
             return partialResult + item.count
         }
     }
     
-    var outputPercentages: [ItemPercentage] {
-        let total: Double = Double(outputCount)
+    static func outputPercentages(_ outputs: [ItemCount]) -> [ItemPercentage] {
+        let total: Double = Double(Self.outputCount(outputs))
         return outputs.map { item in
             return ItemPercentage(type: item.type, percent: Double(item.count) / total)
         }

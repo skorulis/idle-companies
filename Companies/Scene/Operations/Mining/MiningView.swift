@@ -24,7 +24,7 @@ extension MiningView: View {
             VStack {
                 ForEach(viewModel.availableMining) { place in
                     Button(action: viewModel.onPress(place)) {
-                        MiningPlaceView(recipe: place,
+                        MiningPlaceView(operation: place,
                                         progress: viewModel.maybeProgress(place))
                         .contentShape(Rectangle())
                     }

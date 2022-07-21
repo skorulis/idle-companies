@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Memory footprint
 
 struct MiningPlaceView {
-    let recipe: ItemRecipeOperation
+    let operation: MiningOperation
     let progress: OperationProgress?
 }
 
@@ -21,9 +21,9 @@ extension MiningPlaceView: View {
     
     var body: some View {
         VStack {
-            Text(recipe.recipe.name)
+            Text(operation.name)
             outputOptions
-            DurationView(time: recipe.baseTime)
+            details
             progressBar
         }
         .frame(maxWidth: .infinity)
@@ -33,9 +33,16 @@ extension MiningPlaceView: View {
         )
     }
     
+    private var details: some View {
+        HStack {
+            DurationView(time: operation.baseTime)
+            ExperienceView(xp: operation.baseXP)
+        }
+    }
+    
     private var outputOptions: some View {
         HStack {
-            ForEach(recipe.recipe.outputPercentages) { item in
+            ForEach(operation.outputPercentages) { item in
                 ItemPercentageView(item: item)
             }
         }
@@ -61,7 +68,7 @@ struct MiningPlaceView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            MiningPlaceView(recipe: MiningService.ironMine, progress: nil)
+            MiningPlaceView(operation: MiningOperation.iron, progress: nil)
         }
         .padding(12)
         

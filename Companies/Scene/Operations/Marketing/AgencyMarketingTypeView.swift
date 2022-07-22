@@ -7,7 +7,7 @@ import SwiftUI
 
 struct AgencyMarketingTypeView {
     
-    let type: MarketingType
+    let type: MarketingActivity
     let progress: OperationProgress?
 }
 

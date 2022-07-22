@@ -10,11 +10,11 @@ final class MarketingService {
         self.inventory = inventory
     }
     
-    func onFinish(_ type: MarketingType) {
+    func onFinish(_ type: MarketingActivity) {
         inventory.add(item: .credits, count: type.baseProfit)
     }
     
-    func duration(_ type: MarketingType) -> TimeInterval {
+    func duration(_ type: MarketingActivity) -> TimeInterval {
         return type.baseTime
     }
     

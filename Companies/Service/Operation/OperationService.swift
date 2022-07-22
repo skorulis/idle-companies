@@ -62,6 +62,8 @@ extension OperationService {
         switch op {
         case let mining as MiningOperation:
             return miningService.duration(mining)
+        case let marketing as MarketingActivity:
+            return marketingService.duration(marketing)
         default:
             fatalError("Unknown type \(op)")
         }
@@ -86,6 +88,8 @@ extension OperationService {
         switch op {
         case let mining as MiningOperation:
             miningService.onFinish(mining)
+        case let marketing as MarketingActivity:
+            marketingService.onFinish(marketing)
         default:
             fatalError("Unknown type \(op)")
         }

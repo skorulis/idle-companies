@@ -57,7 +57,6 @@
 		FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376792888985900AD3647 /* TimeProvider.swift */; };
 		FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */; };
 		FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767D2888A80B00AD3647 /* MarketingService.swift */; };
-		FAC376822888A85800AD3647 /* MarketingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376812888A85800AD3647 /* MarketingType.swift */; };
 		FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376842888AA2000AD3647 /* MarketingView.swift */; };
 		FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376862888AA2700AD3647 /* MarketingViewModel.swift */; };
 		FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3768A2888AC7200AD3647 /* AgencyMarketingTypeView.swift */; };
@@ -74,6 +73,7 @@
 		FAC376A4288A15D200AD3647 /* POperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A3288A15D200AD3647 /* POperation.swift */; };
 		FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A6288A16B500AD3647 /* MiningOperation.swift */; };
 		FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A8288A1EE000AD3647 /* ExperienceView.swift */; };
+		FAC376AB288A259100AD3647 /* MarketingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AA288A259100AD3647 /* MarketingActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,7 +137,6 @@
 		FAC376792888985900AD3647 /* TimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeProvider.swift; sourceTree = "<group>"; };
 		FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugTimeProvider.swift; sourceTree = "<group>"; };
 		FAC3767D2888A80B00AD3647 /* MarketingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingService.swift; sourceTree = "<group>"; };
-		FAC376812888A85800AD3647 /* MarketingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingType.swift; sourceTree = "<group>"; };
 		FAC376842888AA2000AD3647 /* MarketingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingView.swift; sourceTree = "<group>"; };
 		FAC376862888AA2700AD3647 /* MarketingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketingViewModel.swift; sourceTree = "<group>"; };
 		FAC3768A2888AC7200AD3647 /* AgencyMarketingTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgencyMarketingTypeView.swift; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		FAC376A3288A15D200AD3647 /* POperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POperation.swift; sourceTree = "<group>"; };
 		FAC376A6288A16B500AD3647 /* MiningOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningOperation.swift; sourceTree = "<group>"; };
 		FAC376A8288A1EE000AD3647 /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
+		FAC376AA288A259100AD3647 /* MarketingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketingActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +324,6 @@
 		FAC376142883CB8000AD3647 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
-				FAC376812888A85800AD3647 /* MarketingType.swift */,
 				FAC376152883CB8000AD3647 /* Operation.swift */,
 				FAC376172883CB8700AD3647 /* OperationProgress.swift */,
 				FAC376222883F4B700AD3647 /* TaskTiming.swift */,
@@ -508,6 +507,7 @@
 		FAC376A5288A16A900AD3647 /* SkillOperations */ = {
 			isa = PBXGroup;
 			children = (
+				FAC376AA288A259100AD3647 /* MarketingActivity.swift */,
 				FAC376A6288A16B500AD3647 /* MiningOperation.swift */,
 			);
 			path = SkillOperations;
@@ -631,6 +631,7 @@
 				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,
 				FAC3769A28892DFE00AD3647 /* SkillStore.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
+				FAC376AB288A259100AD3647 /* MarketingActivity.swift in Sources */,
 				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
@@ -657,7 +658,6 @@
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
-				FAC376822888A85800AD3647 /* MarketingType.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,

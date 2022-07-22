@@ -24,7 +24,7 @@ final class MarketingViewModel: ObservableObject {
 
 extension MarketingViewModel {
     
-    var availableOptions: [MarketingType] {
+    var availableOptions: [MarketingActivity] {
         return [.newspaper, .radio]
     }
 }
@@ -33,22 +33,16 @@ extension MarketingViewModel {
 
 extension MarketingViewModel {
     
-    func onPress(_ type: MarketingType) -> () -> Void {
+    func onPress(_ type: MarketingActivity) -> () -> Void {
         return { [unowned self] in
-            //self.operations.start(.agencyMarketing(type))
+            self.operations.start(type)
         }
     }
     
-    func maybeProgress(_ type: MarketingType) -> OperationProgress? {
-        return nil
-        /*return operations.active.first { progress in
-            switch progress.operation {
-            case .agencyMarketing(let opType):
-                return opType == type
-            default:
-                return false
-            }
-        }*/
+    func maybeProgress(_ type: MarketingActivity) -> OperationProgress? {
+        return operations.active.first { progress in
+            return progress.operation.matches(type)
+        }
     }
     
 }

@@ -71,7 +71,7 @@
 		FAC3769D2889665700AD3647 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3769C2889665700AD3647 /* Skill.swift */; };
 		FAC3769F2889666200AD3647 /* SkillExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3769E2889666200AD3647 /* SkillExperience.swift */; };
 		FAC376A2288976D300AD3647 /* SkillStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A1288976D300AD3647 /* SkillStoreTests.swift */; };
-		FAC376A4288A15D200AD3647 /* OperationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A3288A15D200AD3647 /* OperationInfo.swift */; };
+		FAC376A4288A15D200AD3647 /* POperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A3288A15D200AD3647 /* POperation.swift */; };
 		FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A6288A16B500AD3647 /* MiningOperation.swift */; };
 		FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A8288A1EE000AD3647 /* ExperienceView.swift */; };
 /* End PBXBuildFile section */
@@ -151,7 +151,7 @@
 		FAC3769C2889665700AD3647 /* Skill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		FAC3769E2889666200AD3647 /* SkillExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillExperience.swift; sourceTree = "<group>"; };
 		FAC376A1288976D300AD3647 /* SkillStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillStoreTests.swift; sourceTree = "<group>"; };
-		FAC376A3288A15D200AD3647 /* OperationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationInfo.swift; sourceTree = "<group>"; };
+		FAC376A3288A15D200AD3647 /* POperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POperation.swift; sourceTree = "<group>"; };
 		FAC376A6288A16B500AD3647 /* MiningOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningOperation.swift; sourceTree = "<group>"; };
 		FAC376A8288A1EE000AD3647 /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,7 +328,7 @@
 				FAC376152883CB8000AD3647 /* Operation.swift */,
 				FAC376172883CB8700AD3647 /* OperationProgress.swift */,
 				FAC376222883F4B700AD3647 /* TaskTiming.swift */,
-				FAC376A3288A15D200AD3647 /* OperationInfo.swift */,
+				FAC376A3288A15D200AD3647 /* POperation.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -625,7 +625,7 @@
 				FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */,
-				FAC376A4288A15D200AD3647 /* OperationInfo.swift in Sources */,
+				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
 				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,

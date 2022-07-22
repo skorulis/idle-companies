@@ -35,19 +35,20 @@ extension MarketingViewModel {
     
     func onPress(_ type: MarketingType) -> () -> Void {
         return { [unowned self] in
-            self.operations.start(.agencyMarketing(type))
+            //self.operations.start(.agencyMarketing(type))
         }
     }
     
     func maybeProgress(_ type: MarketingType) -> OperationProgress? {
-        return operations.active.first { progress in
+        return nil
+        /*return operations.active.first { progress in
             switch progress.operation {
             case .agencyMarketing(let opType):
                 return opType == type
             default:
                 return false
             }
-        }
+        }*/
     }
     
 }

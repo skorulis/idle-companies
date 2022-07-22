@@ -4,7 +4,7 @@ import Foundation
 
 struct OperationProgress {
     
-    let operation: Operation
+    let operation: POperation
     let timing: TaskTiming
     let lastTick: Date
     

@@ -31,7 +31,7 @@ extension OperationService {
         op.timer?.invalidate()
     }
     
-    func start(_ op: Operation) {
+    func start(_ op: POperation) {
         let time: TimeInterval = duration(op) / timeProvider.speed
         self.active.forEach { stop($0) }
         
@@ -58,19 +58,18 @@ extension OperationService {
 
 extension OperationService {
     
-    func duration(_ op: Operation) -> TimeInterval {
+    func duration(_ op: POperation) -> TimeInterval {
         switch op {
-        case .mining(let type):
-            return miningService.duration(type)
-        case .smithing(let recipe):
-            return smithingService.duration(recipe)
-        case .agencyMarketing(let type):
-            return marketingService.duration(type)
+        case let mining as MiningOperation:
+            return miningService.duration(mining)
+        default:
+            fatalError("Unknown type \(op)")
         }
     }
     
-    func tryStart(_ op: Operation) -> Bool {
-        switch op {
+    func tryStart(_ op: POperation) -> Bool {
+        return true
+        /*switch op {
         case .smithing(let recipe):
             do {
                 try smithingService.start(recipe)
@@ -80,17 +79,15 @@ extension OperationService {
         default:
             break // No actions to do
         }
-        return true
+        return true*/
     }
     
-    func finish(_ op: Operation) {
+    func finish(_ op: POperation) {
         switch op {
-        case .mining(let type):
-            miningService.onFinish(type)
-        case .smithing(let recipe):
-            smithingService.onFinish(recipe)
-        case .agencyMarketing(let type):
-            marketingService.onFinish(type)
+        case let mining as MiningOperation:
+            miningService.onFinish(mining)
+        default:
+            fatalError("Unknown type \(op)")
         }
         self.objectWillChange.send()
     }

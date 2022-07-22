@@ -2,6 +2,7 @@
 
 import Foundation
 
+/*
 public enum Operation {
     case mining(_ type: ItemRecipeOperation)
     case smithing(_ recipe: ItemRecipeOperation)
@@ -21,3 +22,5 @@ public extension Operation {
         }
     }
 }
+
+*/

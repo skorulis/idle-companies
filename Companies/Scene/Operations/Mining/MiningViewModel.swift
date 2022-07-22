@@ -41,18 +41,13 @@ extension MiningViewModel {
     
     func onPress(_ type: MiningOperation) -> () -> Void {
         return { [unowned self] in
-            //self.operations.start(.mining(type))
+            self.operations.start(type)
         }
     }
     
     func maybeProgress(_ place: MiningOperation) -> OperationProgress? {
         return operations.active.first { progress in
-            switch progress.operation {
-            case .mining(let opType):
-                return opType.id == place.id
-            default:
-                return false
-            }
+            return progress.operation.matches(place)
         }
     }
     

@@ -31,17 +31,16 @@ extension RecipeService {
         }
     }
     
-    static func randomItem(recipe: ItemRecipe) -> ItemType {
-        let count = recipe.outputCount
-        let choice = Int.random(in: 1...count)
-        var value: Int = 0
-        for item in recipe.outputs {
-            value += item.count
+    static func randomItem(percentages: [ItemPercentage]) -> ItemType {
+        let choice = Double.random(in: 0...1)
+        var value: Double = 0
+        for item in percentages {
+            value += item.percent
             if value >= choice {
                 return item.type
             }
         }
-        fatalError("Rolled \(choice) for \(recipe.outputs)")
+        fatalError("Rolled \(choice) for \(percentages)")
     }
     
 }

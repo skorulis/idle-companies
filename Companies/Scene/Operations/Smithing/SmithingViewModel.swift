@@ -50,14 +50,15 @@ extension SmithingViewModel {
     }
     
     var maybeProgress: OperationProgress? {
-        return operations.active.first { progress in
+        return nil
+        /*return operations.active.first { progress in
             switch progress.operation {
             case .smithing(let recipe):
                 return selectedRecipe?.id == recipe.id
             default:
                 return false
             }
-        }
+        }*/
     }
 }
 
@@ -73,8 +74,8 @@ extension SmithingViewModel {
     
     func startSmithing() {
         guard let selected = selectedRecipe else { return }
-        let op = Operation.smithing(selected)
-        operations.start(op)
+        //let op = Operation.smithing(selected)
+        //operations.start(op)
     }
     
 }

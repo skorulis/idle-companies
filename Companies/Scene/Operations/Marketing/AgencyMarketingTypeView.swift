@@ -47,18 +47,18 @@ extension AgencyMarketingTypeView: View {
 
 struct AgencyMarketingTypeView_Previews: PreviewProvider {
     
-    private static var progress: OperationProgress {
+    /*private static var progress: OperationProgress {
         return .init(operation: .agencyMarketing(.radio),
                      timing: .init(startTime: Date(), duration: 5),
                      lastTick: Date()
         )
-    }
+    }*/
     
     static var previews: some View {
         VStack {
-            AgencyMarketingTypeView(type: .internet, progress: nil)
+            //AgencyMarketingTypeView(type: .internet, progress: nil)
             
-            AgencyMarketingTypeView(type: .radio, progress: progress)
+            //AgencyMarketingTypeView(type: .radio, progress: progress)
         }
     }
 }

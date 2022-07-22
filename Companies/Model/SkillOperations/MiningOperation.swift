@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum MiningOperation: String, CaseIterable, OperationInfo, Identifiable {
+enum MiningOperation: String, CaseIterable, POperation, Identifiable {
 
     case beach
     case rock
@@ -16,6 +16,7 @@ enum MiningOperation: String, CaseIterable, OperationInfo, Identifiable {
 extension MiningOperation {
     
     var id: String { rawValue }
+    var skill: Skill { .mining }
     
     var name: String {
         switch self {

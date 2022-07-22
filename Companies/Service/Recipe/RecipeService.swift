@@ -18,15 +18,15 @@ struct RecipeService {
 
 extension RecipeService {
     
-    func consume(recipe: ItemRecipe) throws {
-        if !inventory.containsAll(items: recipe.inputs) {
+    func consume(inputs: [ItemCount]) throws {
+        if !inventory.containsAll(items: inputs) {
             throw RecipeError.missingIngredients
         }
-        inventory.removeAll(items: recipe.inputs)
+        inventory.removeAll(items: inputs)
     }
     
-    func finish(recipe: ItemRecipe) {
-        for item in recipe.outputs {
+    func finish(outputs: [ItemCount]) {
+        for item in outputs {
             inventory.add(item: item.type, count: item.count)
         }
     }

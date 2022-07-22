@@ -35,14 +35,13 @@ extension SmithingView: View {
     private var maybeRecipeDetails: some View {
         if let recipe = viewModel.selectedRecipe {
             VStack {
-                RecipeDetailView(recipe: recipe, inv: viewModel.inventory)
-                OperationProgressView(timing: viewModel.maybeProgress?.timing)
+                SmithingActivityView(activity: recipe, progress: viewModel.maybeProgress)
                 startButton(recipe: recipe)
             }
         }
     }
     
-    private func startButton(recipe: ItemRecipeOperation) -> some View {
+    private func startButton(recipe: SmithingActivity) -> some View {
         Button(action: viewModel.startSmithing) {
             HStack {
                 Text("Create")
@@ -59,9 +58,9 @@ extension SmithingView: View {
         }
     }
     
-    private func recipeButton(_ recipe: ItemRecipeOperation) -> some View {
+    private func recipeButton(_ recipe: SmithingActivity) -> some View {
         Button(action: viewModel.recipePressed(recipe)) {
-            RecipeView(recipe: recipe.recipe)
+            SmithingActivityRowView(activity: recipe)
         }
     }
 }
@@ -73,7 +72,7 @@ struct SmithingView_Previews: PreviewProvider {
     static var previews: some View {
         let ioc = IOC()
         let viewModel = ioc.resolve(SmithingViewModel.self)
-        viewModel.selectedRecipe = SmithingService.goldBarRecipe
+        viewModel.selectedRecipe = SmithingActivity.goldBar
         return SmithingView(viewModel: viewModel)
     }
 }

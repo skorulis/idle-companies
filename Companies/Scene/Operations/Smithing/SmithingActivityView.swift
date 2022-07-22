@@ -1,29 +1,23 @@
-//
-//  MiningPlaceView.swift
-//  Companies
-//
-//  Created by Alexander Skorulis on 21/7/2022.
-//
+//  Created by Alexander Skorulis on 22/7/2022.
 
 import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
-struct MiningPlaceView {
-    let operation: MiningOperation
+struct SmithingActivityView {
+    let activity: SmithingActivity
     let progress: OperationProgress?
 }
 
 // MARK: - Rendering
 
-extension MiningPlaceView: View {
+extension SmithingActivityView: View {
     
     var body: some View {
         VStack {
-            Text(operation.name)
-            PercentageOutputView(options: operation.outputPercentages)
-            ActivityStatsView(activity: operation)
+            Text(activity.name)
+            ActivityStatsView(activity: activity)
             OperationProgressView(timing: progress?.timing)
         }
         .frame(maxWidth: .infinity)
@@ -40,19 +34,14 @@ extension MiningPlaceView: View {
             return Color.black.opacity(0.1)
         }
     }
-    
 }
 
 // MARK: - Previews
 
-struct MiningPlaceView_Previews: PreviewProvider {
+struct SmithingRecipeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        VStack {
-            MiningPlaceView(operation: MiningOperation.iron, progress: nil)
-        }
-        .padding(12)
-        
+        SmithingActivityView(activity: SmithingActivity.goldBar, progress: nil)
     }
 }
 

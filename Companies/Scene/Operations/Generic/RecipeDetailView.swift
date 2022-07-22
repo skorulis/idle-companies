@@ -78,7 +78,8 @@ struct RecipeDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let ioc = IOC()
         let inv = ioc.resolve(InventoryStore.self)
-        return RecipeDetailView(recipe: SmithingService.goldBarRecipe, inv: inv)
+        return EmptyView()
+        //return RecipeDetailView(recipe: SmithingService.goldBarRecipe, inv: inv)
     }
 }
 

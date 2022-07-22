@@ -74,6 +74,11 @@
 		FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A6288A16B500AD3647 /* MiningOperation.swift */; };
 		FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376A8288A1EE000AD3647 /* ExperienceView.swift */; };
 		FAC376AB288A259100AD3647 /* MarketingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AA288A259100AD3647 /* MarketingActivity.swift */; };
+		FAC376AD288A274700AD3647 /* SmithingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AC288A274700AD3647 /* SmithingActivity.swift */; };
+		FAC376AF288A2BE700AD3647 /* ActivityStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */; };
+		FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */; };
+		FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */; };
+		FAC376B5288A390700AD3647 /* SmithingActivityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +159,11 @@
 		FAC376A6288A16B500AD3647 /* MiningOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningOperation.swift; sourceTree = "<group>"; };
 		FAC376A8288A1EE000AD3647 /* ExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceView.swift; sourceTree = "<group>"; };
 		FAC376AA288A259100AD3647 /* MarketingActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketingActivity.swift; sourceTree = "<group>"; };
+		FAC376AC288A274700AD3647 /* SmithingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingActivity.swift; sourceTree = "<group>"; };
+		FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsView.swift; sourceTree = "<group>"; };
+		FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageOutputView.swift; sourceTree = "<group>"; };
+		FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingActivityView.swift; sourceTree = "<group>"; };
+		FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingActivityRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +350,8 @@
 				FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */,
 				FAC3766E288807E500AD3647 /* RecipeView.swift */,
 				FAC3767028880D0400AD3647 /* RecipeDetailView.swift */,
+				FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */,
+				FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -411,6 +423,8 @@
 			children = (
 				FAC3764D2887EAD800AD3647 /* SmithingView.swift */,
 				FAC3764F2887EAE400AD3647 /* SmithingViewModel.swift */,
+				FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */,
+				FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */,
 			);
 			path = Smithing;
 			sourceTree = "<group>";
@@ -509,6 +523,7 @@
 			children = (
 				FAC376AA288A259100AD3647 /* MarketingActivity.swift */,
 				FAC376A6288A16B500AD3647 /* MiningOperation.swift */,
+				FAC376AC288A274700AD3647 /* SmithingActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -622,6 +637,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */,
+				FAC376AF288A2BE700AD3647 /* ActivityStatsView.swift in Sources */,
 				FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */,
@@ -639,9 +655,11 @@
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
 				FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */,
+				FAC376AD288A274700AD3647 /* SmithingActivity.swift in Sources */,
 				FAC3769F2889666200AD3647 /* SkillExperience.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
+				FAC376B5288A390700AD3647 /* SmithingActivityRowView.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */,
@@ -662,6 +680,7 @@
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */,
+				FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
@@ -674,6 +693,7 @@
 				FAC376562887F04100AD3647 /* SmithingService.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
+				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

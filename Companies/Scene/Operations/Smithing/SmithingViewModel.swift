@@ -13,7 +13,7 @@ final class SmithingViewModel: ObservableObject {
     
     private var subscribers: Set<AnyCancellable> = []
     
-    @Published var selectedRecipe: ItemRecipeOperation?
+    @Published var selectedRecipe: SmithingActivity?
     
     init(operations: OperationService,
          smithingService: SmithingService,
@@ -45,20 +45,15 @@ final class SmithingViewModel: ObservableObject {
 
 extension SmithingViewModel {
     
-    var recipes: [ItemRecipeOperation] {
-        smithingService.recipes
+    var recipes: [SmithingActivity] {
+        SmithingActivity.allCases
     }
     
     var maybeProgress: OperationProgress? {
-        return nil
-        /*return operations.active.first { progress in
-            switch progress.operation {
-            case .smithing(let recipe):
-                return selectedRecipe?.id == recipe.id
-            default:
-                return false
-            }
-        }*/
+        guard let selected = selectedRecipe else { return nil }
+        return operations.active.first { progress in
+            return progress.operation.matches(selected)
+        }
     }
 }
 
@@ -66,7 +61,7 @@ extension SmithingViewModel {
 
 extension SmithingViewModel {
  
-    func recipePressed(_ recipe: ItemRecipeOperation) -> () -> Void {
+    func recipePressed(_ recipe: SmithingActivity) -> () -> Void {
         return { [unowned self] in
             self.selectedRecipe = recipe
         }
@@ -74,8 +69,7 @@ extension SmithingViewModel {
     
     func startSmithing() {
         guard let selected = selectedRecipe else { return }
-        //let op = Operation.smithing(selected)
-        //operations.start(op)
+        operations.start(selected)
     }
     
 }

@@ -32,7 +32,7 @@ extension RecipeView: View {
 struct RecipeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        RecipeView(recipe: SmithingService.ironBarRecipe.recipe)
+        EmptyView()
     }
 }
 

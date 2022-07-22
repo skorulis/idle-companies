@@ -7,6 +7,7 @@ enum MiningOperation: String, CaseIterable, OperationInfo, Identifiable {
     case beach
     case rock
     case iron
+    case tarSands
     
 }
 
@@ -21,6 +22,7 @@ extension MiningOperation {
         case .beach: return "Beach Quarry"
         case .rock: return "Rock Quarry"
         case .iron: return "Iron mine"
+        case .tarSands: return "Tar sands"
         }
     }
     
@@ -29,6 +31,7 @@ extension MiningOperation {
         case .beach: return 5
         case .rock: return 5
         case .iron: return 7
+        case .tarSands: return 10
         }
     }
     
@@ -37,6 +40,7 @@ extension MiningOperation {
         case .beach: return 5
         case .rock: return 5
         case .iron: return 7
+        case .tarSands: return 11
         }
     }
     
@@ -57,6 +61,10 @@ extension MiningOperation {
                 .init(type: .ironOre, count: 5),
                 .init(type: .stone, count: 2),
                 .init(type: .coal, count: 1)
+            ]
+        case .tarSands:
+            return [
+                .init(type: .oil, count: 3)
             ]
         }
     }

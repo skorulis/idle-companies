@@ -14,6 +14,7 @@ public enum ItemType: String, Codable {
     case coal
     case ironOre
     case goldOre
+    case oil
     
     // Ingots
     case ironBar
@@ -43,6 +44,8 @@ extension ItemType {
             return .clayBrick
         case .concrete:
             return .concreteBag
+        case .oil:
+            return .oilDrum
         }
     }
     
@@ -58,6 +61,7 @@ extension ItemType {
         case .goldBar: return .yellow
         case .brick: return .red
         case .concrete: return .brown
+        case .oil: return .black
         }
     }
     

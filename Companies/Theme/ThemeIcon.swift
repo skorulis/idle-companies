@@ -7,6 +7,7 @@ enum ThemeIcon: String {
 	case concreteBag = "concrete-bag"
 	case metalBar = "metal-bar"
 	case moneyStack = "money-stack"
+	case oilDrum = "oil-drum"
 	case ore = "ore"
 	case stoneBlock = "stone-block"
 	case stonePile = "stone-pile"

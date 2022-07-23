@@ -11,24 +11,26 @@ final class RecipeServiceTests: XCTestCase {
     private lazy var sut = ioc.resolve(RecipeService.self)
     
     func test_consume() {
-        XCTAssertThrowsError(try sut.consume(recipe: recipe1))
+        XCTAssertThrowsError(try sut.consume(inputs: inputs))
         
         inv.add(item: .ironOre, count: 1)
         
-        XCTAssertNoThrow(try sut.consume(recipe: recipe1))
+        XCTAssertNoThrow(try sut.consume(inputs: inputs))
         
         XCTAssertEqual(inv.count(item: .ironOre), 0)
     }
     
     func test_finish() {
-        sut.finish(recipe: recipe1)
+        sut.finish(outputs: outputs)
         XCTAssertEqual(inv.count(item: .ironBar), 1)
     }
     
-    private var recipe1: ItemRecipe {
-        return ItemRecipe(name: "TEST",
-                          inputs: [ItemType.ironOre.bundle(1)],
-                          outputs: [ItemType.ironBar.bundle(1)])
+    private var inputs: [ItemCount] {
+        return [ItemType.ironOre.bundle(1)]
+    }
+    
+    private var outputs: [ItemCount] {
+        return [ItemType.ironBar.bundle(1)]
     }
     
 }

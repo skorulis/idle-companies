@@ -26,25 +26,11 @@ struct OperationProgressView {
 extension OperationProgressView: View {
     
     var body: some View {
-        content
+        LinearProgressView(progress: progress, color: .red)
             .onAppear(perform: start)
             .id(self.id)
     }
     
-    private var content: some View {
-        RoundedRectangle(cornerRadius: 4)
-            .fill(Color.black.opacity(0.1))
-            .frame(height: 12)
-            .overlay(filledOverlay)
-    }
-    
-    private var filledOverlay: some View {
-        GeometryReader { proxy in
-            RoundedRectangle(cornerRadius: 4)
-                .fill(Color.red)
-                .frame(width: proxy.size.width * progress)
-        }
-    }
 }
 
 // MARK: - Computed values

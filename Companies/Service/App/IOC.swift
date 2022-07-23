@@ -8,6 +8,7 @@ final class IOC: IOCService {
     
     override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
+        registerCalculations()
         registerViewModels()
         registerServices()
         registerStores()
@@ -55,6 +56,11 @@ private extension IOC {
             container.autoregister(PKeyValueStore.self, initializer: UserDefaults.init)
                 .inObjectScope(.container)
         }
+    }
+    
+    func registerCalculations() {
+        container.autoregister(XPLevelCalculation.self, initializer: XPLevelCalculation.init)
+
     }
     
 }

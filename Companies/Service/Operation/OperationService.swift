@@ -10,7 +10,7 @@ final class OperationService: ObservableObject {
     @Published var active: [OperationProgress] = []
     private let factory: PFactory
     private let timeProvider: PTimeProvider
-    private let skillStore: SkillStore
+    let skillStore: SkillStore
     
     private lazy var miningService: MiningService = factory.resolve()
     private lazy var smithingService: SmithingService = factory.resolve()
@@ -101,6 +101,7 @@ extension OperationService {
         default:
             fatalError("Unknown type \(op)")
         }
+        skillStore.addXP(skill: op.skill, xp: op.baseXP, operationID: op.id)
         self.objectWillChange.send()
     }
     

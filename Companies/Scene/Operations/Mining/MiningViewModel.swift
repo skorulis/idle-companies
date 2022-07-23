@@ -9,14 +9,27 @@ final class MiningViewModel: ObservableObject {
     
     private let operations: OperationService
     private let miningService: MiningService
+    let xpCalc: XPLevelCalculation
     private var subscribers: Set<AnyCancellable> = []
     
     init(operations: OperationService,
-         miningService: MiningService
+         miningService: MiningService,
+         xpCalc: XPLevelCalculation
     ) {
         self.operations = operations
         self.miningService = miningService
+        self.xpCalc = xpCalc
+        setupObservers()
+    }
+    
+    private func setupObservers() {
         operations.objectWillChange
+            .sink { [unowned self] _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &subscribers)
+        
+        operations.skillStore.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -32,6 +45,10 @@ extension MiningViewModel {
     
     var availableMining: [MiningOperation] {
         return MiningOperation.allCases
+    }
+    
+    var xp: Int64 {
+        operations.skillStore.xp(skill: .mining)
     }
 }
 

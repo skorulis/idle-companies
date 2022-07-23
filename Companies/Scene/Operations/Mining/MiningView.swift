@@ -22,6 +22,7 @@ extension MiningView: View {
     private var content: some View {
         ScrollView {
             VStack {
+                SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
                 ForEach(viewModel.availableMining) { place in
                     Button(action: viewModel.onPress(place)) {
                         MiningPlaceView(operation: place,

@@ -2,12 +2,14 @@
 
 import Foundation
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
 struct MiningView {
     
     @StateObject var viewModel: MiningViewModel
+    @Environment(\.as_presentation) private var presentation
 }
 
 // MARK: - Rendering
@@ -15,8 +17,11 @@ struct MiningView {
 extension MiningView: View {
     
     var body: some View {
-        content
-            .navigationTitle("Mining")
+        VStack(spacing: 0) {
+            NavBar(left: BarButtonItem.back(back), mid: Text("Mining"))
+            content
+        }
+        .navigationBarHidden(true)
     }
     
     private var content: some View {
@@ -35,6 +40,14 @@ extension MiningView: View {
             }
             .padding(.horizontal, 16)
         }
+    }
+}
+
+// MARK: - Logic
+
+private extension MiningView {
+    func back() {
+        presentation.dismiss()
     }
 }
 

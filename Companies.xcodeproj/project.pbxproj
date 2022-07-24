@@ -35,9 +35,7 @@
 		FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376382884B44C00AD3647 /* OperationListViewModel.swift */; };
 		FAC3763C288547C100AD3647 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC3763B288547C100AD3647 /* fontello.ttf */; };
 		FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3763E28854B6F00AD3647 /* Fonts.swift */; };
-		FAC376412885504600AD3647 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376402885504600AD3647 /* Theme.swift */; };
-		FAC37643288566FF00AD3647 /* Fontello.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37642288566FF00AD3647 /* Fontello.swift */; };
-		FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37644288567FF00AD3647 /* Fontello+Icon.swift */; };
+		FAC376412885504600AD3647 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376402885504600AD3647 /* Color+Theme.swift */; };
 		FAC3764728868C6400AD3647 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC3764628868C6400AD3647 /* Icons.xcassets */; };
 		FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764A2886915B00AD3647 /* ThemeIcon.swift */; };
 		FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764D2887EAD800AD3647 /* SmithingView.swift */; };
@@ -85,6 +83,7 @@
 		FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C4288BE6F700AD3647 /* ToastView.swift */; };
 		FAC376C8288BECDD00AD3647 /* ToastPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C7288BECDD00AD3647 /* ToastPresentationView.swift */; };
 		FAC376CA288BECF600AD3647 /* ToastPresentationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C9288BECF600AD3647 /* ToastPresentationService.swift */; };
+		FAC376CC288D38D900AD3647 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376CB288D38D900AD3647 /* Palette.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,9 +124,7 @@
 		FAC376382884B44C00AD3647 /* OperationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationListViewModel.swift; sourceTree = "<group>"; };
 		FAC3763B288547C100AD3647 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
 		FAC3763E28854B6F00AD3647 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		FAC376402885504600AD3647 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		FAC37642288566FF00AD3647 /* Fontello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fontello.swift; sourceTree = "<group>"; };
-		FAC37644288567FF00AD3647 /* Fontello+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fontello+Icon.swift"; sourceTree = "<group>"; };
+		FAC376402885504600AD3647 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		FAC3764628868C6400AD3647 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAC3764A2886915B00AD3647 /* ThemeIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeIcon.swift; sourceTree = "<group>"; };
 		FAC3764D2887EAD800AD3647 /* SmithingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingView.swift; sourceTree = "<group>"; };
@@ -176,6 +173,7 @@
 		FAC376C4288BE6F700AD3647 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		FAC376C7288BECDD00AD3647 /* ToastPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationView.swift; sourceTree = "<group>"; };
 		FAC376C9288BECF600AD3647 /* ToastPresentationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationService.swift; sourceTree = "<group>"; };
+		FAC376CB288D38D900AD3647 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,9 +425,8 @@
 				FAC376BF288B82C500AD3647 /* Components */,
 				FAC3764A2886915B00AD3647 /* ThemeIcon.swift */,
 				FAC3763E28854B6F00AD3647 /* Fonts.swift */,
-				FAC376402885504600AD3647 /* Theme.swift */,
-				FAC37642288566FF00AD3647 /* Fontello.swift */,
-				FAC37644288567FF00AD3647 /* Fontello+Icon.swift */,
+				FAC376402885504600AD3647 /* Color+Theme.swift */,
+				FAC376CB288D38D900AD3647 /* Palette.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -698,12 +695,10 @@
 				FAC376AF288A2BE700AD3647 /* ActivityStatsView.swift in Sources */,
 				FAC376A7288A16B500AD3647 /* MiningOperation.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
-				FAC37645288567FF00AD3647 /* Fontello+Icon.swift in Sources */,
 				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
 				FAC376C1288B82CD00AD3647 /* LinearProgressView.swift in Sources */,
 				FAC376C8288BECDD00AD3647 /* ToastPresentationView.swift in Sources */,
-				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,
 				FAC3769A28892DFE00AD3647 /* SkillStore.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
@@ -729,7 +724,7 @@
 				FAC376922888B0B800AD3647 /* DebugViewModel.swift in Sources */,
 				FAC376162883CB8000AD3647 /* Operation.swift in Sources */,
 				FAC3764E2887EAD800AD3647 /* SmithingView.swift in Sources */,
-				FAC376412885504600AD3647 /* Theme.swift in Sources */,
+				FAC376412885504600AD3647 /* Color+Theme.swift in Sources */,
 				FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */,
 				FAC3767128880D0400AD3647 /* RecipeDetailView.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
@@ -739,6 +734,7 @@
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
+				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,

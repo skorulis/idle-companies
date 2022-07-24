@@ -25,6 +25,9 @@ private extension IOC {
         container.autoregister(SmithingViewModel.self, initializer: SmithingViewModel.init)
         container.autoregister(MarketingViewModel.self, initializer: MarketingViewModel.init)
         container.autoregister(DebugViewModel.self, initializer: DebugViewModel.init)
+        
+        container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
+            .inObjectScope(.container)
     }
     
     func registerServices() {

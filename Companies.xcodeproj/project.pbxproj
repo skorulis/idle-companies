@@ -82,6 +82,9 @@
 		FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */; };
 		FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376BD288B42C800AD3647 /* SkillProgressView.swift */; };
 		FAC376C1288B82CD00AD3647 /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C0288B82CD00AD3647 /* LinearProgressView.swift */; };
+		FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C4288BE6F700AD3647 /* ToastView.swift */; };
+		FAC376C8288BECDD00AD3647 /* ToastPresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C7288BECDD00AD3647 /* ToastPresentationView.swift */; };
+		FAC376CA288BECF600AD3647 /* ToastPresentationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376C9288BECF600AD3647 /* ToastPresentationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +173,9 @@
 		FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPLevelCalculationTests.swift; sourceTree = "<group>"; };
 		FAC376BD288B42C800AD3647 /* SkillProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressView.swift; sourceTree = "<group>"; };
 		FAC376C0288B82CD00AD3647 /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
+		FAC376C4288BE6F700AD3647 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		FAC376C7288BECDD00AD3647 /* ToastPresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationView.swift; sourceTree = "<group>"; };
+		FAC376C9288BECF600AD3647 /* ToastPresentationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +246,7 @@
 				FAC3762C2884226200AD3647 /* Inventory */,
 				FAC3760528839EFF00AD3647 /* Operations */,
 				FAC376BC288B42B600AD3647 /* Skill */,
+				FAC376C6288BECCE00AD3647 /* Toast */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -565,8 +572,18 @@
 			isa = PBXGroup;
 			children = (
 				FAC376C0288B82CD00AD3647 /* LinearProgressView.swift */,
+				FAC376C4288BE6F700AD3647 /* ToastView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FAC376C6288BECCE00AD3647 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				FAC376C7288BECDD00AD3647 /* ToastPresentationView.swift */,
+				FAC376C9288BECF600AD3647 /* ToastPresentationService.swift */,
+			);
+			path = Toast;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,14 +702,17 @@
 				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
 				FAC376C1288B82CD00AD3647 /* LinearProgressView.swift in Sources */,
+				FAC376C8288BECDD00AD3647 /* ToastPresentationView.swift in Sources */,
 				FAC37643288566FF00AD3647 /* Fontello.swift in Sources */,
 				FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */,
 				FAC3769A28892DFE00AD3647 /* SkillStore.swift in Sources */,
 				FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */,
 				FAC376AB288A259100AD3647 /* MarketingActivity.swift in Sources */,
+				FAC376CA288BECF600AD3647 /* ToastPresentationService.swift in Sources */,
 				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
+				FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */,
 				FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,

@@ -8,13 +8,14 @@ public enum ItemType: String, Codable {
     // Money
     case credits
     
-    // Ores
+    // Mining products
     case stone
     case limestone
     case coal
     case ironOre
     case goldOre
     case oil
+    case sand
     
     // Ingots
     case ironBar
@@ -46,6 +47,8 @@ extension ItemType {
             return .concreteBag
         case .oil:
             return .oilDrum
+        case .sand:
+            return .sandDust
         }
     }
     
@@ -62,6 +65,7 @@ extension ItemType {
         case .brick: return .red
         case .concrete: return .brown
         case .oil: return .black
+        case .sand: return .yellow
         }
     }
     

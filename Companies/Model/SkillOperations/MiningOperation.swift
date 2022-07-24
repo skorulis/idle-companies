@@ -50,6 +50,7 @@ extension MiningOperation {
         case .beach:
             return [
                 .init(type: .limestone, count: 2),
+                .init(type: .sand, count: 2),
                 .init(type: .stone, count: 1)
             ]
         case .rock:
@@ -65,6 +66,7 @@ extension MiningOperation {
             ]
         case .tarSands:
             return [
+                .init(type: .sand, count: 2),
                 .init(type: .oil, count: 3)
             ]
         }

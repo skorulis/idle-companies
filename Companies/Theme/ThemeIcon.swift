@@ -9,6 +9,7 @@ enum ThemeIcon: String {
 	case moneyStack = "money-stack"
 	case oilDrum = "oil-drum"
 	case ore = "ore"
+	case sandDust = "sand-dust"
 	case stoneBlock = "stone-block"
 	case stonePile = "stone-pile"
 	case anvil = "anvil"

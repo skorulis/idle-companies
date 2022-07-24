@@ -20,6 +20,15 @@ struct ContentView: View {
 extension ContentView {
     
     var body: some View {
+        ZStack {
+            tabs
+            ToastPresentationView(viewModel: factory.resolve())
+                .allowsHitTesting(false)
+        }
+        
+    }
+    
+    private var tabs: some View {
         TabView {
             operations
             inventory
@@ -27,7 +36,6 @@ extension ContentView {
             debug
             #endif
         }
-        
     }
     
     private var inventory: some View {

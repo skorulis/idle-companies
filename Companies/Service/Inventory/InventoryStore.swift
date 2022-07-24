@@ -12,10 +12,12 @@ final class InventoryStore: ObservableObject {
         }
     }
     private let store: PKeyValueStore
+    private let toasts: ToastPresentationService
     private static let storageKey = "InventoryStore.storageKey"
     
-    init(store: PKeyValueStore) {
+    init(store: PKeyValueStore, toasts: ToastPresentationService) {
         self.store = store
+        self.toasts = toasts
         let data = Self.readFromDisk(store: store)
         inventory = data.items
     }
@@ -28,6 +30,7 @@ extension InventoryStore {
     
     func add(item: ItemType, count: Int) {
         inventory[item] = self.count(item: item) + count
+        toasts.add(text: "+\(count) \(item.name)")
     }
     
     func count(item: ItemType) -> Int {

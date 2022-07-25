@@ -5,7 +5,7 @@ import Foundation
 /// Operations that can be done
 public enum Skill: String, Identifiable, Codable {
     case mining
-    case smithing
+    case metallurgy
     case marketing
     
     public var id: String { rawValue }
@@ -16,7 +16,7 @@ extension Skill {
     var name: String {
         switch self {
         case .mining: return "Mining"
-        case .smithing: return "Smithing"
+        case .metallurgy: return "Metallurgy"
         case .marketing: return "Marketing"
         }
     }
@@ -24,7 +24,7 @@ extension Skill {
     var icon: ThemeIcon {
         switch self {
         case .mining: return .digDug
-        case .smithing: return .anvil
+        case .metallurgy: return .anvil
         case .marketing: return .virtualMarker
         }
     }

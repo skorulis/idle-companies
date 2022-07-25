@@ -22,7 +22,8 @@ private extension IOC {
         container.autoregister(MiningViewModel.self, initializer: MiningViewModel.init)
         container.autoregister(InventoryViewModel.self, initializer: InventoryViewModel.init)
         container.autoregister(OperationListViewModel.self, initializer: OperationListViewModel.init)
-        container.autoregister(SmithingViewModel.self, initializer: SmithingViewModel.init)
+        container.autoregister(SmeltingViewModel.self, initializer: SmeltingViewModel.init)
+        container.autoregister(MetallurgyViewModel.self, initializer: MetallurgyViewModel.init)
         container.autoregister(MarketingViewModel.self, initializer: MarketingViewModel.init)
         container.autoregister(DebugViewModel.self, initializer: DebugViewModel.init)
         

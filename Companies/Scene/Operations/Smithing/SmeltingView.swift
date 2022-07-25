@@ -1,34 +1,36 @@
-//
-//  SmithingView.swift
-//  Companies
-//
 //  Created by Alexander Skorulis on 20/7/2022.
-//
 
+import ASSwiftUI
 import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
-struct SmithingView {
+struct SmeltingView {
     
-    @StateObject var viewModel: SmithingViewModel
+    @StateObject var viewModel: SmeltingViewModel
 }
 
 // MARK: - Rendering
 
-extension SmithingView: View {
+extension SmeltingView: View {
     
     var body: some View {
-        ScrollView {
-            VStack {
-                maybeRecipeDetails
-                Divider()
-                recipeList
-            }
-            .padding(.horizontal, 16)
+        PageTemplate(nav: nav, content: content)
+    }
+    
+    private func nav() -> some View {
+        NavBar(left: BarButtonItem.back(),
+               mid: Text("Smelting"))
+    }
+    
+    private func content() -> some View {
+        VStack {
+            maybeRecipeDetails
+            Divider()
+            recipeList
         }
-        .navigationTitle("Smithing")
+        .padding(.horizontal, 16)
     }
     
     @ViewBuilder
@@ -41,7 +43,7 @@ extension SmithingView: View {
         }
     }
     
-    private func startButton(recipe: SmithingActivity) -> some View {
+    private func startButton(recipe: SmeltingActivity) -> some View {
         Button(action: viewModel.startSmithing) {
             HStack {
                 Text("Create")
@@ -58,7 +60,7 @@ extension SmithingView: View {
         }
     }
     
-    private func recipeButton(_ recipe: SmithingActivity) -> some View {
+    private func recipeButton(_ recipe: SmeltingActivity) -> some View {
         Button(action: viewModel.recipePressed(recipe)) {
             SmithingActivityRowView(activity: recipe)
         }
@@ -71,9 +73,9 @@ struct SmithingView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        let viewModel = ioc.resolve(SmithingViewModel.self)
-        viewModel.selectedRecipe = SmithingActivity.goldBar
-        return SmithingView(viewModel: viewModel)
+        let viewModel = ioc.resolve(SmeltingViewModel.self)
+        viewModel.selectedRecipe = SmeltingActivity.goldBar
+        return SmeltingView(viewModel: viewModel)
     }
 }
 

@@ -6,7 +6,7 @@ import SwiftUI
 // MARK: - Memory footprint
 
 struct SmithingActivityView {
-    let activity: SmithingActivity
+    let activity: SmeltingActivity
     let progress: OperationProgress?
 }
 
@@ -41,7 +41,7 @@ extension SmithingActivityView: View {
 struct SmithingRecipeView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SmithingActivityView(activity: SmithingActivity.goldBar, progress: nil)
+        SmithingActivityView(activity: SmeltingActivity.goldBar, progress: nil)
     }
 }
 

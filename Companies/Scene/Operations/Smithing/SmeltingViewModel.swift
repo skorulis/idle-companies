@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Memory footprint
 
-final class SmithingViewModel: ObservableObject {
+final class SmeltingViewModel: ObservableObject {
 
     private let operations: OperationService
     private let smithingService: SmithingService
@@ -13,7 +13,7 @@ final class SmithingViewModel: ObservableObject {
     
     private var subscribers: Set<AnyCancellable> = []
     
-    @Published var selectedRecipe: SmithingActivity?
+    @Published var selectedRecipe: SmeltingActivity?
     
     init(operations: OperationService,
          smithingService: SmithingService,
@@ -43,10 +43,10 @@ final class SmithingViewModel: ObservableObject {
 
 // MARK: - Computed values
 
-extension SmithingViewModel {
+extension SmeltingViewModel {
     
-    var recipes: [SmithingActivity] {
-        SmithingActivity.allCases
+    var recipes: [SmeltingActivity] {
+        SmeltingActivity.allCases
     }
     
     var maybeProgress: OperationProgress? {
@@ -59,9 +59,9 @@ extension SmithingViewModel {
 
 // MARK: - Logic
 
-extension SmithingViewModel {
+extension SmeltingViewModel {
  
-    func recipePressed(_ recipe: SmithingActivity) -> () -> Void {
+    func recipePressed(_ recipe: SmeltingActivity) -> () -> Void {
         return { [unowned self] in
             self.selectedRecipe = recipe
         }

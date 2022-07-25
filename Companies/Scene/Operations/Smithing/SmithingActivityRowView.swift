@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Memory footprint
 
 struct SmithingActivityRowView {
-    let activity: SmithingActivity
+    let activity: SmeltingActivity
 }
 
 // MARK: - Rendering
@@ -37,7 +37,7 @@ extension SmithingActivityRowView: View {
 struct SmithingActivityRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SmithingActivityRowView(activity: SmithingActivity.concrete)
+        SmithingActivityRowView(activity: SmeltingActivity.concrete)
     }
 }
 

@@ -12,11 +12,11 @@ final class SmithingServiceTests: XCTestCase {
     private lazy var sut = ioc.resolve(SmithingService.self)
  
     func test_start() {
-        XCTAssertThrowsError(try sut.start(SmithingActivity.ironBar))
+        XCTAssertThrowsError(try sut.start(SmeltingActivity.ironBar))
         
         inv.add(item: .ironOre, count: 1)
         
-        XCTAssertNoThrow(try sut.start(SmithingActivity.ironBar))
+        XCTAssertNoThrow(try sut.start(SmeltingActivity.ironBar))
     }
     
 }

@@ -9,7 +9,6 @@ import ASSwiftUI
 struct MiningView {
     
     @StateObject var viewModel: MiningViewModel
-    @Environment(\.as_presentation) private var presentation
 }
 
 // MARK: - Rendering
@@ -26,7 +25,7 @@ extension MiningView: View {
     
     private var navBar: some View {
         NavBar(
-            left: BarButtonItem.back(back),
+            left: BarButtonItem.back(),
             mid: Text("Mining")
                     .foregroundColor(.label)
                     .font(.headline)
@@ -52,14 +51,6 @@ extension MiningView: View {
             .padding(.horizontal, 16)
         }
         .background(Color.background2)
-    }
-}
-
-// MARK: - Logic
-
-private extension MiningView {
-    func back() {
-        presentation.dismiss()
     }
 }
 

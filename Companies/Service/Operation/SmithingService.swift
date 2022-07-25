@@ -18,15 +18,15 @@ struct SmithingService {
 
 extension SmithingService {
     
-    func duration(_ recipe: SmithingActivity) -> TimeInterval {
+    func duration(_ recipe: SmeltingActivity) -> TimeInterval {
         return recipe.baseTime
     }
     
-    func start(_ recipe: SmithingActivity) throws {
+    func start(_ recipe: SmeltingActivity) throws {
         try recipeService.consume(inputs: recipe.inputs)
     }
     
-    func onFinish(_ recipe: SmithingActivity) {
+    func onFinish(_ recipe: SmeltingActivity) {
         let output = ItemCount(type: recipe.output, count: 1)
         recipeService.finish(outputs: [output])
     }

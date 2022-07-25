@@ -69,7 +69,7 @@ extension OperationService {
             return miningService.duration(mining)
         case let marketing as MarketingActivity:
             return marketingService.duration(marketing)
-        case let smithing as SmithingActivity:
+        case let smithing as SmeltingActivity:
             return smithingService.duration(smithing)
         default:
             fatalError("Unknown type \(op)")
@@ -78,7 +78,7 @@ extension OperationService {
     
     func tryStart(_ op: POperation) -> Bool {
         switch op {
-        case let smithing as SmithingActivity:
+        case let smithing as SmeltingActivity:
             do {
                 try smithingService.start(smithing)
             } catch {
@@ -96,7 +96,7 @@ extension OperationService {
             miningService.onFinish(mining)
         case let marketing as MarketingActivity:
             marketingService.onFinish(marketing)
-        case let smithing as SmithingActivity:
+        case let smithing as SmeltingActivity:
             smithingService.onFinish(smithing)
         default:
             fatalError("Unknown type \(op)")

@@ -2,21 +2,21 @@
 
 import Foundation
 
-enum SmithingActivity: String, POperation, Identifiable, CaseIterable {
+enum SmeltingActivity: String, POperation, Identifiable, CaseIterable {
     
     case brick
     case concrete
     case ironBar
     case goldBar
     
-    var skill: Skill { .smithing }
+    var skill: Skill { .metallurgy }
     var id: String { rawValue }
     
 }
 
 // MARK: - Activity defintion
 
-extension SmithingActivity {
+extension SmeltingActivity {
     
     var name: String { output.name }
     var icon: ThemeIcon { output.icon }

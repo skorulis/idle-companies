@@ -30,10 +30,17 @@ extension ItemPercentageView: View {
     }
     
     private var text: some View {
-        Text(item.percent, format: .percent)
+        Text(format(item.percent))
             .padding(.horizontal, 4)
             .foregroundColor(Color.black)
             .background(Capsule().fill(Color.gray))
+    }
+    
+    func format(_ number: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        formatter.maximumFractionDigits = number < 0.01 ? 1 : 0
+        return formatter.string(from: number as NSNumber)!
     }
 }
 

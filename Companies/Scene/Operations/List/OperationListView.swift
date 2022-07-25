@@ -20,20 +20,22 @@ extension OperationListView: View {
     var body: some View {
         ZStack {
             NavigationHelper.invisible(selection: $viewModel.selectedOp, destination: skillMapping(skill:))
-            content
+            PageTemplate(nav: nav, content: content)
         }
-        .navigationTitle("Operations")
     }
     
-    private var content: some View {
-        ScrollView {
-            VStack {
-                ForEach(viewModel.available) { skill in
-                    operationButton(skill: skill)
-                }
+    private func nav() -> some View {
+        NavBar(left: BarButtonItem.back(),
+               mid: BarButtonItem.title("Operations"))
+    }
+    
+    private func content() -> some View {
+        VStack {
+            ForEach(viewModel.available) { skill in
+                operationButton(skill: skill)
             }
-            .padding(.horizontal, 16)
         }
+        .padding(.horizontal, 16)
     }
     
     private func operationButton(skill: Skill) -> some View {
@@ -50,8 +52,8 @@ extension OperationListView: View {
         switch skill {
         case .mining:
             MiningView(viewModel: factory.resolve())
-        case .smithing:
-            SmithingView(viewModel: factory.resolve())
+        case .metallurgy:
+            MetallurgyView(viewModel: factory.resolve())
         case .marketing:
             MarketingView(viewModel: factory.resolve())
         }

@@ -10,6 +10,8 @@ final class InventoryViewModel: ObservableObject {
     private let inventoryStore: InventoryStore
     private var subscribers: Set<AnyCancellable> = []
     
+    @Published var selectedItem: ItemType?
+    
     init(inventoryStore: InventoryStore) {
         self.inventoryStore = inventoryStore
         self.inventoryStore.objectWillChange.sink { _ in
@@ -30,4 +32,15 @@ extension InventoryViewModel {
         }
     }
     
+}
+
+// MARK: - Logic
+
+extension InventoryViewModel {
+    
+    func onClick(_ item: ItemCount) -> () -> Void {
+        return { [unowned self] in
+            self.selectedItem = item.type
+        }
+    }
 }

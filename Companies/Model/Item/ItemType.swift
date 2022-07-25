@@ -31,7 +31,9 @@ public enum ItemType: String, Codable {
     
 }
 
-extension ItemType {
+extension ItemType: Identifiable {
+    
+    public var id: String { rawValue }
     
     var icon: ThemeIcon {
         switch self {

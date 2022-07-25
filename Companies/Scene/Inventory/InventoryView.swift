@@ -2,6 +2,7 @@
 
 import Foundation
 import SwiftUI
+import ASSwiftUI
 
 // MARK: - Memory footprint
 
@@ -16,13 +17,20 @@ struct InventoryView {
 extension InventoryView: View {
     
     var body: some View {
-        ScrollView {
-            VStack {
-                grid
+        PageTemplate(nav: nav, content: content)
+            .sheet(item: $viewModel.selectedItem) { item in
+                ItemDetailsView(item: item)
             }
+    }
+    
+    private func nav() -> some View {
+        NavBar(left: EmptyView(), mid: BarButtonItem.title("Warehouse"))
+    }
+    
+    private func content() -> some View {
+        VStack {
+            grid
         }
-        .navigationTitle("Inventory")
-        
     }
     
     private var grid: some View {
@@ -36,7 +44,10 @@ extension InventoryView: View {
                   alignment: .center,
                   spacing: 4) {
             ForEach(viewModel.inventory) { item in
-                ItemCountView(item: item)
+                Button(action: viewModel.onClick(item)) {
+                    ItemCountView(item: item)
+                        .contentShape(Rectangle())
+                }
             }
         }
     }

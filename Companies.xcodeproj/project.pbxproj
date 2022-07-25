@@ -87,6 +87,7 @@
 		FAC376D1288E915A00AD3647 /* MetallurgyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376D0288E915A00AD3647 /* MetallurgyView.swift */; };
 		FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376D2288E916B00AD3647 /* MetallurgyViewModel.swift */; };
 		FAC376D5288E92AA00AD3647 /* PageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376D4288E92AA00AD3647 /* PageTemplate.swift */; };
+		FAC376D7288EB44D00AD3647 /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376D6288EB44D00AD3647 /* ItemDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		FAC376D0288E915A00AD3647 /* MetallurgyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallurgyView.swift; sourceTree = "<group>"; };
 		FAC376D2288E916B00AD3647 /* MetallurgyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetallurgyViewModel.swift; sourceTree = "<group>"; };
 		FAC376D4288E92AA00AD3647 /* PageTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageTemplate.swift; sourceTree = "<group>"; };
+		FAC376D6288EB44D00AD3647 /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -404,6 +406,7 @@
 				FAC37633288428D600AD3647 /* ItemIconView.swift */,
 				FAC3767228880FB900AD3647 /* ItemCountView.swift */,
 				FAC3769728891B5500AD3647 /* ItemPercentageView.swift */,
+				FAC376D6288EB44D00AD3647 /* ItemDetailsView.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */,
 				FAC376AD288A274700AD3647 /* SmeltingActivity.swift in Sources */,
 				FAC3769F2889666200AD3647 /* SkillExperience.swift in Sources */,
+				FAC376D7288EB44D00AD3647 /* ItemDetailsView.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,

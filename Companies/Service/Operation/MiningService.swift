@@ -12,12 +12,12 @@ struct MiningService {
         self.inventory = inventory
     }
     
-    func onFinish(_ place: MiningOperation) {
+    func onFinish(_ place: MiningActivity) {
         let item = RecipeService.randomItem(percentages: place.outputPercentages)
         inventory.add(item: item, count: 1)
     }
     
-    func duration(_ type: MiningOperation) -> TimeInterval {
+    func duration(_ type: MiningActivity) -> TimeInterval {
         return type.baseTime
     }
     

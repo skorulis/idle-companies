@@ -2,10 +2,12 @@
 
 import Foundation
 
-enum MiningOperation: String, CaseIterable, POperation, Identifiable {
+enum MiningActivity: String, CaseIterable, POperation, Identifiable {
 
     case beach
     case rock
+    case tinVein
+    case copperMine
     case iron
     case tarSands
     
@@ -13,7 +15,7 @@ enum MiningOperation: String, CaseIterable, POperation, Identifiable {
 
 // MARK: - Computed values
 
-extension MiningOperation {
+extension MiningActivity {
     
     var id: String { rawValue }
     var skill: Skill { .mining }
@@ -22,6 +24,8 @@ extension MiningOperation {
         switch self {
         case .beach: return "Beach Quarry"
         case .rock: return "Rock Quarry"
+        case .tinVein: return "Tin Vein"
+        case .copperMine: return "Copper mine"
         case .iron: return "Iron mine"
         case .tarSands: return "Tar sands"
         }
@@ -31,18 +35,15 @@ extension MiningOperation {
         switch self {
         case .beach: return 5
         case .rock: return 5
+        case .tinVein: return 5
+        case .copperMine: return 5
         case .iron: return 7
         case .tarSands: return 10
         }
     }
     
     var baseXP: Int64 {
-        switch self {
-        case .beach: return 5
-        case .rock: return 5
-        case .iron: return 7
-        case .tarSands: return 11
-        }
+        return Int64(baseTime)
     }
     
     var outputs: [ItemCount] {
@@ -56,6 +57,16 @@ extension MiningOperation {
         case .rock:
             return [
                 .init(type: .stone, count: 2),
+                .init(type: .coal, count: 1)
+            ]
+        case .tinVein:
+            return [
+                .init(type: .tinOre, count: 2),
+                .init(type: .stone, count: 1)
+            ]
+        case .copperMine:
+            return [
+                .init(type: .copperOre, count: 2),
                 .init(type: .coal, count: 1)
             ]
         case .iron:

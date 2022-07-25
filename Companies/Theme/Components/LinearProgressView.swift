@@ -10,7 +10,7 @@ struct LinearProgressView {
     let progress: CGFloat
     let color: Color
     
-    init(progress: CGFloat, color: Color = .red) {
+    init(progress: CGFloat, color: Color = Color.greenProgress) {
         self.progress = progress
         self.color = color
     }

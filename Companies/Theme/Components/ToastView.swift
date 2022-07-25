@@ -24,7 +24,13 @@ extension ToastView: View {
     
     var body: some View {
         Text(model.text)
-            .background(Color.green)
+            .padding(2)
+            .background(background)
+    }
+    
+    private var background: some View {
+        RoundedRectangle(cornerRadius: 2)
+            .fill(Color.green)
     }
 }
 

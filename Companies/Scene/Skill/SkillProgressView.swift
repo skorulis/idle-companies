@@ -22,6 +22,8 @@ extension SkillProgressView: View {
             Text("XP: \(xp) / \(nextXP)")
             LinearProgressView(progress: progressPct)
         }
+        .padding(4)
+        .background(PanelBackground())
     }
 }
 
@@ -63,6 +65,7 @@ struct SkillProgressView_Previews: PreviewProvider {
             
             SkillProgressView(xp: 112320, calc: XPLevelCalculation())
         }
+        .padding(4)
         
     }
 }

@@ -65,7 +65,7 @@ extension OperationService {
     
     func duration(_ op: POperation) -> TimeInterval {
         switch op {
-        case let mining as MiningOperation:
+        case let mining as MiningActivity:
             return miningService.duration(mining)
         case let marketing as MarketingActivity:
             return marketingService.duration(marketing)
@@ -92,7 +92,7 @@ extension OperationService {
     
     func finish(_ op: POperation) {
         switch op {
-        case let mining as MiningOperation:
+        case let mining as MiningActivity:
             miningService.onFinish(mining)
         case let marketing as MarketingActivity:
             marketingService.onFinish(marketing)

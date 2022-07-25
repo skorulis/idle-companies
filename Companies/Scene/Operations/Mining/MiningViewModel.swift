@@ -43,8 +43,8 @@ final class MiningViewModel: ObservableObject {
 
 extension MiningViewModel {
     
-    var availableMining: [MiningOperation] {
-        return MiningOperation.allCases
+    var availableMining: [MiningActivity] {
+        return MiningActivity.allCases
     }
     
     var xp: Int64 {
@@ -56,13 +56,13 @@ extension MiningViewModel {
 
 extension MiningViewModel {
     
-    func onPress(_ type: MiningOperation) -> () -> Void {
+    func onPress(_ type: MiningActivity) -> () -> Void {
         return { [unowned self] in
             self.operations.start(type)
         }
     }
     
-    func maybeProgress(_ place: MiningOperation) -> OperationProgress? {
+    func maybeProgress(_ place: MiningActivity) -> OperationProgress? {
         return operations.active.first { progress in
             return progress.operation.matches(place)
         }

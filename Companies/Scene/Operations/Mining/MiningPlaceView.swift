@@ -11,7 +11,7 @@ import SwiftUI
 // MARK: - Memory footprint
 
 struct MiningPlaceView {
-    let operation: MiningOperation
+    let operation: MiningActivity
     let progress: OperationProgress?
 }
 
@@ -27,10 +27,8 @@ extension MiningPlaceView: View {
             OperationProgressView(timing: progress?.timing)
         }
         .frame(maxWidth: .infinity)
-        .padding(2)
-        .background(RoundedRectangle(cornerRadius: 8)
-            .fill(backgroundColor)
-        )
+        .padding(4)
+        .background(PanelBackground())
     }
     
     private var backgroundColor: Color {
@@ -49,7 +47,7 @@ struct MiningPlaceView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            MiningPlaceView(operation: MiningOperation.iron, progress: nil)
+            MiningPlaceView(operation: MiningActivity.iron, progress: nil)
         }
         .padding(12)
         

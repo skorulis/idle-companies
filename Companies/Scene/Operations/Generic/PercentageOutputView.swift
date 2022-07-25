@@ -27,7 +27,7 @@ extension PercentageOutputView: View {
 struct PercentageOutputView_Previews: PreviewProvider {
     
     static var previews: some View {
-        PercentageOutputView(options: MiningOperation.iron.outputPercentages)
+        PercentageOutputView(options: MiningActivity.iron.outputPercentages)
     }
 }
 

@@ -6,7 +6,7 @@ import SwiftUI
 
 enum Palette: UInt, PColorPalette, CaseIterable, Identifiable {
     
-    case primary = 0xd89841
+    case primary = 0xfdd978
     case green = 0x63806a
     case blue = 0xb0bec5
     case red = 0x7f4536

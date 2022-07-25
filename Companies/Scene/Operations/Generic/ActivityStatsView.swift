@@ -28,7 +28,7 @@ extension ActivityStatsView: View {
 struct ActivityStatsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ActivityStatsView(activity: MiningOperation.beach)
+        ActivityStatsView(activity: MiningActivity.beach)
     }
 }
 

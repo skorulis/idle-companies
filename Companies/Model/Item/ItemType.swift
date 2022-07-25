@@ -12,12 +12,16 @@ public enum ItemType: String, Codable {
     case stone
     case limestone
     case coal
+    case copperOre
+    case tinOre
     case ironOre
     case goldOre
     case oil
     case sand
     
     // Ingots
+    case copperBar
+    case tinBar
     case ironBar
     case goldBar
     
@@ -33,11 +37,11 @@ extension ItemType {
         switch self {
         case .credits:
             return .moneyStack
-        case .ironOre, .goldOre, .coal:
+        case .ironOre, .goldOre, .coal, .tinOre, .copperOre:
             return .ore
         case .limestone:
             return .stonePile
-        case .ironBar, .goldBar:
+        case .ironBar, .goldBar, .tinBar, .copperBar:
             return .metalBar
         case .stone:
             return .stonePile
@@ -58,10 +62,10 @@ extension ItemType {
         case .stone: return .gray
         case .limestone: return .white
         case .coal: return .black
-        case .ironOre: return .orange
-        case .goldOre: return .yellow
-        case .ironBar: return .orange
-        case .goldBar: return .yellow
+        case .copperOre, .copperBar: return .Item.copper
+        case .tinOre, .tinBar: return .Item.tin
+        case .ironOre, .ironBar: return .Item.iron
+        case .goldOre, .goldBar: return .Item.gold
         case .brick: return .red
         case .concrete: return .brown
         case .oil: return .black
@@ -71,8 +75,12 @@ extension ItemType {
     
     var name: String {
         switch self {
+        case .copperOre: return "Copper ore"
+        case .tinOre: return "Tin ore"
         case .ironOre: return "Iron ore"
         case .goldOre: return "Gold ore"
+        case .copperBar: return "Copper bar"
+        case .tinBar: return " Tin bar"
         case .ironBar: return "Iron bar"
         case .goldBar: return "Gold bar"
         default:

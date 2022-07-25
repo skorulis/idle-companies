@@ -18,15 +18,26 @@ extension MiningView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            NavBar(left: BarButtonItem.back(back), mid: Text("Mining"))
+            navBar
             content
         }
         .navigationBarHidden(true)
     }
     
+    private var navBar: some View {
+        NavBar(
+            left: BarButtonItem.back(back),
+            mid: Text("Mining")
+                    .foregroundColor(.label)
+                    .font(.headline)
+        )
+    }
+    
     private var content: some View {
         ScrollView {
             VStack {
+                Spacer()
+                    .frame(height: 20)
                 SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
                 ForEach(viewModel.availableMining) { place in
                     Button(action: viewModel.onPress(place)) {
@@ -40,6 +51,7 @@ extension MiningView: View {
             }
             .padding(.horizontal, 16)
         }
+        .background(Color.background2)
     }
 }
 

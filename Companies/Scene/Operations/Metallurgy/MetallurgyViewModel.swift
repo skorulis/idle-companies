@@ -4,35 +4,30 @@ import Foundation
 
 // MARK: - Memory footprint
 
-final class MetallurgyViewModel: ObservableObject {
+final class MetallurgyViewModel: CoordinatedViewModel, ObservableObject {
     
-    @Published var selectedDestination: Destination?
-    
-    init() {
+    override init() {
         
     }
 }
 
-// MARK: - Inner types
+// MARK: - Computed values
 
 extension MetallurgyViewModel {
     
-    enum Destination: String, Identifiable, CaseIterable {
-        
-        case smelting
-        case alloys
-        
-        var id: String { rawValue }
+    var options: [OperationPath] {
+        return [.smelting]
     }
+    
 }
 
 // MARK: - Logic
 
 extension MetallurgyViewModel {
     
-    func show(_ dest: Destination) -> () -> Void {
+    func show(_ dest: OperationPath) -> () -> Void {
         return { [unowned self] in
-            self.selectedDestination = dest
+            self.coordinator.push(dest)
         }
     }
 }

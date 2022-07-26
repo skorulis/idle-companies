@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA738DBB288FE97C00E1EC60 /* CoordinatorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */; };
+		FA738DBB288FE97C00E1EC60 /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DBA288FE97C00E1EC60 /* GameCoordinator.swift */; };
+		FA738DBD2890962600E1EC60 /* PCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DBC2890962600E1EC60 /* PCoordinator.swift */; };
+		FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DBE289096ED00E1EC60 /* OperationPath.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -102,7 +104,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPath.swift; sourceTree = "<group>"; };
+		FA738DBA288FE97C00E1EC60 /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
+		FA738DBC2890962600E1EC60 /* PCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCoordinator.swift; sourceTree = "<group>"; };
+		FA738DBE289096ED00E1EC60 /* OperationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationPath.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -209,7 +213,9 @@
 		FA738DB9288FE97300E1EC60 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */,
+				FA738DBA288FE97C00E1EC60 /* GameCoordinator.swift */,
+				FA738DBC2890962600E1EC60 /* PCoordinator.swift */,
+				FA738DBE289096ED00E1EC60 /* OperationPath.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -777,10 +783,11 @@
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
+				FA738DBD2890962600E1EC60 /* PCoordinator.swift in Sources */,
 				FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */,
 				FAC376502887EAE400AD3647 /* SmeltingViewModel.swift in Sources */,
 				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
-				FA738DBB288FE97C00E1EC60 /* CoordinatorPath.swift in Sources */,
+				FA738DBB288FE97C00E1EC60 /* GameCoordinator.swift in Sources */,
 				FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,
@@ -788,6 +795,7 @@
 				FAC376D5288E92AA00AD3647 /* PageTemplate.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
 				FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */,
+				FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,

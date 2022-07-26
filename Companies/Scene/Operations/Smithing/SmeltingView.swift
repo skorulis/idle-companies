@@ -20,7 +20,7 @@ extension SmeltingView: View {
     }
     
     private func nav() -> some View {
-        NavBar(left: BarButtonItem.back(),
+        NavBar(left: BarButtonItem.back(viewModel.back),
                mid: Text("Smelting"))
     }
     

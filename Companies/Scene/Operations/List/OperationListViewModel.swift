@@ -4,9 +4,7 @@ import Foundation
 
 // MARK: - Memory footprint
 
-final class OperationListViewModel: ObservableObject {
-
-    @Published var selectedOp: Skill?
+final class OperationListViewModel: CoordinatedViewModel, ObservableObject {
     
 }
 
@@ -26,7 +24,15 @@ extension OperationListViewModel {
     
     func show(_ skill: Skill) -> () -> Void {
         return { [unowned self] in
-            self.selectedOp = skill
+            coordinator.push(self.path(forSkill: skill))
+        }
+    }
+    
+    func path(forSkill: Skill) -> OperationPath {
+        switch forSkill {
+        case .mining: return .mining
+        case .metallurgy: return .metallurgy
+        case .marketing: return .marketing
         }
     }
     

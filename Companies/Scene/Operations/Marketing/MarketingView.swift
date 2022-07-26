@@ -1,5 +1,6 @@
 //  Created by Alexander Skorulis on 21/7/2022.
 
+import ASSwiftUI
 import Foundation
 import SwiftUI
 
@@ -15,24 +16,26 @@ struct MarketingView {
 extension MarketingView: View {
     
     var body: some View {
-        content
-            .navigationTitle("Marketing")
+        PageTemplate(nav: nav, content: content)
     }
     
-    private var content: some View {
-        ScrollView {
-            VStack {
-                ForEach(viewModel.availableOptions) { type in
-                    Button(action: viewModel.onPress(type)) {
-                        AgencyMarketingTypeView(type: type,
-                                     progress: viewModel.maybeProgress(type)
-                        )
-                        .contentShape(Rectangle())
-                    }
+    private func nav() -> some View {
+        NavBar(left: BarButtonItem.back(viewModel.back),
+               mid: BarButtonItem.title("Marketing"))
+    }
+    
+    private func content() -> some View {
+        VStack {
+            ForEach(viewModel.availableOptions) { type in
+                Button(action: viewModel.onPress(type)) {
+                    AgencyMarketingTypeView(type: type,
+                                 progress: viewModel.maybeProgress(type)
+                    )
+                    .contentShape(Rectangle())
                 }
             }
-            .padding(.horizontal, 16)
         }
+        .padding(.horizontal, 16)
     }
 }
 

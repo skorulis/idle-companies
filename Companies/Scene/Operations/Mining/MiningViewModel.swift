@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Memory footpring
 
-final class MiningViewModel: ObservableObject {
+final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     
     private let operations: OperationService
     private let miningService: MiningService
@@ -19,6 +19,7 @@ final class MiningViewModel: ObservableObject {
         self.operations = operations
         self.miningService = miningService
         self.xpCalc = xpCalc
+        super.init()
         setupObservers()
     }
     

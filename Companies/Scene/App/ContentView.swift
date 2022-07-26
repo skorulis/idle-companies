@@ -49,16 +49,15 @@ extension ContentView {
     }
     
     private var operations: some View {
-        NavigationStack {
-            OperationListView(viewModel: factory.resolve())
-        }
+        CoordinatorView(coordinator: .init(factory: factory,
+                                           root: .operation(.list)))
         .tabItem {
             Label("Operations", systemImage: "power.circle.fill")
         }
     }
     
     private var experiment: some View {
-        CoordinatorView(coordinator: .init(factory: factory, root: .root))
+        CoordinatorView(coordinator: .init(factory: factory, root: .operation(.list)))
             .tabItem {
                 Text("Exp")
             }

@@ -17,14 +17,11 @@ struct MetallurgyView {
 extension MetallurgyView: View {
     
     var body: some View {
-        ZStack {
-            NavigationHelper.invisible(selection: $viewModel.selectedDestination, destination: destination(_:))
-            PageTemplate(nav: nav, content: content)
-        }
+        PageTemplate(nav: nav, content: content)
     }
     
     private func nav() -> some View {
-        NavBar(left: BarButtonItem.back(),
+        NavBar(left: BarButtonItem.back(viewModel.back),
                mid: Text("Metallurgy")
                         .foregroundColor(.label)
                         .font(.headline)
@@ -33,30 +30,21 @@ extension MetallurgyView: View {
     
     private func content() -> some View {
         VStack {
-            ForEach(MetallurgyViewModel.Destination.allCases) { dest in
+            ForEach(viewModel.options) { dest in
                 navButton(dest)
             }
         }
         .padding(.horizontal, 16)
     }
     
-    private func navButton(_ dest: MetallurgyViewModel.Destination) -> some View {
+    private func navButton(_ dest: OperationPath) -> some View {
         Button(action: viewModel.show(dest)) {
-            Text(dest.rawValue)
+            Text("Smelting")
             Spacer()
             Image(systemName: "chevron.right")
         }
     }
     
-    @ViewBuilder
-    private func destination(_ dest: MetallurgyViewModel.Destination) -> some View {
-        switch dest {
-        case .smelting:
-            SmeltingView(viewModel: factory.resolve())
-        case .alloys:
-            Text("TODO")
-        }
-    }
 }
 
 // MARK: - Previews

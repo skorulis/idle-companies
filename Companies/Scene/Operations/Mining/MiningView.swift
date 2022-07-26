@@ -25,7 +25,7 @@ extension MiningView: View {
     
     private var navBar: some View {
         NavBar(
-            left: BarButtonItem.back(),
+            left: BarButtonItem.back(viewModel.back),
             mid: Text("Mining")
                     .foregroundColor(.label)
                     .font(.headline)

@@ -18,14 +18,11 @@ struct OperationListView {
 extension OperationListView: View {
     
     var body: some View {
-        ZStack {
-            NavigationHelper.invisible(selection: $viewModel.selectedOp, destination: skillMapping(skill:))
-            PageTemplate(nav: nav, content: content)
-        }
+        PageTemplate(nav: nav, content: content)
     }
     
     private func nav() -> some View {
-        NavBar(left: BarButtonItem.back(),
+        NavBar(left: EmptyView(),
                mid: BarButtonItem.title("Operations"))
     }
     
@@ -47,17 +44,6 @@ extension OperationListView: View {
         }
     }
     
-    @ViewBuilder
-    private func skillMapping(skill: Skill) -> some View {
-        switch skill {
-        case .mining:
-            MiningView(viewModel: factory.resolve())
-        case .metallurgy:
-            MetallurgyView(viewModel: factory.resolve())
-        case .marketing:
-            MarketingView(viewModel: factory.resolve())
-        }
-    }
 }
 
 // MARK: - Previews

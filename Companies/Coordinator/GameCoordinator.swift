@@ -4,39 +4,23 @@ import Foundation
 import SwiftUI
 import ASKCore
 
-protocol CoordinatorPath: Hashable {
-    associatedtype CoordinatorType: PCoordinator where CoordinatorType.PathType == Self
-    associatedtype ViewType: View
-    
-    func render(coordinator: CoordinatorType) -> ViewType
-}
-
-protocol PCoordinator {
-    associatedtype PathType: CoordinatorPath where PathType.CoordinatorType == Self
-    
-    func push(_ p: PathType)
-    func pop()
-}
-
-// -----
 
 class CoordinatedViewModel {
     weak var coordinator: GameCoordinator!
+    
+    func back() {
+        coordinator.pop()
+    }
 }
 
-enum GamePath: String, CoordinatorPath, Hashable {
-    case root
-    case second
+enum GamePath: CoordinatorPath, Hashable {
+    case operation(_ path: OperationPath)
     
     @ViewBuilder
     func render(coordinator: GameCoordinator) -> some View {
         switch self {
-        case .root:
-            NavigationLink(value: GamePath.root) {
-                Text("HERE Is the first path")
-            }
-        case .second:
-            Text("Second")
+        case .operation(let path):
+            path.render(coordinator: coordinator)
         }
     }
 }
@@ -44,7 +28,7 @@ enum GamePath: String, CoordinatorPath, Hashable {
 final class GameCoordinator: PCoordinator, ObservableObject {
     typealias PathType = GamePath
     
-    @Published var path = NavigationPath()
+    @Published var navPath = NavigationPath()
     let root: GamePath
     let factory: PFactory
     
@@ -54,11 +38,15 @@ final class GameCoordinator: PCoordinator, ObservableObject {
     }
     
     func push(_ p: GamePath) {
-        path.append(p)
+        navPath.append(p)
+    }
+    
+    func push(_ path: OperationPath) {
+        navPath.append(GamePath.operation(path))
     }
     
     func pop() {
-        path.removeLast()
+        navPath.removeLast()
     }
 }
 
@@ -93,7 +81,7 @@ struct CoordinatorView: View {
     }
     
     var body: some View {
-        NavigationStack(path: $coordinator.path) {
+        NavigationStack(path: $coordinator.navPath) {
             coordinator.root.render(coordinator: coordinator)
                 .navigationDestination(for: GamePath.self) { path in
                     path.render(coordinator: coordinator)

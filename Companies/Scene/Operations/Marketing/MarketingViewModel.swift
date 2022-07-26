@@ -5,13 +5,14 @@ import Foundation
 
 // MARK: - Memory footprint
 
-final class MarketingViewModel: ObservableObject {
+final class MarketingViewModel: CoordinatedViewModel, ObservableObject {
     
     private let operations: OperationService
     private var subscribers: Set<AnyCancellable> = []
     
     init(operations: OperationService) {
         self.operations = operations
+        super.init()
         operations.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()

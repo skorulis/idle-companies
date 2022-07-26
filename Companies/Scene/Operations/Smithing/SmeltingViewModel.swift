@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Memory footprint
 
-final class SmeltingViewModel: ObservableObject {
+final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
 
     private let operations: OperationService
     private let smithingService: SmithingService
@@ -22,7 +22,7 @@ final class SmeltingViewModel: ObservableObject {
         self.operations = operations
         self.smithingService = smithingService
         self.inventory = inventory
-        
+        super.init()
         setupObservers()
     }
     

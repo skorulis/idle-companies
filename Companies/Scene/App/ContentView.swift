@@ -32,6 +32,7 @@ extension ContentView {
         TabView {
             operations
             inventory
+            experiment
             #if DEBUG
             debug
             #endif
@@ -48,12 +49,19 @@ extension ContentView {
     }
     
     private var operations: some View {
-        NavigationView {
+        NavigationStack {
             OperationListView(viewModel: factory.resolve())
         }
         .tabItem {
             Label("Operations", systemImage: "power.circle.fill")
         }
+    }
+    
+    private var experiment: some View {
+        CoordinatorView(coordinator: .init(factory: factory, root: .root))
+            .tabItem {
+                Text("Exp")
+            }
     }
     
     #if DEBUG

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA738DBB288FE97C00E1EC60 /* CoordinatorPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -101,6 +102,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPath.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -204,6 +206,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA738DB9288FE97300E1EC60 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				FA738DBA288FE97C00E1EC60 /* CoordinatorPath.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +236,7 @@
 		FAC375DC2883888F00AD3647 /* Companies */ = {
 			isa = PBXGroup;
 			children = (
+				FA738DB9288FE97300E1EC60 /* Coordinator */,
 				FAC376B6288A4E7D00AD3647 /* Calculations */,
 				FAC375F42883943100AD3647 /* Model */,
 				FAC375F52883943100AD3647 /* Resource */,
@@ -769,6 +780,7 @@
 				FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */,
 				FAC376502887EAE400AD3647 /* SmeltingViewModel.swift in Sources */,
 				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
+				FA738DBB288FE97C00E1EC60 /* CoordinatorPath.swift in Sources */,
 				FAC3767E2888A80B00AD3647 /* MarketingService.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,
@@ -855,7 +867,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -909,7 +921,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

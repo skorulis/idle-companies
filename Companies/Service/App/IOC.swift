@@ -26,6 +26,7 @@ private extension IOC {
         container.autoregister(MetallurgyViewModel.self, initializer: MetallurgyViewModel.init)
         container.autoregister(MarketingViewModel.self, initializer: MarketingViewModel.init)
         container.autoregister(DebugViewModel.self, initializer: DebugViewModel.init)
+        container.autoregister(ConstructionViewModel.self, initializer: ConstructionViewModel.init)
         
         container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
             .inObjectScope(.container)

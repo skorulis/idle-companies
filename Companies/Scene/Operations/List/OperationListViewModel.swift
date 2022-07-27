@@ -13,7 +13,7 @@ final class OperationListViewModel: CoordinatedViewModel, ObservableObject {
 extension OperationListViewModel {
     
     var available: [Skill] {
-        return [.mining, .marketing, .metallurgy]
+        return [.mining, .marketing, .metallurgy, .construction]
     }
     
 }
@@ -24,16 +24,8 @@ extension OperationListViewModel {
     
     func show(_ skill: Skill) -> () -> Void {
         return { [unowned self] in
-            coordinator.push(self.path(forSkill: skill))
+            coordinator.push(OperationPath.skillRoot(skill))
         }
     }
-    
-    func path(forSkill: Skill) -> OperationPath {
-        switch forSkill {
-        case .mining: return .mining
-        case .metallurgy: return .metallurgy
-        case .marketing: return .marketing
-        }
-    }
-    
+        
 }

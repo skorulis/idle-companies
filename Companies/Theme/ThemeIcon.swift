@@ -14,6 +14,7 @@ enum ThemeIcon: String {
 	case stonePile = "stone-pile"
 	case anvil = "anvil"
 	case digDug = "dig-dug"
+	case hammerNails = "hammer-nails"
 	case virtualMarker = "virtual-marker"
 	case factory = "factory"
 	case woodenCrate = "wooden-crate"

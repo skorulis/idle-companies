@@ -3,10 +3,11 @@
 import Foundation
 
 /// Operations that can be done
-public enum Skill: String, Identifiable, Codable {
+public enum Skill: String, Hashable, Identifiable, Codable {
     case mining
     case metallurgy
     case marketing
+    case construction
     
     public var id: String { rawValue }
 }
@@ -18,6 +19,7 @@ extension Skill {
         case .mining: return "Mining"
         case .metallurgy: return "Metallurgy"
         case .marketing: return "Marketing"
+        case .construction: return "Construction"
         }
     }
     
@@ -26,6 +28,7 @@ extension Skill {
         case .mining: return .digDug
         case .metallurgy: return .anvil
         case .marketing: return .virtualMarker
+        case .construction: return .hammerNails
         }
     }
     

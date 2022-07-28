@@ -27,6 +27,9 @@ private extension IOC {
         container.autoregister(MarketingViewModel.self, initializer: MarketingViewModel.init)
         container.autoregister(DebugViewModel.self, initializer: DebugViewModel.init)
         container.autoregister(ConstructionViewModel.self, initializer: ConstructionViewModel.init)
+        container.autoregister(ConstructionContractsViewModel.self, initializer: ConstructionContractsViewModel.init)
+        container.autoregister(HeadquartersViewModel.self, initializer: HeadquartersViewModel.init)
+        container.autoregister(HQUpgradeViewModel.self, initializer: HQUpgradeViewModel.init)
         
         container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
             .inObjectScope(.container)
@@ -39,6 +42,8 @@ private extension IOC {
         container.autoregister(MarketingService.self, initializer: MarketingService.init)
         container.autoregister(SmithingService.self, initializer: SmithingService.init)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
+        container.autoregister(ConstructionService.self, initializer: ConstructionService.init)
+        
         #if DEBUG
         container.autoregister(PTimeProvider.self, initializer: DebugTimeProvider.init)
             .inObjectScope(.container)
@@ -51,6 +56,8 @@ private extension IOC {
         container.autoregister(InventoryStore.self, initializer: InventoryStore.init)
             .inObjectScope(.container)
         container.autoregister(SkillStore.self, initializer: SkillStore.init)
+            .inObjectScope(.container)
+        container.autoregister(CompanyStore.self, initializer: CompanyStore.init)
             .inObjectScope(.container)
         
         switch purpose {

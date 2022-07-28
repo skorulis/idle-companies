@@ -25,11 +25,25 @@ extension ConstructionView: View {
     }
     
     private func content() -> some View {
-        VStack {
-            Text("Contracts")
-            Text("Materials")
+        VStack(spacing: 8) {
+            SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
+            ForEach(ConstructionSubType.allCases) { type in
+                button(type: type)
+            }
         }
         .padding(.horizontal, 16)
+    }
+    
+    private func button(type: ConstructionSubType) -> some View {
+        Button(action: viewModel.show(type)) {
+            HStack {
+                type.icon.image(24)
+                Text(type.name)
+                Spacer()
+                Image(systemName: "chevron.right")
+            }
+            .contentShape(Rectangle())
+        }
     }
 }
 

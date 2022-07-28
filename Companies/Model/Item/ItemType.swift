@@ -29,6 +29,11 @@ public enum ItemType: String, Codable {
     case brick
     case concrete
     
+    // Gems
+    
+    case quartz
+    case diamond
+    
 }
 
 extension ItemType: Identifiable {
@@ -55,6 +60,10 @@ extension ItemType: Identifiable {
             return .oilDrum
         case .sand:
             return .sandDust
+        case .quartz:
+            return .saphir
+        case .diamond:
+            return .cutDiamond
         }
     }
     
@@ -72,6 +81,8 @@ extension ItemType: Identifiable {
         case .concrete: return .brown
         case .oil: return .black
         case .sand: return .yellow
+        case .diamond: return .blue
+        case .quartz: return .white
         }
     }
     

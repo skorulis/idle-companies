@@ -15,6 +15,7 @@ final class OperationService: ObservableObject {
     private lazy var miningService: MiningService = factory.resolve()
     private lazy var smithingService: SmithingService = factory.resolve()
     private lazy var marketingService: MarketingService = factory.resolve()
+    private lazy var constructionService: ConstructionService = factory.resolve()
     
     public init(factory: PFactory,
                 timeProvider: PTimeProvider,
@@ -71,6 +72,8 @@ extension OperationService {
             return marketingService.duration(marketing)
         case let smithing as SmeltingActivity:
             return smithingService.duration(smithing)
+        case let typed as ConstructionContractActivity:
+            return constructionService.duration(typed)
         default:
             fatalError("Unknown type \(op)")
         }
@@ -98,6 +101,8 @@ extension OperationService {
             marketingService.onFinish(marketing)
         case let smithing as SmeltingActivity:
             smithingService.onFinish(smithing)
+        case let typed as ConstructionContractActivity:
+            constructionService.onFinish(typed)
         default:
             fatalError("Unknown type \(op)")
         }

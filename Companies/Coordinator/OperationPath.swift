@@ -8,6 +8,11 @@ enum OperationPath: Hashable, Identifiable {
     case skillRoot(_ skill: Skill)
     
     case smelting
+    case construction(_ type: ConstructionSubType)
+    
+    var id: String {
+        String(describing: self)
+    }
     
     @ViewBuilder
     func render(coordinator: GameCoordinator) -> some View {
@@ -18,11 +23,13 @@ enum OperationPath: Hashable, Identifiable {
             skillView(coordinator: coordinator, skill: skill)
         case .smelting:
             SmeltingView(viewModel: coordinator.resolve())
+        case .construction(let type):
+            constructionView(coordinator: coordinator, type: type)
         }
     }
     
     @ViewBuilder
-    func skillView(coordinator: GameCoordinator, skill: Skill) -> some View {
+    private func skillView(coordinator: GameCoordinator, skill: Skill) -> some View {
         switch skill {
         case .mining:
             MiningView(viewModel: coordinator.resolve())
@@ -35,7 +42,18 @@ enum OperationPath: Hashable, Identifiable {
         }
     }
     
-    var id: String {
-        String(describing: self)
+    @ViewBuilder
+    private func constructionView(coordinator: GameCoordinator, type: ConstructionSubType) -> some View {
+        switch type {
+        case .materials:
+            EmptyView()
+        case .buildings:
+            EmptyView()
+        case .contracts:
+            ConstructionContractsView(viewModel: coordinator.resolve())
+        }
     }
+    
+    
+    
 }

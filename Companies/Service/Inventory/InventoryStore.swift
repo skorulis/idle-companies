@@ -8,7 +8,7 @@ final class InventoryStore: ObservableObject {
     
     @Published private(set) var inventory: [ItemType: Int] {
         didSet {
-            writeToDisk()
+            try! self.store.set(codable: inventory, forKey: Self.storageKey)
         }
     }
     private let store: PKeyValueStore
@@ -18,8 +18,7 @@ final class InventoryStore: ObservableObject {
     init(store: PKeyValueStore, toasts: ToastPresentationService) {
         self.store = store
         self.toasts = toasts
-        let data = Self.readFromDisk(store: store)
-        inventory = data.items
+        self.inventory = Self.readFromDisk(store: store)
     }
     
 }
@@ -65,28 +64,15 @@ extension InventoryStore {
     }
 }
 
-// MARK: - Inner types
-
-private extension InventoryStore {
-    struct DiskStorage: Codable {
-        let items: [ItemType: Int]
-    }
-}
-
 // MARK: - Private logic
 
 private extension InventoryStore {
     
-    func writeToDisk() {
-        let storage = DiskStorage(items: inventory)
-        try! store.set(codable: storage, forKey: Self.storageKey)
-    }
-    
-    static func readFromDisk(store: PKeyValueStore) -> DiskStorage {
-        if let item: DiskStorage = try? store.codable(forKey: Self.storageKey) {
-            return item
+    static func readFromDisk(store: PKeyValueStore) -> [ItemType: Int] {
+        if let inventory: [ItemType: Int] = try? store.codable(forKey: Self.storageKey) {
+            return inventory
         }
-        return DiskStorage(items: [:])
+        return [:]
     }
     
 }

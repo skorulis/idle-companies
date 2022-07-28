@@ -32,6 +32,7 @@ extension ContentView {
         TabView {
             operations
             inventory
+            headquarters
             #if DEBUG
             debug
             #endif
@@ -48,11 +49,17 @@ extension ContentView {
     }
     
     private var operations: some View {
-        CoordinatorView(coordinator: .init(factory: factory,
-                                           root: .operation(.list)))
-        .tabItem {
-            Label("Operations", systemImage: "power.circle.fill")
-        }
+        CoordinatorView(coordinator: .init(factory: factory, root: .operation(.list)))
+            .tabItem {
+                Label("Operations", systemImage: "power.circle.fill")
+            }
+    }
+    
+    private var headquarters: some View {
+        CoordinatorView(coordinator: .init(factory: factory, root: .hq(.home)))
+            .tabItem {
+                Label("Headquarters", systemImage: "flag.fill")
+            }
     }
     
     #if DEBUG

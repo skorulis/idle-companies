@@ -2,14 +2,44 @@
 
 import Foundation
 
+// MARK: - Memory footprint
+
 final class HQUpgradeViewModel: CoordinatedViewModel, ObservableObject {
     
-    private let inventory: InventoryStore
+    let inventory: InventoryStore
+    private let company: CompanyStore
     
-    init(inventory: InventoryStore) {
+    init(inventory: InventoryStore, company: CompanyStore) {
         self.inventory = inventory
+        self.company = company
         super.init()
     }
     
+}
+
+// MARK: - Computed values
+
+extension HQUpgradeViewModel {
     
+    var type: HQType? {
+        return company.company.hqType.next
+    }
+    
+    var canUpgrade: Bool {
+        guard let type = type else { return false }
+        return inventory.containsAll(items: type.requirements)
+    }
+    
+}
+
+// MARK: - Logic
+
+extension HQUpgradeViewModel {
+ 
+    func upgrade() {
+        guard let type = type, canUpgrade else { return }
+        
+        inventory.removeAll(items: type.requirements)
+        company.company.hqType = type
+    }
 }

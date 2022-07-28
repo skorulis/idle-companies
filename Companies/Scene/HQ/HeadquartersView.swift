@@ -43,6 +43,9 @@ extension HeadquartersView: View {
                 }
             }
         }
+        .padding(4)
+        .frame(maxWidth: .infinity)
+        .background(PanelBackground())
     }
 }
 

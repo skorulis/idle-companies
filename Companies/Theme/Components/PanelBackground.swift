@@ -26,6 +26,15 @@ extension PanelBackground: View {
     }
 }
 
+extension View {
+    
+    func panelBackground() -> some View {
+        self.padding(4)
+            .frame(maxWidth: .infinity)
+            .background(PanelBackground())
+    }
+}
+
 // MARK: - Previews
 
 struct PanelBackground_Previews: PreviewProvider {

@@ -15,7 +15,7 @@ struct HQUpgradeView {
 extension HQUpgradeView: View {
     
     var body: some View {
-        PageTemplate(nav: nav, content: content)
+        PageTemplate(nav: nav, content: maybeContent)
     }
     
     private func nav() -> some View {
@@ -23,9 +23,23 @@ extension HQUpgradeView: View {
                mid: BarButtonItem.title("Upgrade HQ"))
     }
     
-    private func content() -> some View {
+    @ViewBuilder
+    private func maybeContent() -> some View {
+        if let type = viewModel.type {
+            content(type: type)
+        }
+    }
+    
+    private func content(type: HQType) -> some View {
         VStack {
+            IngredientsView(ingredients: type.requirements, inventory: viewModel.inventory)
+                .panelBackground()
             
+            Button(action: viewModel.upgrade) {
+                Text("Upgrade")
+            }
+            .panelBackground()
+            .disabled(!viewModel.canUpgrade)
         }
         .padding(.horizontal, 16)
     }

@@ -74,6 +74,8 @@ extension OperationService {
             return smithingService.duration(smithing)
         case let typed as ConstructionContractActivity:
             return constructionService.duration(typed)
+        case let typed as ConstructionMaterialActivity:
+            return constructionService.duration(typed)
         default:
             fatalError("Unknown type \(op)")
         }
@@ -84,6 +86,12 @@ extension OperationService {
         case let smithing as SmeltingActivity:
             do {
                 try smithingService.start(smithing)
+            } catch {
+                return false
+            }
+        case let typed as ConstructionMaterialActivity:
+            do {
+                try constructionService.start(typed)
             } catch {
                 return false
             }

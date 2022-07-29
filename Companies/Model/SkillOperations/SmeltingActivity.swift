@@ -4,8 +4,6 @@ import Foundation
 
 enum SmeltingActivity: String, POperation, Identifiable, CaseIterable {
     
-    case brick
-    case concrete
     case ironBar
     case goldBar
     
@@ -23,8 +21,6 @@ extension SmeltingActivity {
     
     var output: ItemType {
         switch self {
-        case .brick: return .brick
-        case .concrete: return .concrete
         case .ironBar: return .ironBar
         case .goldBar: return .goldBar
         }
@@ -32,10 +28,6 @@ extension SmeltingActivity {
     
     var baseTime: TimeInterval {
         switch self {
-        case .brick:
-            return 3
-        case .concrete:
-            return 10
         case .ironBar:
             return 5
         case .goldBar:
@@ -49,10 +41,6 @@ extension SmeltingActivity {
     
     var inputs: [ItemCount] {
         switch self {
-        case .brick:
-            return [.init(type: .stone, count: 1)]
-        case .concrete:
-            return [.init(type: .stone, count: 2), .init(type: .limestone, count: 1)]
         case .ironBar:
             return [.init(type: .ironOre, count: 1)]
         case .goldBar:

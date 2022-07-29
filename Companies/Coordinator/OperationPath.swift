@@ -46,7 +46,7 @@ enum OperationPath: Hashable, Identifiable {
     private func constructionView(coordinator: GameCoordinator, type: ConstructionSubType) -> some View {
         switch type {
         case .materials:
-            EmptyView()
+            ConstructionMaterialsView(viewModel: coordinator.resolve())
         case .buildings:
             EmptyView()
         case .contracts:

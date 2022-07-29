@@ -37,7 +37,7 @@ extension SmithingActivityRowView: View {
 struct SmithingActivityRowView_Previews: PreviewProvider {
     
     static var previews: some View {
-        SmithingActivityRowView(activity: SmeltingActivity.concrete)
+        SmithingActivityRowView(activity: SmeltingActivity.ironBar)
     }
 }
 

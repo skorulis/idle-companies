@@ -32,6 +32,10 @@ extension InventoryStore {
         toasts.add(text: "+\(count) \(item.name)")
     }
     
+    func add(item: ItemCount) {
+        add(item: item.type, count: item.count)
+    }
+    
     func count(item: ItemType) -> Int {
         return inventory[item] ?? 0
     }

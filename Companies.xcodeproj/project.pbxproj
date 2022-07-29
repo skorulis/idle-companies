@@ -28,6 +28,10 @@
 		FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DE1289296A500E1EC60 /* HQPath.swift */; };
 		FA738DE4289297B700E1EC60 /* GamePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DE3289297B700E1EC60 /* GamePath.swift */; };
 		FA738DE728929E2400E1EC60 /* IngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DE628929E2400E1EC60 /* IngredientsView.swift */; };
+		FA738DE928937F9200E1EC60 /* ConstructionMaterialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DE828937F9200E1EC60 /* ConstructionMaterialsView.swift */; };
+		FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DEA28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift */; };
+		FA738DED289385C100E1EC60 /* ConstructionMaterialActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DEC289385C100E1EC60 /* ConstructionMaterialActivity.swift */; };
+		FA738DEF2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DEE2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -142,6 +146,10 @@
 		FA738DE1289296A500E1EC60 /* HQPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HQPath.swift; sourceTree = "<group>"; };
 		FA738DE3289297B700E1EC60 /* GamePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePath.swift; sourceTree = "<group>"; };
 		FA738DE628929E2400E1EC60 /* IngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsView.swift; sourceTree = "<group>"; };
+		FA738DE828937F9200E1EC60 /* ConstructionMaterialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionMaterialsView.swift; sourceTree = "<group>"; };
+		FA738DEA28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionMaterialsViewModel.swift; sourceTree = "<group>"; };
+		FA738DEC289385C100E1EC60 /* ConstructionMaterialActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionMaterialActivity.swift; sourceTree = "<group>"; };
+		FA738DEE2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionMaterialActivtyView.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -265,6 +273,9 @@
 				FA738DCB28911F1F00E1EC60 /* ConstructionContractsView.swift */,
 				FA738DCD28911F2F00E1EC60 /* ConstructionContractsViewModel.swift */,
 				FA738DCF2891231000E1EC60 /* ConstructionContractActivityView.swift */,
+				FA738DE828937F9200E1EC60 /* ConstructionMaterialsView.swift */,
+				FA738DEA28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift */,
+				FA738DEE2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift */,
 			);
 			path = Construction;
 			sourceTree = "<group>";
@@ -646,6 +657,7 @@
 				FAC376A6288A16B500AD3647 /* MiningActivity.swift */,
 				FAC376AC288A274700AD3647 /* SmeltingActivity.swift */,
 				FA738DC728911C4600E1EC60 /* ConstructionContractActivity.swift */,
+				FA738DEC289385C100E1EC60 /* ConstructionMaterialActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -845,11 +857,13 @@
 				FAC376D7288EB44D00AD3647 /* ItemDetailsView.swift in Sources */,
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */,
+				FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
 				FAC376B5288A390700AD3647 /* SmithingActivityRowView.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
+				FA738DE928937F9200E1EC60 /* ConstructionMaterialsView.swift in Sources */,
 				FA738DC22890DBAB00E1EC60 /* ConstructionView.swift in Sources */,
 				FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */,
 				FAC376922888B0B800AD3647 /* DebugViewModel.swift in Sources */,
@@ -874,6 +888,7 @@
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC376D1288E915A00AD3647 /* MetallurgyView.swift in Sources */,
+				FA738DEF2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift in Sources */,
 				FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */,
 				FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
@@ -894,6 +909,7 @@
 				FAC376D5288E92AA00AD3647 /* PageTemplate.swift in Sources */,
 				FA738DC42890DCA100E1EC60 /* ConstructionViewModel.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,
+				FA738DED289385C100E1EC60 /* ConstructionMaterialActivity.swift in Sources */,
 				FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */,
 				FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,

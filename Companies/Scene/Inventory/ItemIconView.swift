@@ -6,7 +6,13 @@ import SwiftUI
 // MARK: - Memory footprint
 
 struct ItemIconView {
-    let item: ItemType
+    private let item: ItemType
+    private let size: CGFloat
+    
+    init(item: ItemType, size: CGFloat = 28) {
+        self.item = item
+        self.size = size
+    }
 }
 
 // MARK: - Rendering

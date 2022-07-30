@@ -26,7 +26,8 @@ extension ConstructionMaterialsView: View {
     
     private func content() -> some View {
         VStack {
-            maybeCurrent
+            SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
+            current
             
             ForEach(ConstructionMaterialActivity.allCases) { activity in
                 Button(action: select(activity)) {
@@ -38,13 +39,11 @@ extension ConstructionMaterialsView: View {
     }
     
     @ViewBuilder
-    private var maybeCurrent: some View {
-        if let activity = viewModel.selected {
-            ConstructionMaterialActivtyView(activity: activity,
-                                            progress: viewModel.maybeProgress,
-                                            inv: viewModel.inventory,
-                                            onStart: viewModel.start)
-        }
+    private var current: some View {
+        ConstructionMaterialActivtyView(activity: viewModel.selected,
+                                        progress: viewModel.maybeProgress,
+                                        inv: viewModel.inventory,
+                                        onStart: viewModel.start)
     }
 }
 

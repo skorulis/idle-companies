@@ -9,16 +9,26 @@ final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObje
     
     let inventory: InventoryStore
     private let operations: OperationService
+    private let uiStore: UIHistoryStore
+    private let skillStore: SkillStore
+    let xpCalc: XPLevelCalculation
     
-    @Published var selected: ConstructionMaterialActivity?
+    @Published var selected: ConstructionMaterialActivity
     
     private var subscribers: Set<AnyCancellable> = []
     
     init(inventory: InventoryStore,
-         operations: OperationService
+         operations: OperationService,
+         uiStore: UIHistoryStore,
+         skillStore: SkillStore,
+         xpCalc: XPLevelCalculation
     ) {
         self.inventory = inventory
         self.operations = operations
+        self.uiStore = uiStore
+        self.skillStore = skillStore
+        self.xpCalc = xpCalc
+        selected =  uiStore.retrieve() ?? ConstructionMaterialActivity.allCases[0]
         super .init()
         setupObservers()
     }
@@ -41,6 +51,10 @@ extension ConstructionMaterialsViewModel {
         return operations.maybeProgress(selected)
     }
     
+    var xp: Int64 {
+        skillStore.xp(skill: .construction)
+    }
+    
 }
 
 // MARK: - Logic
@@ -49,11 +63,11 @@ extension ConstructionMaterialsViewModel {
     
     func select(_ activity: ConstructionMaterialActivity) {
         self.selected = activity
+        uiStore.store(selection: activity)
     }
     
     func start() {
-        guard let activity = selected else { return }
-        operations.start(activity)
+        operations.start(selected)
     }
     
 }

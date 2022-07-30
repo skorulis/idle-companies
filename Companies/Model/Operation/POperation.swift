@@ -21,4 +21,8 @@ extension POperation {
         return self.skill == op.skill && self.id == op.id
     }
     
+    static var typeID: String {
+        String(describing: type(of: self))
+    }
+    
 }

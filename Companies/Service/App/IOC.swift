@@ -63,6 +63,8 @@ private extension IOC {
             .inObjectScope(.container)
         container.autoregister(CompanyStore.self, initializer: CompanyStore.init)
             .inObjectScope(.container)
+        container.autoregister(UIHistoryStore.self, initializer: UIHistoryStore.init)
+            .inObjectScope(.container)
         
         switch purpose {
         case .testing:

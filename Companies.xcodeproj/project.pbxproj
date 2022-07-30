@@ -42,6 +42,7 @@
 		FA738E042895428800E1EC60 /* UIHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E032895428800E1EC60 /* UIHistoryStore.swift */; };
 		FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E052895F69600E1EC60 /* AppDelegate.swift */; };
 		FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E072895F6C200E1EC60 /* SceneDelegate.swift */; };
+		FA738E0A2895F9CE00E1EC60 /* PBackgroundListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -167,6 +168,7 @@
 		FA738E032895428800E1EC60 /* UIHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHistoryStore.swift; sourceTree = "<group>"; };
 		FA738E052895F69600E1EC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA738E072895F6C200E1EC60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBackgroundListener.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -449,6 +451,7 @@
 				FAC376792888985900AD3647 /* TimeProvider.swift */,
 				FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */,
 				FA738E032895428800E1EC60 /* UIHistoryStore.swift */,
+				FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				FA738DCE28911F2F00E1EC60 /* ConstructionContractsViewModel.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,
+				FA738E0A2895F9CE00E1EC60 /* PBackgroundListener.swift in Sources */,
 				FAC376D5288E92AA00AD3647 /* PageTemplate.swift in Sources */,
 				FA738DC42890DCA100E1EC60 /* ConstructionViewModel.swift in Sources */,
 				FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */,

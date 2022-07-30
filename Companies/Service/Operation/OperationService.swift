@@ -84,8 +84,23 @@ extension OperationService {
     }
     
     func finish<T: POperation>(_ op: T) {
+        print("Finish task")
         let service = factory.resolve(T.ServiceType.self)
         service.finish(activity: op)
+    }
+    
+}
+
+// MARK: - PBackgroundListener
+
+extension OperationService: PBackgroundListener {
+    
+    func willEnterForeground() {
+        print("FG")
+    }
+    
+    func didEnterBackground() {
+        print("BG")
     }
     
 }

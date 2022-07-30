@@ -8,6 +8,7 @@ final class IOC: IOCService {
     
     override init(purpose: IOCPurpose = .testing) {
         super.init(purpose: purpose)
+        registerBehaviors()
         registerCalculations()
         registerViewModels()
         registerServices()
@@ -79,6 +80,10 @@ private extension IOC {
     func registerCalculations() {
         container.autoregister(XPLevelCalculation.self, initializer: XPLevelCalculation.init)
 
+    }
+    
+    func registerBehaviors() {
+        container.addBehavior(InstanceAggregation<PBackgroundListener>(isChild: { $0 is PBackgroundListener.Type }))
     }
     
 }

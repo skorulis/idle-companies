@@ -15,6 +15,10 @@ struct CompaniesApp: App {
     
     private let ioc = IOC(purpose: .normal)
     
+    init() {
+        SceneDelegate.factory = ioc
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -3,7 +3,7 @@
 import Foundation
 
 enum MiningActivity: String, CaseIterable, POperation, Identifiable {
-
+    
     case beach
     case rock
     case tinVein

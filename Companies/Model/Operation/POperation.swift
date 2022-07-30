@@ -2,7 +2,8 @@
 
 import Foundation
 
-public protocol POperation {
+protocol POperation {
+    associatedtype ServiceType: PActivityService where ServiceType.ActivityType == Self
     
     var id: String { get }
     var name: String { get }
@@ -10,13 +11,13 @@ public protocol POperation {
     var baseXP: Int64 { get }
     var skill: Skill { get }
     
-    func matches(_ op: POperation) -> Bool
+    func matches(_ op: any POperation) -> Bool
     
 }
 
 extension POperation {
     
-    func matches(_ op: POperation) -> Bool {
+    func matches(_ op: any POperation) -> Bool {
         return self.skill == op.skill && self.id == op.id
     }
     

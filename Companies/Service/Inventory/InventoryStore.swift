@@ -66,6 +66,13 @@ extension InventoryStore {
     func removeAll(items: [ItemCount]) {
         items.forEach { remove(item: $0) }
     }
+    
+    func consume(inputs: [ItemCount]) throws {
+        if !containsAll(items: inputs) {
+            throw RecipeError.missingIngredients
+        }
+        removeAll(items: inputs)
+    }
 }
 
 // MARK: - Private logic

@@ -39,11 +39,14 @@ private extension IOC {
     func registerServices() {
         container.autoregister(OperationService.self, initializer: OperationService.init)
             .inObjectScope(.container)
-        container.autoregister(MiningService.self, initializer: MiningService.init)
-        container.autoregister(MarketingService.self, initializer: MarketingService.init)
-        container.autoregister(SmithingService.self, initializer: SmithingService.init)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
-        container.autoregister(ConstructionService.self, initializer: ConstructionService.init)
+        container.autoregister(MiningActivity.Service.self, initializer: MiningActivity.Service.init)
+        container.autoregister(MarketingActivity.Service.self, initializer: MarketingActivity.Service.init)
+        container.autoregister(SmeltingActivity.Service.self, initializer: SmeltingActivity.Service.init)
+        container.autoregister(ConstructionMaterialActivity.Service.self,
+                               initializer: ConstructionMaterialActivity.Service.init)
+        container.autoregister(ConstructionContractActivity.Service.self,
+                               initializer: ConstructionContractActivity.Service.init)
         
         #if DEBUG
         container.autoregister(PTimeProvider.self, initializer: DebugTimeProvider.init)

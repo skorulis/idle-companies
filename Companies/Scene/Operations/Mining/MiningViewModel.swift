@@ -8,16 +8,13 @@ import Foundation
 final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     
     private let operations: OperationService
-    private let miningService: MiningService
     let xpCalc: XPLevelCalculation
     private var subscribers: Set<AnyCancellable> = []
     
     init(operations: OperationService,
-         miningService: MiningService,
          xpCalc: XPLevelCalculation
     ) {
         self.operations = operations
-        self.miningService = miningService
         self.xpCalc = xpCalc
         super.init()
         setupObservers()

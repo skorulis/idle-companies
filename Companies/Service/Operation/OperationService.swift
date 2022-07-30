@@ -12,11 +12,6 @@ final class OperationService: ObservableObject {
     private let timeProvider: PTimeProvider
     let skillStore: SkillStore
     
-    private lazy var miningService: MiningService = factory.resolve()
-    private lazy var smithingService: SmithingService = factory.resolve()
-    private lazy var marketingService: MarketingService = factory.resolve()
-    private lazy var constructionService: ConstructionService = factory.resolve()
-    
     public init(factory: PFactory,
                 timeProvider: PTimeProvider,
                 skillStore: SkillStore
@@ -37,7 +32,7 @@ extension OperationService {
         op.timer?.invalidate()
     }
     
-    func start(_ op: POperation) {
+    func start<T: POperation>(_ op: T) {
         let time: TimeInterval = duration(op) / timeProvider.speed
         self.active.forEach { stop($0) }
         
@@ -64,45 +59,27 @@ extension OperationService {
 
 extension OperationService {
     
-    func duration(_ op: POperation) -> TimeInterval {
-        switch op {
-        case let mining as MiningActivity:
-            return miningService.duration(mining)
-        case let marketing as MarketingActivity:
-            return marketingService.duration(marketing)
-        case let smithing as SmeltingActivity:
-            return smithingService.duration(smithing)
-        case let typed as ConstructionContractActivity:
-            return constructionService.duration(typed)
-        case let typed as ConstructionMaterialActivity:
-            return constructionService.duration(typed)
-        default:
-            fatalError("Unknown type \(op)")
-        }
+    func duration<T: POperation>(_ op: T) -> TimeInterval {
+        let service = factory.resolve(T.ServiceType.self)
+        return service.stats(activity: op).duration
+        
     }
     
-    func tryStart(_ op: POperation) -> Bool {
-        switch op {
-        case let smithing as SmeltingActivity:
-            do {
-                try smithingService.start(smithing)
-            } catch {
-                return false
-            }
-        case let typed as ConstructionMaterialActivity:
-            do {
-                try constructionService.start(typed)
-            } catch {
-                return false
-            }
-        default:
-            break // No actions to do
+    func tryStart<T: POperation>(_ op: T) -> Bool {
+        let service = factory.resolve(T.ServiceType.self)
+        do {
+            try service.tryStart(activity: op)
+        } catch {
+            return false
         }
+        
         return true
     }
     
-    func finish(_ op: POperation) {
-        switch op {
+    func finish<T: POperation>(_ op: T) {
+        let service = factory.resolve(T.ServiceType.self)
+        service.finish(activity: op)
+        /*switch op {
         case let mining as MiningActivity:
             miningService.onFinish(mining)
         case let marketing as MarketingActivity:
@@ -115,7 +92,7 @@ extension OperationService {
             fatalError("Unknown type \(op)")
         }
         skillStore.addXP(skill: op.skill, xp: op.baseXP, operationID: op.id)
-        self.objectWillChange.send()
+        self.objectWillChange.send()*/
     }
     
 }

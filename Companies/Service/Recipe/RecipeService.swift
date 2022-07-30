@@ -47,17 +47,14 @@ extension RecipeService {
 
 // MARK: - Inner type
 
-extension RecipeService {
+enum RecipeError: Error, LocalizedError {
     
-    enum RecipeError: Error, LocalizedError {
-        
-        case missingIngredients
-        
-        var errorDescription: String? {
-            switch self {
-            case .missingIngredients:
-                return "Insufficient ingredients"
-            }
+    case missingIngredients
+    
+    var errorDescription: String? {
+        switch self {
+        case .missingIngredients:
+            return "Insufficient ingredients"
         }
     }
 }

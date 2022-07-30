@@ -5,9 +5,9 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct ActivityStatsView {
+struct ActivityStatsView<Act: POperation> {
     
-    let activity: POperation
+    let activity: Act
     
 }
 

@@ -8,7 +8,6 @@ import Foundation
 final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
 
     private let operations: OperationService
-    private let smithingService: SmithingService
     let inventory: InventoryStore
     
     private var subscribers: Set<AnyCancellable> = []
@@ -16,11 +15,9 @@ final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
     @Published var selectedRecipe: SmeltingActivity?
     
     init(operations: OperationService,
-         smithingService: SmithingService,
          inventory: InventoryStore
     ) {
         self.operations = operations
-        self.smithingService = smithingService
         self.inventory = inventory
         super.init()
         setupObservers()

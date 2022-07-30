@@ -11,6 +11,8 @@ import ASKCore
 @main
 struct CompaniesApp: App {
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     private let ioc = IOC(purpose: .normal)
     
     var body: some Scene {

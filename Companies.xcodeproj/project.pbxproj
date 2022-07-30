@@ -40,6 +40,8 @@
 		FA738E002894AE0200E1EC60 /* SmeltingActivity+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738DFF2894AE0200E1EC60 /* SmeltingActivity+Service.swift */; };
 		FA738E0228951A5200E1EC60 /* SimpleRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E0128951A5200E1EC60 /* SimpleRecipeView.swift */; };
 		FA738E042895428800E1EC60 /* UIHistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E032895428800E1EC60 /* UIHistoryStore.swift */; };
+		FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E052895F69600E1EC60 /* AppDelegate.swift */; };
+		FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E072895F6C200E1EC60 /* SceneDelegate.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -163,6 +165,8 @@
 		FA738DFF2894AE0200E1EC60 /* SmeltingActivity+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SmeltingActivity+Service.swift"; sourceTree = "<group>"; };
 		FA738E0128951A5200E1EC60 /* SimpleRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRecipeView.swift; sourceTree = "<group>"; };
 		FA738E032895428800E1EC60 /* UIHistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHistoryStore.swift; sourceTree = "<group>"; };
+		FA738E052895F69600E1EC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA738E072895F6C200E1EC60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 				FAC3768E2888B0A300AD3647 /* Debug */,
 				FAC375F22883943100AD3647 /* ContentView.swift */,
 				FAC375F32883943100AD3647 /* CompaniesApp.swift */,
+				FA738E052895F69600E1EC60 /* AppDelegate.swift */,
+				FA738E072895F6C200E1EC60 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -875,6 +881,7 @@
 				FAC376CE288DF89700AD3647 /* PanelBackground.swift in Sources */,
 				FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */,
 				FA738DC628910FF800E1EC60 /* ConstructionSubType.swift in Sources */,
+				FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */,
 				FA738DE4289297B700E1EC60 /* GamePath.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
 				FAC376372884B43900AD3647 /* OperationListView.swift in Sources */,
@@ -906,6 +913,7 @@
 				FA738DD52892295900E1EC60 /* HeadquartersViewModel.swift in Sources */,
 				FA738DCC28911F1F00E1EC60 /* ConstructionContractsView.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
+				FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FA738DE728929E2400E1EC60 /* IngredientsView.swift in Sources */,
 				FA738DE0289294A300E1EC60 /* HQUpgradeViewModel.swift in Sources */,

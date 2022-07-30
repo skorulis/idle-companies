@@ -8,6 +8,7 @@ import SwiftUI
 
 struct ConstructionMaterialsView {
     @StateObject var viewModel: ConstructionMaterialsViewModel
+    @State private var scrollViewID = UUID()
 }
 
 // MARK: - Rendering
@@ -25,11 +26,36 @@ extension ConstructionMaterialsView: View {
     
     private func content() -> some View {
         VStack {
+            maybeCurrent
+            
             ForEach(ConstructionMaterialActivity.allCases) { activity in
-                ConstructionMaterialActivtyView(activity: activity, progress: nil, inv: viewModel.inventory)
+                Button(action: select(activity)) {
+                    SimpleRecipeView(output: activity.output)
+                }
             }
         }
         .padding(.horizontal, 16)
+    }
+    
+    @ViewBuilder
+    private var maybeCurrent: some View {
+        if let activity = viewModel.selected {
+            ConstructionMaterialActivtyView(activity: activity,
+                                            progress: viewModel.maybeProgress,
+                                            inv: viewModel.inventory,
+                                            onStart: viewModel.start)
+        }
+    }
+}
+
+// MARK: - Logic
+
+private extension ConstructionMaterialsView {
+    
+    func select(_ activity: ConstructionMaterialActivity) -> () -> Void {
+        return {
+            self.viewModel.select(activity)
+        }
     }
 }
 

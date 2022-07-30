@@ -9,14 +9,17 @@ struct ConstructionMaterialActivtyView {
     
     private let activity: ConstructionMaterialActivity
     private let progress: OperationProgress?
+    private let onStart: () -> Void
     @ObservedObject private var inv: InventoryStore
     
     init(activity: ConstructionMaterialActivity,
          progress: OperationProgress?,
-         inv: InventoryStore
+         inv: InventoryStore,
+         onStart: @escaping () -> Void
     ) {
         self.activity = activity
         self.progress = progress
+        self.onStart = onStart
         _inv = ObservedObject(wrappedValue: inv)
     }
 }
@@ -33,6 +36,8 @@ extension ConstructionMaterialActivtyView: View {
             }
             IngredientsView(ingredients: activity.inputs, inventory: inv)
                 .panelBackground()
+            
+            bottomSection
         }
     }
     
@@ -54,6 +59,25 @@ extension ConstructionMaterialActivtyView: View {
         .padding(4)
         .background(PanelBackground())
     }
+    
+    private var bottomSection: some View {
+        VStack {
+            stats
+            Button(action: onStart) {
+                Text("Start")
+            }
+            
+            OperationProgressView(timing: progress?.timing)
+        }
+        .panelBackground()
+    }
+    
+    private var stats: some View {
+        HStack {
+            DurationView(time: activity.baseTime)
+            ExperienceView(xp: activity.baseXP)
+        }
+    }
 }
 
 // MARK: - Computed values
@@ -74,7 +98,7 @@ struct ConstructionMaterialActivtyView_Previews: PreviewProvider {
         let inv = ioc.resolve(InventoryStore.self)
         ScrollView {
             VStack {
-                ConstructionMaterialActivtyView(activity: .concrete, progress: nil, inv: inv)
+                ConstructionMaterialActivtyView(activity: .concrete, progress: nil, inv: inv, onStart: {})
             }
             .padding(.horizontal, 16)
         }

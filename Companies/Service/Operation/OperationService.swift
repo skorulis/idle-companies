@@ -52,6 +52,13 @@ extension OperationService {
         active = [prog]
     }
     
+    func maybeProgress<T: POperation>(_ op: T?) -> OperationProgress? {
+        guard let op = op else { return nil }
+        return active.first { progress in
+            return progress.operation.matches(op)
+        }
+    }
+    
     
 }
 
@@ -79,20 +86,6 @@ extension OperationService {
     func finish<T: POperation>(_ op: T) {
         let service = factory.resolve(T.ServiceType.self)
         service.finish(activity: op)
-        /*switch op {
-        case let mining as MiningActivity:
-            miningService.onFinish(mining)
-        case let marketing as MarketingActivity:
-            marketingService.onFinish(marketing)
-        case let smithing as SmeltingActivity:
-            smithingService.onFinish(smithing)
-        case let typed as ConstructionContractActivity:
-            constructionService.onFinish(typed)
-        default:
-            fatalError("Unknown type \(op)")
-        }
-        skillStore.addXP(skill: op.skill, xp: op.baseXP, operationID: op.id)
-        self.objectWillChange.send()*/
     }
     
 }

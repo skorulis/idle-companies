@@ -8,6 +8,21 @@ struct OperationProgress {
     let timing: TaskTiming
     let lastTick: Date
     
-    var timer: Timer?
+    var status: ActivityStatus
     
+    var timer: Timer? {
+        if case let .active(timer) = status {
+            return timer
+        }
+        return nil
+    }
+    
+    var finishTime: TimeInterval { timing.finishTime }
+}
+
+enum ActivityStatus {
+    
+    case active(timer: Timer)
+    case paused(remaining: TimeInterval)
+    case stalled
 }

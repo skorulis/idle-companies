@@ -8,10 +8,10 @@ final class MarketingServiceTests: XCTestCase {
     
     private let ioc = IOC()
     private lazy var inv = ioc.resolve(InventoryStore.self)
-    private lazy var sut = ioc.resolve(MarketingService.self)
+    private lazy var sut = ioc.resolve(MarketingActivity.Service.self)
  
     func test_finish() {
-        sut.onFinish(.radio)
+        sut.finish(activity: .radio)
         
         XCTAssertEqual(inv.count(item: .credits), 2)
     }

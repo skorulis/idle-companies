@@ -8,6 +8,7 @@ import ASKCore
 final class OperationService: ObservableObject {
     
     @Published var active: [OperationProgress] = []
+    @Published var finishCount: Int = 0
     private let factory: PFactory
     private let timeProvider: PTimeProvider
     let skillStore: SkillStore
@@ -40,15 +41,14 @@ extension OperationService {
             return
         }
         
-        let timing = TaskTiming(startTime: Date(), duration: time)
-        var prog = OperationProgress(operation: op, timing: timing, lastTick: Date())
-        
         let timer: Timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false) { [weak self] _ in
             self?.finish(op)
             self?.start(op) // Restart
         }
         
-        prog.timer = timer
+        let timing = TaskTiming(startTime: Date(), duration: time)
+        let prog = OperationProgress(operation: op, timing: timing, lastTick: Date(), status: .active(timer: timer))
+        
         active = [prog]
     }
     
@@ -59,12 +59,44 @@ extension OperationService {
         }
     }
     
+    func pause() {
+        let time = timeProvider.seconds
+        for i in 0..<active.count {
+            var task = active[i]
+            task.timer?.invalidate()
+            let remaining = time - task.timing.startTime.timeIntervalSince1970
+            task.status = .paused(remaining: remaining)
+            active[i] = task
+        }
+    }
+    
+    func resume() {
+        
+    }
+    
+    var nextToFinish: OperationProgress? {
+        nextToFinish(before: timeProvider.seconds)
+    }
+    
+    func nextToFinish(before: TimeInterval) -> OperationProgress? {
+        let next = active.min { op1, op2 in
+            return op1.finishTime < op2.finishTime
+        }
+        guard let next = next else {
+            return nil
+        }
+        if next.finishTime < before {
+            return next
+        } else {
+            return nil
+        }
+    }
     
 }
 
 // MARK: - Private logic
 
-extension OperationService {
+private extension OperationService {
     
     func duration<T: POperation>(_ op: T) -> TimeInterval {
         let service = factory.resolve(T.ServiceType.self)
@@ -84,23 +116,10 @@ extension OperationService {
     }
     
     func finish<T: POperation>(_ op: T) {
-        print("Finish task")
+        finishCount += 1
+        print("Finish task \(finishCount)")
         let service = factory.resolve(T.ServiceType.self)
         service.finish(activity: op)
-    }
-    
-}
-
-// MARK: - PBackgroundListener
-
-extension OperationService: PBackgroundListener {
-    
-    func willEnterForeground() {
-        print("FG")
-    }
-    
-    func didEnterBackground() {
-        print("BG")
     }
     
 }

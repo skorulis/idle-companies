@@ -10,6 +10,7 @@ struct OperationProgressView {
     let timing: TaskTiming?
     
     @State private var progress: CGFloat
+    @Environment(\.timeProvider) private var timeProvider
     
     init(timing: TaskTiming?) {
         self.timing = timing
@@ -52,7 +53,7 @@ private extension OperationProgressView {
             return
         }
         self.progress = timing.currentPct
-        let rem = timing.remaining
+        let rem = timing.remaining(timeProvider)
         if rem <= 0 {
             progress = 1
             return

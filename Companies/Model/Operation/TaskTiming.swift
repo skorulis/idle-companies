@@ -12,8 +12,8 @@ struct TaskTiming {
         Date().timeIntervalSince1970 - startTime.timeIntervalSince1970
     }
     
-    var remaining: TimeInterval {
-        let elapsed = Date().timeIntervalSince1970 - startTime.timeIntervalSince1970
+    func remaining(_ time: PTimeProvider) -> TimeInterval {
+        let elapsed = time.seconds - startTime.timeIntervalSince1970
         return duration - elapsed
     }
     
@@ -24,5 +24,9 @@ struct TaskTiming {
     
     var id: String {
         return "\(startTime)-\(duration)"
+    }
+    
+    var finishTime: TimeInterval {
+        startTime.timeIntervalSince1970 + duration
     }
 }

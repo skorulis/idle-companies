@@ -1,9 +1,10 @@
 //  Created by Alexander Skorulis on 21/7/2022.
 
 import Foundation
+import SwiftUI
 
 /// Protocol to provide information about time
-protocol PTimeProvider {
+public protocol PTimeProvider {
     
     /// Current time
     var time: Date { get }
@@ -12,16 +13,32 @@ protocol PTimeProvider {
     var speed: TimeInterval { get }
 }
 
-
-final class TimeProvider: PTimeProvider {
+extension PTimeProvider {
     
-    var time: Date {
+    var seconds: TimeInterval { time.timeIntervalSince1970 }
+}
+
+public final class TimeProvider: PTimeProvider {
+    
+    public var time: Date {
         return Date()
     }
     
-    var speed: TimeInterval {
+    public var speed: TimeInterval {
         return 1
     }
     
+}
+
+public struct TimeProviderKey: EnvironmentKey {
+    public static var defaultValue: PTimeProvider = TimeProvider()
+}
+
+extension EnvironmentValues {
+    
+    var timeProvider: PTimeProvider {
+        get { self[TimeProviderKey.self] }
+        set { self[TimeProviderKey.self] = newValue }
+    }
 }
 

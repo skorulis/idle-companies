@@ -40,6 +40,7 @@ private extension IOC {
     func registerServices() {
         container.autoregister(OperationService.self, initializer: OperationService.init)
             .inObjectScope(.container)
+        container.autoregister(OfflineService.self, initializer: OfflineService.init)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
         container.autoregister(MiningActivity.Service.self, initializer: MiningActivity.Service.init)
         container.autoregister(MarketingActivity.Service.self, initializer: MarketingActivity.Service.init)
@@ -50,7 +51,8 @@ private extension IOC {
                                initializer: ConstructionContractActivity.Service.init)
         
         #if DEBUG
-        container.autoregister(PTimeProvider.self, initializer: DebugTimeProvider.init)
+        container.autoregister(DebugTimeProvider.self, initializer: DebugTimeProvider.init)
+            .forward(from: PTimeProvider.self, container: container)
             .inObjectScope(.container)
         #else
         container.autoregister(PTimeProvider.self, initializer: TimeProvider.init)

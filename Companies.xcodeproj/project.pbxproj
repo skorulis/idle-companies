@@ -43,6 +43,9 @@
 		FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E052895F69600E1EC60 /* AppDelegate.swift */; };
 		FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E072895F6C200E1EC60 /* SceneDelegate.swift */; };
 		FA738E0A2895F9CE00E1EC60 /* PBackgroundListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */; };
+		FA738E0C289653AD00E1EC60 /* OfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E0B289653AD00E1EC60 /* OfflineService.swift */; };
+		FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E0D28965C2700E1EC60 /* OperationService.swift */; };
+		FA738E1128967FA800E1EC60 /* OfflineServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1028967FA800E1EC60 /* OfflineServiceTests.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -54,7 +57,6 @@
 		FAC37604288394A600AD3647 /* ASSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FAC37603288394A600AD3647 /* ASSwiftUI */; };
 		FAC3760828839F9B00AD3647 /* MiningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760728839F9B00AD3647 /* MiningView.swift */; };
 		FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760928839FA100AD3647 /* MiningViewModel.swift */; };
-		FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3760E2883C8B500AD3647 /* OperationService.swift */; };
 		FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376172883CB8700AD3647 /* OperationProgress.swift */; };
 		FAC3761D2883DEC400AD3647 /* DurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3761C2883DEC400AD3647 /* DurationView.swift */; };
 		FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */; };
@@ -169,6 +171,9 @@
 		FA738E052895F69600E1EC60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA738E072895F6C200E1EC60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBackgroundListener.swift; sourceTree = "<group>"; };
+		FA738E0B289653AD00E1EC60 /* OfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineService.swift; sourceTree = "<group>"; };
+		FA738E0D28965C2700E1EC60 /* OperationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
+		FA738E1028967FA800E1EC60 /* OfflineServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineServiceTests.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -179,7 +184,6 @@
 		FAC375FF2883947700AD3647 /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FAC3760728839F9B00AD3647 /* MiningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningView.swift; sourceTree = "<group>"; };
 		FAC3760928839FA100AD3647 /* MiningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiningViewModel.swift; sourceTree = "<group>"; };
-		FAC3760E2883C8B500AD3647 /* OperationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		FAC376172883CB8700AD3647 /* OperationProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgress.swift; sourceTree = "<group>"; };
 		FAC3761C2883DEC400AD3647 /* DurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationView.swift; sourceTree = "<group>"; };
 		FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgressView.swift; sourceTree = "<group>"; };
@@ -328,7 +332,17 @@
 		FA738DF02894937800E1EC60 /* Generic */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E0D28965C2700E1EC60 /* OperationService.swift */,
 				FA738DF12894938A00E1EC60 /* PActivityService.swift */,
+				FA738E0B289653AD00E1EC60 /* OfflineService.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
+		FA738E0F28967F9300E1EC60 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E1028967FA800E1EC60 /* OfflineServiceTests.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -484,7 +498,6 @@
 			isa = PBXGroup;
 			children = (
 				FA738DF02894937800E1EC60 /* Generic */,
-				FAC3760E2883C8B500AD3647 /* OperationService.swift */,
 				FA738DF92894AAC200E1EC60 /* ConstructionContractActivity+Service.swift */,
 				FA738DFB2894ACBB00E1EC60 /* ConstructionMaterialActivity+Service.swift */,
 				FA738DFD2894ADCC00E1EC60 /* MarketingActivity+Service.swift */,
@@ -623,6 +636,7 @@
 		FAC376682887F31D00AD3647 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E0F28967F9300E1EC60 /* Generic */,
 				FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */,
 				FAC3768C2888B00600AD3647 /* MarketingServiceTests.swift */,
 			);
@@ -911,7 +925,6 @@
 				FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */,
 				FA738DFA2894AAC200E1EC60 /* ConstructionContractActivity+Service.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
-				FAC3760F2883C8B500AD3647 /* OperationService.swift in Sources */,
 				FAC376902888B0A800AD3647 /* DebugView.swift in Sources */,
 				FA738DD52892295900E1EC60 /* HeadquartersViewModel.swift in Sources */,
 				FA738DCC28911F1F00E1EC60 /* ConstructionContractsView.swift in Sources */,
@@ -924,11 +937,13 @@
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
+				FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */,
 				FA738E002894AE0200E1EC60 /* SmeltingActivity+Service.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
 				FAC376D1288E915A00AD3647 /* MetallurgyView.swift in Sources */,
 				FA738DEF2893E38E00E1EC60 /* ConstructionMaterialActivtyView.swift in Sources */,
 				FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */,
+				FA738E0C289653AD00E1EC60 /* OfflineService.swift in Sources */,
 				FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
@@ -967,6 +982,7 @@
 				FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */,
 				FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */,
 				FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */,
+				FA738E1128967FA800E1EC60 /* OfflineServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

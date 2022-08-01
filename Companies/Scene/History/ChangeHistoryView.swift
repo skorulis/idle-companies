@@ -9,6 +9,7 @@ import SwiftUI
 struct ChangeHistoryView {
     
     @StateObject var viewModel: ChangeHistoryViewModel
+    @Environment(\.presentationMode) private var presentationMode
 }
 
 // MARK: - Rendering
@@ -26,13 +27,15 @@ extension ChangeHistoryView: View {
     }
     
     private var closeButton: some View {
-        Button(action: {}) {
+        Button(action: dismiss) {
             Image(systemName: "xmark.circle.fill")
         }
     }
     
     private func content() -> some View {
         VStack {
+            Text("Welcome back!")
+                .font(.title)
             Text("While you were away")
             ForEach(viewModel.itemList) { item in
                 Text("\(item.count) \(item.type.name)")
@@ -45,6 +48,9 @@ extension ChangeHistoryView: View {
 
 private extension ChangeHistoryView {
     
+    func dismiss() {
+        presentationMode.wrappedValue.dismiss()
+    }
 }
 
 // MARK: - Previews

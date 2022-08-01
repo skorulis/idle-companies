@@ -6,7 +6,7 @@ import Foundation
 
 final class AppStateStore {
     
-    @Published var inForeground: Bool = true
+    @Published var inForeground: Bool = false
     
     init() {
         

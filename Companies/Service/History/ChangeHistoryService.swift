@@ -25,8 +25,9 @@ extension ChangeHistoryService {
     }
     
     func finish() {
+        guard let current = current, !current.isEmpty else { return }
         toDispay = current
-        current = nil
+        self.current = nil
     }
     
     func change(item: ItemType, count: Int) {

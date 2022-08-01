@@ -21,7 +21,6 @@ extension ToastPresentationView: View {
             ForEach(viewModel.toasts) { toast in
                 ToastView(model: toast)
             }
-            
         }
         .padding(.bottom, 8)
         .frame(maxHeight: .infinity)
@@ -36,7 +35,8 @@ extension ToastPresentationView: View {
 struct ToastPresentationView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let service = ToastPresentationService()
+        let ioc = IOC()
+        let service: ToastPresentationService = ioc.resolve()
         service.add(text: "+1 Stuff")
         service.add(text: "+2 Other")
         return ToastPresentationView(viewModel: service)

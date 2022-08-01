@@ -7,6 +7,11 @@ import Foundation
 final class ToastPresentationService: ObservableObject {
     
     @Published private(set) var toasts: [ToastView.Model] = []
+    private let appStateStore: AppStateStore
+    
+    init(appStateStore: AppStateStore) {
+        self.appStateStore = appStateStore
+    }
     
 }
 
@@ -15,6 +20,7 @@ final class ToastPresentationService: ObservableObject {
 extension ToastPresentationService {
     
     func add(text: String) {
+        if !appStateStore.inForeground { return }
         let toast = ToastView.Model(text: text)
         toasts.append(toast)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] timer in

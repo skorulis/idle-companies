@@ -24,10 +24,9 @@ struct OperationProgress: Codable {
         try container.encode(operation, forKey: .operation)
     }
     
-    init<T: POperation>(operation: T, timing: TaskTiming, timer: Timer? = nil) {
+    init<T: POperation>(operation: T, timing: TaskTiming) {
         self.operation = operation
         self.timing = timing
-        self.timer = timer
     }
     
     init(from decoder: Decoder) throws {

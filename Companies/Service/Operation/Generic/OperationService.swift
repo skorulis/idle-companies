@@ -43,15 +43,20 @@ extension OperationService {
         let time: TimeInterval = duration(op) / timeProvider.speed
         store.active.forEach { stop($0) }
         
-        let timer: Timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false) { [weak self] _ in
-            self?.finish(op)
-            self?.start(op) // Restart
-        }
-        
         let timing = TaskTiming(startTime: timeProvider.seconds, duration: time)
-        let prog = OperationProgress(operation: op, timing: timing, timer: timer)
+        var prog = OperationProgress(operation: op, timing: timing)
+        prog.timer = createTimer(prog: prog)
         
         store.active = [prog]
+    }
+    
+    private func createTimer(prog: OperationProgress) -> Timer {
+        let remaining = prog.timing.remaining(timeProvider)
+        let interval = max(remaining, 0.1)
+        return Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
+            self?.finish(prog.operation)
+            self?.start(prog.operation) // Restart
+        }
     }
     
     func startBackground<T: POperation>(_ op: T, startTime: TimeInterval) {
@@ -60,7 +65,7 @@ extension OperationService {
         }
         let time: TimeInterval = duration(op) / timeProvider.speed
         let timing = TaskTiming(startTime: startTime, duration: time)
-        let prog = OperationProgress(operation: op, timing: timing, timer: nil)
+        let prog = OperationProgress(operation: op, timing: timing)
         store.active = [prog]
     }
     
@@ -74,7 +79,12 @@ extension OperationService {
     }
     
     func resume() {
-        
+        for i in 0..<store.active.count {
+            var task = store.active[i]
+            task.timer = createTimer(prog: task)
+            store.active[i] = task
+        }
+        print("Resumed \(store.active.count) tasks")
     }
     
     var nextToFinish: OperationProgress? {

@@ -27,6 +27,7 @@ extension ToastPresentationView: View {
         .frame(maxHeight: .infinity)
         .ignoresSafeArea()
         .animation(.easeInOut, value: viewModel.toasts)
+        .allowsHitTesting(false)
     }
 }
 

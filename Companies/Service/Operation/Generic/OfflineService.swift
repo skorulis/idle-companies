@@ -47,11 +47,12 @@ extension OfflineService: PBackgroundListener {
     }
     
     func willEnterForeground() {
-        guard let pauseTime = pauseTime else { return }
+        let pauseTime = self.pauseTime ?? self.operationService.store.lastStartTime ?? 0
         self.pauseTime = nil
         let elapsed = Date().timeIntervalSince1970 - pauseTime
         print("Finished offline after \(elapsed)")
         advanceTasks()
+        operationService.resume()
     }
     
     

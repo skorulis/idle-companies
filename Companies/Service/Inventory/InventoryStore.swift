@@ -83,7 +83,7 @@ extension InventoryStore {
     }
 }
 
-// MARK: - Private logic
+// MARK: - Logic (private)
 
 private extension InventoryStore {
     

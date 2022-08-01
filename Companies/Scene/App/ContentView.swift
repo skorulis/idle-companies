@@ -12,9 +12,11 @@ struct ContentView: View {
     
     private let factory: PFactory
     @ObservedObject private var changeService: ChangeHistoryService
+    private let toastPresentation: ToastPresentationWindow
     
     init(factory: PFactory) {
         self.factory = factory
+        toastPresentation = ToastPresentationWindow(factory: factory)
         _changeService = ObservedObject(wrappedValue: factory.resolve(ChangeHistoryService.self))
     }
     
@@ -25,14 +27,10 @@ struct ContentView: View {
 extension ContentView {
     
     var body: some View {
-        ZStack {
-            tabs
-            ToastPresentationView(viewModel: factory.resolve())
-                .allowsHitTesting(false)
-        }
-        .sheet(item: $changeService.toDispay) { change in
-            ChangeHistoryView(viewModel: factory.resolve())
-        }
+        tabs
+            .sheet(item: $changeService.toDispay) { change in
+                ChangeHistoryView(viewModel: factory.resolve())
+            }
     }
     
     private var tabs: some View {

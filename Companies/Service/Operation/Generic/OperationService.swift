@@ -34,21 +34,31 @@ extension OperationService {
     }
     
     func start<T: POperation>(_ op: T) {
-        let time: TimeInterval = duration(op) / timeProvider.speed
-        self.active.forEach { stop($0) }
-        
         if !tryStart(op) {
             return
         }
+        
+        let time: TimeInterval = duration(op) / timeProvider.speed
+        self.active.forEach { stop($0) }
         
         let timer: Timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false) { [weak self] _ in
             self?.finish(op)
             self?.start(op) // Restart
         }
         
-        let timing = TaskTiming(startTime: Date(), duration: time)
-        let prog = OperationProgress(operation: op, timing: timing, lastTick: Date(), status: .active(timer: timer))
+        let timing = TaskTiming(startTime: timeProvider.seconds, duration: time)
+        let prog = OperationProgress(operation: op, timing: timing, status: .active(timer: timer))
         
+        active = [prog]
+    }
+    
+    func startBackground<T: POperation>(_ op: T, startTime: TimeInterval) {
+        if !tryStart(op) {
+            return
+        }
+        let time: TimeInterval = duration(op) / timeProvider.speed
+        let timing = TaskTiming(startTime: startTime, duration: time)
+        let prog = OperationProgress(operation: op, timing: timing, status: .paused)
         active = [prog]
     }
     
@@ -60,12 +70,10 @@ extension OperationService {
     }
     
     func pause() {
-        let time = timeProvider.seconds
         for i in 0..<active.count {
             var task = active[i]
             task.timer?.invalidate()
-            let remaining = time - task.timing.startTime.timeIntervalSince1970
-            task.status = .paused(remaining: remaining)
+            task.status = .paused
             active[i] = task
         }
     }
@@ -115,7 +123,7 @@ private extension OperationService {
         return true
     }
     
-    func finish<T: POperation>(_ op: T) {
+    internal func finish<T: POperation>(_ op: T) {
         finishCount += 1
         print("Finish task \(finishCount)")
         let service = factory.resolve(T.ServiceType.self)

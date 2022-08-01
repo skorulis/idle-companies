@@ -32,6 +32,7 @@ private extension IOC {
         container.autoregister(HeadquartersViewModel.self, initializer: HeadquartersViewModel.init)
         container.autoregister(HQUpgradeViewModel.self, initializer: HQUpgradeViewModel.init)
         container.autoregister(ConstructionMaterialsViewModel.self, initializer: ConstructionMaterialsViewModel.init)
+        container.autoregister(ChangeHistoryViewModel.self, initializer: ChangeHistoryViewModel.init)
         
         container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
             .inObjectScope(.container)
@@ -41,6 +42,7 @@ private extension IOC {
         container.autoregister(OperationService.self, initializer: OperationService.init)
             .inObjectScope(.container)
         container.autoregister(OfflineService.self, initializer: OfflineService.init)
+            .inObjectScope(.container)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
         container.autoregister(MiningActivity.Service.self, initializer: MiningActivity.Service.init)
         container.autoregister(MarketingActivity.Service.self, initializer: MarketingActivity.Service.init)
@@ -49,6 +51,8 @@ private extension IOC {
                                initializer: ConstructionMaterialActivity.Service.init)
         container.autoregister(ConstructionContractActivity.Service.self,
                                initializer: ConstructionContractActivity.Service.init)
+        container.autoregister(ChangeHistoryService.self, initializer: ChangeHistoryService.init)
+            .inObjectScope(.container)
         
         #if DEBUG
         container.autoregister(DebugTimeProvider.self, initializer: DebugTimeProvider.init)
@@ -67,6 +71,8 @@ private extension IOC {
         container.autoregister(CompanyStore.self, initializer: CompanyStore.init)
             .inObjectScope(.container)
         container.autoregister(UIHistoryStore.self, initializer: UIHistoryStore.init)
+            .inObjectScope(.container)
+        container.autoregister(AppStateStore.self, initializer: AppStateStore.init)
             .inObjectScope(.container)
         
         switch purpose {

@@ -16,7 +16,7 @@ struct CompaniesApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(factory: ioc)
                 .environment(\.factory, ioc)
                 .environment(\.timeProvider, ioc.resolve(PTimeProvider.self))
         }

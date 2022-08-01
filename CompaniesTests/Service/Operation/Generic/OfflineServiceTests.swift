@@ -19,6 +19,15 @@ final class OfflineServiceTests: XCTestCase {
         XCTAssertNotNil(operationService.nextToFinish)
     }
     
+    func test_finish() {
+        sut.didEnterBackground()
+        operationService.start(MiningActivity.beach)
+        timeProvider.advance(30)
+        sut.willEnterForeground()
+        
+        XCTAssertEqual(operationService.finishCount, 6)
+    }
+    
 }
 
 

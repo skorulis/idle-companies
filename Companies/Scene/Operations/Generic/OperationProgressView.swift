@@ -72,8 +72,8 @@ struct OperationProgressView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack(spacing: 8) {
-            let t1 = TaskTiming(startTime: Date(), duration: 5)
-            let t2 = TaskTiming(startTime: Date().advanced(by: -3), duration: 5)
+            let t1 = TaskTiming(startTime: Date().timeIntervalSince1970, duration: 5)
+            let t2 = TaskTiming(startTime: Date().advanced(by: -3).timeIntervalSince1970, duration: 5)
             OperationProgressView(timing: t1)
             OperationProgressView(timing: t2)
             OperationProgressView(timing: nil)

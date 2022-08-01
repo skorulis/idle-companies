@@ -46,6 +46,11 @@
 		FA738E0C289653AD00E1EC60 /* OfflineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E0B289653AD00E1EC60 /* OfflineService.swift */; };
 		FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E0D28965C2700E1EC60 /* OperationService.swift */; };
 		FA738E1128967FA800E1EC60 /* OfflineServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1028967FA800E1EC60 /* OfflineServiceTests.swift */; };
+		FA738E1428972D5E00E1EC60 /* ChangeHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1328972D5E00E1EC60 /* ChangeHistory.swift */; };
+		FA738E1728972DA200E1EC60 /* ChangeHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1628972DA200E1EC60 /* ChangeHistoryService.swift */; };
+		FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E192897383400E1EC60 /* ChangeHistoryView.swift */; };
+		FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */; };
+		FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1D28974E2000E1EC60 /* AppStateStore.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -174,6 +179,11 @@
 		FA738E0B289653AD00E1EC60 /* OfflineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineService.swift; sourceTree = "<group>"; };
 		FA738E0D28965C2700E1EC60 /* OperationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OperationService.swift; sourceTree = "<group>"; };
 		FA738E1028967FA800E1EC60 /* OfflineServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineServiceTests.swift; sourceTree = "<group>"; };
+		FA738E1328972D5E00E1EC60 /* ChangeHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistory.swift; sourceTree = "<group>"; };
+		FA738E1628972DA200E1EC60 /* ChangeHistoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistoryService.swift; sourceTree = "<group>"; };
+		FA738E192897383400E1EC60 /* ChangeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistoryView.swift; sourceTree = "<group>"; };
+		FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistoryViewModel.swift; sourceTree = "<group>"; };
+		FA738E1D28974E2000E1EC60 /* AppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -347,6 +357,31 @@
 			path = Generic;
 			sourceTree = "<group>";
 		};
+		FA738E1228972D2400E1EC60 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E1328972D5E00E1EC60 /* ChangeHistory.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FA738E1528972D9400E1EC60 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E1628972DA200E1EC60 /* ChangeHistoryService.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		FA738E182897382800E1EC60 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E192897383400E1EC60 /* ChangeHistoryView.swift */,
+				FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +427,7 @@
 		FAC375F02883943100AD3647 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E182897382800E1EC60 /* History */,
 				FAC375F12883943100AD3647 /* App */,
 				FA738DE528929DBD00E1EC60 /* Common */,
 				FA738DD12892293B00E1EC60 /* HQ */,
@@ -418,6 +454,7 @@
 		FAC375F42883943100AD3647 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E1228972D2400E1EC60 /* History */,
 				FA738DD82892307000E1EC60 /* Company */,
 				FAC3762728840BB600AD3647 /* Item */,
 				FAC376142883CB8000AD3647 /* Operation */,
@@ -449,9 +486,10 @@
 		FAC375F92883943100AD3647 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				FAC375FE2883945A00AD3647 /* App */,
+				FA738E1528972D9400E1EC60 /* History */,
 				FAC376742888278800AD3647 /* Persistence */,
 				FAC3762428840B3D00AD3647 /* Inventory */,
-				FAC375FE2883945A00AD3647 /* App */,
 				FAC3760D2883C8AC00AD3647 /* Operation */,
 				FAC376572887F06C00AD3647 /* Recipe */,
 			);
@@ -466,6 +504,7 @@
 				FAC3767B2888A58F00AD3647 /* DebugTimeProvider.swift */,
 				FA738E032895428800E1EC60 /* UIHistoryStore.swift */,
 				FA738E092895F9CE00E1EC60 /* PBackgroundListener.swift */,
+				FA738E1D28974E2000E1EC60 /* AppStateStore.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -936,6 +975,7 @@
 				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
+				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
 				FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */,
 				FA738E002894AE0200E1EC60 /* SmeltingActivity+Service.swift in Sources */,
@@ -947,6 +987,7 @@
 				FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
+				FA738E1428972D5E00E1EC60 /* ChangeHistory.swift in Sources */,
 				FA738DDE2892948100E1EC60 /* HQUpgradeView.swift in Sources */,
 				FAC376182883CB8700AD3647 /* OperationProgress.swift in Sources */,
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
@@ -958,6 +999,7 @@
 				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
 				FA738DBB288FE97C00E1EC60 /* GameCoordinator.swift in Sources */,
 				FA738DCE28911F2F00E1EC60 /* ConstructionContractsViewModel.swift in Sources */,
+				FA738E1728972DA200E1EC60 /* ChangeHistoryService.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,
 				FA738E0A2895F9CE00E1EC60 /* PBackgroundListener.swift in Sources */,
@@ -968,6 +1010,8 @@
 				FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */,
 				FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
+				FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */,
+				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,
 			);

@@ -10,8 +10,13 @@ import ASKCore
 
 struct ContentView: View {
     
-    @Environment(\.factory) private var factory
+    private let factory: PFactory
+    @ObservedObject private var changeService: ChangeHistoryService
     
+    init(factory: PFactory) {
+        self.factory = factory
+        _changeService = ObservedObject(wrappedValue: factory.resolve(ChangeHistoryService.self))
+    }
     
 }
 
@@ -25,7 +30,9 @@ extension ContentView {
             ToastPresentationView(viewModel: factory.resolve())
                 .allowsHitTesting(false)
         }
-        
+        .sheet(item: $changeService.toDispay) { change in
+            ChangeHistoryView(viewModel: factory.resolve())
+        }
     }
     
     private var tabs: some View {
@@ -76,6 +83,7 @@ extension ContentView {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let ioc = IOC()
+        ContentView(factory: ioc)
     }
 }

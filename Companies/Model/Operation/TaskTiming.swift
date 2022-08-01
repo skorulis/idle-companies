@@ -5,15 +5,15 @@ import SwiftUI
 
 struct TaskTiming {
     
-    let startTime: Date
+    let startTime: TimeInterval
     let duration: TimeInterval
     
     var elapsed: TimeInterval {
-        Date().timeIntervalSince1970 - startTime.timeIntervalSince1970
+        Date().timeIntervalSince1970 - startTime
     }
     
     func remaining(_ time: PTimeProvider) -> TimeInterval {
-        let elapsed = time.seconds - startTime.timeIntervalSince1970
+        let elapsed = time.seconds - startTime
         return duration - elapsed
     }
     
@@ -27,6 +27,6 @@ struct TaskTiming {
     }
     
     var finishTime: TimeInterval {
-        startTime.timeIntervalSince1970 + duration
+        startTime + duration
     }
 }

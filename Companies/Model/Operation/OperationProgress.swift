@@ -6,7 +6,6 @@ struct OperationProgress {
     
     let operation: any POperation
     let timing: TaskTiming
-    let lastTick: Date
     
     var status: ActivityStatus
     
@@ -23,6 +22,6 @@ struct OperationProgress {
 enum ActivityStatus {
     
     case active(timer: Timer)
-    case paused(remaining: TimeInterval)
+    case paused
     case stalled
 }

@@ -3,7 +3,7 @@
 import Foundation
 import SwiftUI
 
-struct TaskTiming {
+struct TaskTiming: Codable {
     
     let startTime: TimeInterval
     let duration: TimeInterval

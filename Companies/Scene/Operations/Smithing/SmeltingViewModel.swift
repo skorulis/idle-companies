@@ -22,7 +22,7 @@ final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
     }
     
     private func setupObservers() {
-        operations.objectWillChange
+        operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -45,10 +45,7 @@ extension SmeltingViewModel {
     }
     
     var maybeProgress: OperationProgress? {
-        guard let selected = selectedRecipe else { return nil }
-        return operations.active.first { progress in
-            return progress.operation.matches(selected)
-        }
+        operations.store.maybeProgress(selectedRecipe)
     }
 }
 

@@ -12,7 +12,7 @@ final class OperationListViewModel: CoordinatedViewModel, ObservableObject {
     init(operationService: OperationService) {
         self.operationService = operationService
         super.init()
-        operationService.objectWillChange
+        operationService.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -41,7 +41,7 @@ extension OperationListViewModel {
     }
     
     func isActive(_ skill: Skill) -> Bool {
-        let matching = operationService.active.filter { $0.operation.skill == skill}
+        let matching = operationService.store.active.filter { $0.operation.skill == skill}
         return matching.count > 0
     }
         

@@ -74,6 +74,8 @@ private extension IOC {
             .inObjectScope(.container)
         container.autoregister(AppStateStore.self, initializer: AppStateStore.init)
             .inObjectScope(.container)
+        container.autoregister(ActivityStore.self, initializer: ActivityStore.init)
+            .inObjectScope(.container)
         
         switch purpose {
         case .testing:

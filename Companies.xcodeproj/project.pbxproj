@@ -51,6 +51,8 @@
 		FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E192897383400E1EC60 /* ChangeHistoryView.swift */; };
 		FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */; };
 		FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1D28974E2000E1EC60 /* AppStateStore.swift */; };
+		FA738E2028976F7400E1EC60 /* ActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1F28976F7400E1EC60 /* ActivityStore.swift */; };
+		FA738E24289775D700E1EC60 /* OperationProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E23289775D700E1EC60 /* OperationProgressTests.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -184,6 +186,8 @@
 		FA738E192897383400E1EC60 /* ChangeHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistoryView.swift; sourceTree = "<group>"; };
 		FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHistoryViewModel.swift; sourceTree = "<group>"; };
 		FA738E1D28974E2000E1EC60 /* AppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateStore.swift; sourceTree = "<group>"; };
+		FA738E1F28976F7400E1EC60 /* ActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStore.swift; sourceTree = "<group>"; };
+		FA738E23289775D700E1EC60 /* OperationProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgressTests.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -345,6 +349,7 @@
 				FA738E0D28965C2700E1EC60 /* OperationService.swift */,
 				FA738DF12894938A00E1EC60 /* PActivityService.swift */,
 				FA738E0B289653AD00E1EC60 /* OfflineService.swift */,
+				FA738E1F28976F7400E1EC60 /* ActivityStore.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -380,6 +385,22 @@
 				FA738E1B2897384A00E1EC60 /* ChangeHistoryViewModel.swift */,
 			);
 			path = History;
+			sourceTree = "<group>";
+		};
+		FA738E21289775C700E1EC60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E22289775C700E1EC60 /* Operation */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA738E22289775C700E1EC60 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E23289775D700E1EC60 /* OperationProgressTests.swift */,
+			);
+			path = Operation;
 			sourceTree = "<group>";
 		};
 		FAC375D12883888F00AD3647 = {
@@ -657,6 +678,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC376B9288A4EEE00AD3647 /* Calculations */,
+				FA738E21289775C700E1EC60 /* Model */,
 				FAC376672887F31D00AD3647 /* Service */,
 			);
 			path = CompaniesTests;
@@ -1014,6 +1036,7 @@
 				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,
+				FA738E2028976F7400E1EC60 /* ActivityStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1021,6 +1044,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA738E24289775D700E1EC60 /* OperationProgressTests.swift in Sources */,
 				FAC376A2288976D300AD3647 /* SkillStoreTests.swift in Sources */,
 				FAC3768D2888B00600AD3647 /* MarketingServiceTests.swift in Sources */,
 				FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */,

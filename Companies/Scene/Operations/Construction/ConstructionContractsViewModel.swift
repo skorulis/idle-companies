@@ -12,7 +12,7 @@ final class ConstructionContractsViewModel: CoordinatedViewModel, ObservableObje
     init(operations: OperationService) {
         self.operations = operations
         super.init()
-        operations.objectWillChange
+        operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -41,8 +41,6 @@ extension ConstructionContractsViewModel {
     }
     
     func maybeProgress(_ type: ConstructionContractActivity) -> OperationProgress? {
-        return operations.active.first { progress in
-            return progress.operation.matches(type)
-        }
+        operations.store.maybeProgress(type)
     }
 }

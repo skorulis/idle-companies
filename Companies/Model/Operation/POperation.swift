@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol POperation {
+protocol POperation: Codable {
     associatedtype ServiceType: PActivityService where ServiceType.ActivityType == Self
     
     var id: String { get }

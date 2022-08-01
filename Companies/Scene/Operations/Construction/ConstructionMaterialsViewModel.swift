@@ -32,7 +32,7 @@ final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObje
     }
     
     private func setupObservers() {
-        operations.objectWillChange
+        operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -46,7 +46,7 @@ final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObje
 extension ConstructionMaterialsViewModel {
     
     var maybeProgress: OperationProgress? {
-        return operations.maybeProgress(selected)
+        return operations.store.maybeProgress(selected)
     }
     
     var xp: Int64 {

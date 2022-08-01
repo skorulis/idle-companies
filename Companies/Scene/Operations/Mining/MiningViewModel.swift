@@ -20,7 +20,7 @@ final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     }
     
     private func setupObservers() {
-        operations.objectWillChange
+        operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -60,9 +60,7 @@ extension MiningViewModel {
     }
     
     func maybeProgress(_ place: MiningActivity) -> OperationProgress? {
-        return operations.active.first { progress in
-            return progress.operation.matches(place)
-        }
+        operations.store.maybeProgress(place)
     }
     
 }

@@ -12,7 +12,7 @@ final class MarketingViewModel: CoordinatedViewModel, ObservableObject {
     init(operations: OperationService) {
         self.operations = operations
         super.init()
-        operations.objectWillChange
+        operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
@@ -40,9 +40,7 @@ extension MarketingViewModel {
     }
     
     func maybeProgress(_ type: MarketingActivity) -> OperationProgress? {
-        return operations.active.first { progress in
-            return progress.operation.matches(type)
-        }
+        operations.store.maybeProgress(type)
     }
     
 }

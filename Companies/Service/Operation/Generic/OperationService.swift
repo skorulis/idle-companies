@@ -5,21 +5,23 @@ import ASKCore
 
 // MARK: - Memory footprint
 
-final class OperationService: ObservableObject {
+final class OperationService {
     
-    @Published var active: [OperationProgress] = []
     @Published var finishCount: Int = 0
     private let factory: PFactory
     private let timeProvider: PTimeProvider
     let skillStore: SkillStore
+    let store: ActivityStore
     
     public init(factory: PFactory,
                 timeProvider: PTimeProvider,
-                skillStore: SkillStore
+                skillStore: SkillStore,
+                store: ActivityStore
     ) {
         self.factory = factory
         self.timeProvider = timeProvider
         self.skillStore = skillStore
+        self.store = store
     }
     
     
@@ -39,7 +41,7 @@ extension OperationService {
         }
         
         let time: TimeInterval = duration(op) / timeProvider.speed
-        self.active.forEach { stop($0) }
+        store.active.forEach { stop($0) }
         
         let timer: Timer = Timer.scheduledTimer(withTimeInterval: time, repeats: false) { [weak self] _ in
             self?.finish(op)
@@ -47,9 +49,9 @@ extension OperationService {
         }
         
         let timing = TaskTiming(startTime: timeProvider.seconds, duration: time)
-        let prog = OperationProgress(operation: op, timing: timing, status: .active(timer: timer))
+        let prog = OperationProgress(operation: op, timing: timing, timer: timer)
         
-        active = [prog]
+        store.active = [prog]
     }
     
     func startBackground<T: POperation>(_ op: T, startTime: TimeInterval) {
@@ -58,23 +60,16 @@ extension OperationService {
         }
         let time: TimeInterval = duration(op) / timeProvider.speed
         let timing = TaskTiming(startTime: startTime, duration: time)
-        let prog = OperationProgress(operation: op, timing: timing, status: .paused)
-        active = [prog]
-    }
-    
-    func maybeProgress<T: POperation>(_ op: T?) -> OperationProgress? {
-        guard let op = op else { return nil }
-        return active.first { progress in
-            return progress.operation.matches(op)
-        }
+        let prog = OperationProgress(operation: op, timing: timing, timer: nil)
+        store.active = [prog]
     }
     
     func pause() {
-        for i in 0..<active.count {
-            var task = active[i]
+        for i in 0..<store.active.count {
+            var task = store.active[i]
             task.timer?.invalidate()
-            task.status = .paused
-            active[i] = task
+            task.timer = nil
+            store.active[i] = task
         }
     }
     
@@ -87,7 +82,7 @@ extension OperationService {
     }
     
     func nextToFinish(before: TimeInterval) -> OperationProgress? {
-        let next = active.min { op1, op2 in
+        let next = store.active.min { op1, op2 in
             return op1.finishTime < op2.finishTime
         }
         guard let next = next else {
@@ -104,15 +99,15 @@ extension OperationService {
 
 // MARK: - Private logic
 
-private extension OperationService {
+extension OperationService {
     
-    func duration<T: POperation>(_ op: T) -> TimeInterval {
+    private func duration<T: POperation>(_ op: T) -> TimeInterval {
         let service = factory.resolve(T.ServiceType.self)
         return service.stats(activity: op).duration
         
     }
     
-    func tryStart<T: POperation>(_ op: T) -> Bool {
+    private func tryStart<T: POperation>(_ op: T) -> Bool {
         let service = factory.resolve(T.ServiceType.self)
         do {
             try service.tryStart(activity: op)

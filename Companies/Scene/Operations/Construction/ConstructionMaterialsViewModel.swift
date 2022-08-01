@@ -15,8 +15,6 @@ final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObje
     
     @Published var selected: ConstructionMaterialActivity
     
-    private var subscribers: Set<AnyCancellable> = []
-    
     init(inventory: InventoryStore,
          operations: OperationService,
          uiStore: UIHistoryStore,

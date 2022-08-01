@@ -8,7 +8,6 @@ import Foundation
 final class ConstructionContractsViewModel: CoordinatedViewModel, ObservableObject {
 
     private let operations: OperationService
-    private var subscribers: Set<AnyCancellable> = []
     
     init(operations: OperationService) {
         self.operations = operations

@@ -42,6 +42,7 @@ extension OperationListView: View {
             Spacer()
             Image(systemName: "chevron.right")
         }
+        .foregroundColor(viewModel.isActive(skill) ? Palette.green.step(600) : Color.label)
     }
     
 }

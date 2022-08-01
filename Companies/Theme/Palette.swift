@@ -29,6 +29,7 @@ struct Palette_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(Palette.allCases) { base in
             palette(base: base)
+                .previewDisplayName(base.name)
         }
     }
     

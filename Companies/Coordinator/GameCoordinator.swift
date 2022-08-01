@@ -1,5 +1,6 @@
 //  Created by Alexander Skorulis on 26/7/2022.
 
+import Combine
 import Foundation
 import SwiftUI
 import ASKCore
@@ -7,6 +8,7 @@ import ASKCore
 
 class CoordinatedViewModel {
     weak var coordinator: GameCoordinator!
+    var subscribers: Set<AnyCancellable> = []
     
     func back() {
         coordinator.pop()

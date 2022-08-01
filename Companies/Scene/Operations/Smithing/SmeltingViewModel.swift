@@ -10,8 +10,6 @@ final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
     private let operations: OperationService
     let inventory: InventoryStore
     
-    private var subscribers: Set<AnyCancellable> = []
-    
     @Published var selectedRecipe: SmeltingActivity?
     
     init(operations: OperationService,

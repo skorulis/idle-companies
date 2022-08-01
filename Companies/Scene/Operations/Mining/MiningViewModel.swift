@@ -9,7 +9,6 @@ final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     
     private let operations: OperationService
     let xpCalc: XPLevelCalculation
-    private var subscribers: Set<AnyCancellable> = []
     
     init(operations: OperationService,
          xpCalc: XPLevelCalculation

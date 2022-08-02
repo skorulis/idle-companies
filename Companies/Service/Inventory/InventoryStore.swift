@@ -81,6 +81,10 @@ extension InventoryStore {
         }
         removeAll(items: inputs)
     }
+    
+    var credits: Int {
+        return inventory[.credits] ?? 0
+    }
 }
 
 // MARK: - Logic (private)

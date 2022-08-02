@@ -32,12 +32,14 @@ extension HQType {
         case .leve1:
             return [
                 .init(type: .brick, count: 100),
-                .init(type: .concrete, count: 100)
+                .init(type: .concrete, count: 100),
+                .init(type: .credits, count: 1000)
             ]
         case .level2:
             return [
                 .init(type: .brick, count: 500),
-                .init(type: .concrete, count: 500)
+                .init(type: .concrete, count: 500),
+                .init(type: .credits, count: 10000)
             ]
         }
     }

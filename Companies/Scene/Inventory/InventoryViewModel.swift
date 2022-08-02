@@ -29,7 +29,7 @@ extension InventoryViewModel {
     var inventory: [ItemCount] {
         return inventoryStore.inventory.map { (item, value) in
             return ItemCount(type: item, count: value)
-        }
+        }.filter { $0.type != .credits }
     }
     
 }

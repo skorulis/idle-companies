@@ -108,4 +108,8 @@ extension ItemType: Identifiable {
         return ItemCount(type: self, count: count)
     }
     
+    var creditValue: Int {
+        return 1
+    }
+    
 }

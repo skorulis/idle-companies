@@ -26,6 +26,8 @@ extension HeadquartersView: View {
     private func content() -> some View {
         VStack {
             Text(viewModel.name)
+            networth
+            Text("Headquarters")
             hqBuilding
             
         }
@@ -46,6 +48,14 @@ extension HeadquartersView: View {
         .padding(4)
         .frame(maxWidth: .infinity)
         .background(PanelBackground())
+    }
+    
+    private var networth: some View {
+        HStack {
+            Text("Networth")
+            Spacer()
+            Text(ShortNumberFormatter.standard.format(viewModel.networth))
+        }
     }
 }
 

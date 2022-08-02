@@ -4,6 +4,8 @@ import Foundation
 
 struct ShortNumberFormatter {
     
+    static let standard: ShortNumberFormatter = ShortNumberFormatter()
+    
     private static let singleDigit: NumberFormatter = {
         let nf = NumberFormatter()
         nf.maximumFractionDigits = 1

@@ -34,7 +34,7 @@ extension InventoryStore {
     
     func add(item: ItemType, count: Int) {
         inventory[item] = self.count(item: item) + count
-        toasts.add(text: "+\(count) \(item.name)")
+        toasts.add(text: "+\(count) \(item.name)", style: .positive)
         changeService.change(item: item, count: count)
     }
     
@@ -67,7 +67,7 @@ extension InventoryStore {
         } else {
             inventory[item.type] = finalCount
         }
-        toasts.add(text: "-\(item.count) \(item.type.name)")
+        toasts.add(text: "-\(item.count) \(item.type.name)", style: .negative)
         changeService.change(item: item.type, count: item.count * -1)
     }
     

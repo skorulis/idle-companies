@@ -37,8 +37,8 @@ struct ToastPresentationView_Previews: PreviewProvider {
     static var previews: some View {
         let ioc = IOC()
         let service: ToastPresentationService = ioc.resolve()
-        service.add(text: "+1 Stuff")
-        service.add(text: "+2 Other")
+        service.add(text: "+1 Stuff", style: .positive)
+        service.add(text: "+2 Other", style: .negative)
         return ToastPresentationView(viewModel: service)
     }
 }

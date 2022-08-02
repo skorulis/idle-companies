@@ -19,9 +19,9 @@ final class ToastPresentationService: ObservableObject {
 
 extension ToastPresentationService {
     
-    func add(text: String) {
+    func add(text: String, style: ToastView.ToastStyle) {
         if !appStateStore.inForeground { return }
-        let toast = ToastView.Model(text: text)
+        let toast = ToastView.Model(text: text, style: style)
         toasts.append(toast)
         Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { [weak self] timer in
             self?.remove(id: toast.id)

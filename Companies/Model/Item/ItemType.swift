@@ -24,6 +24,7 @@ public enum ItemType: String, Codable {
     case tinBar
     case ironBar
     case goldBar
+    case bronzeBar
     
     // Materials
     case brick
@@ -48,7 +49,7 @@ extension ItemType: Identifiable {
             return .ore
         case .limestone:
             return .stonePile
-        case .ironBar, .goldBar, .tinBar, .copperBar:
+        case .ironBar, .goldBar, .tinBar, .copperBar, .bronzeBar:
             return .metalBar
         case .stone:
             return .stonePile
@@ -77,6 +78,7 @@ extension ItemType: Identifiable {
         case .tinOre, .tinBar: return .Item.tin
         case .ironOre, .ironBar: return .Item.iron
         case .goldOre, .goldBar: return .Item.gold
+        case .bronzeBar: return .Item.bronze
         case .brick: return .red
         case .concrete: return .brown
         case .oil: return .black
@@ -96,6 +98,7 @@ extension ItemType: Identifiable {
         case .tinBar: return " Tin bar"
         case .ironBar: return "Iron bar"
         case .goldBar: return "Gold bar"
+        case .bronzeBar: return "Bronze bar"
         default:
             return rawValue.capitalized
         }

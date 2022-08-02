@@ -6,6 +6,7 @@ enum SmeltingActivity: String, POperation, Identifiable, CaseIterable {
     
     case ironBar
     case goldBar
+    case bronzeBar
     
     var skill: Skill { .metallurgy }
     var id: String { rawValue }
@@ -23,7 +24,19 @@ extension SmeltingActivity {
         switch self {
         case .ironBar: return .ironBar
         case .goldBar: return .goldBar
+        case .bronzeBar: return .bronzeBar
         }
+    }
+    
+    var count: Int {
+        switch self {
+        case .bronzeBar: return 2
+        default: return 1
+        }
+    }
+    
+    var outputCount: ItemCount {
+        return ItemCount(type: output, count: count)
     }
     
     var baseTime: TimeInterval {
@@ -32,6 +45,8 @@ extension SmeltingActivity {
             return 5
         case .goldBar:
             return 10
+        case .bronzeBar:
+            return 20
         }
     }
     
@@ -42,9 +57,14 @@ extension SmeltingActivity {
     var inputs: [ItemCount] {
         switch self {
         case .ironBar:
-            return [.init(type: .ironOre, count: 1)]
+            return [.init(type: .ironOre, count: 2)]
         case .goldBar:
             return [.init(type: .goldOre, count: 2)]
+        case .bronzeBar:
+            return [
+                .init(type: .copperOre, count: 5),
+                .init(type: .tinOre, count: 1),
+            ]
         }
     }
 }

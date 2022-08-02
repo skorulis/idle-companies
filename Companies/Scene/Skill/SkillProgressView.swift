@@ -1,5 +1,6 @@
 //  Created by Alexander Skorulis on 23/7/2022.
 
+import ASKCore
 import Foundation
 import SwiftUI
 
@@ -9,6 +10,11 @@ struct SkillProgressView {
     
     let xp: Int64
     let calc: XPLevelCalculation
+    
+    init(xp: Int64, calc: XPLevelCalculation) {
+        self.xp = xp
+        self.calc = calc
+    }
     
 }
 

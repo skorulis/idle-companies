@@ -54,6 +54,11 @@
 		FA738E2028976F7400E1EC60 /* ActivityStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E1F28976F7400E1EC60 /* ActivityStore.swift */; };
 		FA738E24289775D700E1EC60 /* OperationProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E23289775D700E1EC60 /* OperationProgressTests.swift */; };
 		FA738E262897B50100E1EC60 /* ToastPresentationWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E252897B50100E1EC60 /* ToastPresentationWindow.swift */; };
+		FA738E28289882C800E1EC60 /* AlloyActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E27289882C800E1EC60 /* AlloyActivity.swift */; };
+		FA738E2D2898C5A400E1EC60 /* SmithingActivityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E292898C5A400E1EC60 /* SmithingActivityRowView.swift */; };
+		FA738E2E2898C5A400E1EC60 /* SmeltingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E2A2898C5A400E1EC60 /* SmeltingViewModel.swift */; };
+		FA738E2F2898C5A400E1EC60 /* SmeltingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E2B2898C5A400E1EC60 /* SmeltingView.swift */; };
+		FA738E302898C5A400E1EC60 /* SmithingActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E2C2898C5A400E1EC60 /* SmithingActivityView.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -82,8 +87,6 @@
 		FAC376412885504600AD3647 /* Color+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376402885504600AD3647 /* Color+Theme.swift */; };
 		FAC3764728868C6400AD3647 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC3764628868C6400AD3647 /* Icons.xcassets */; };
 		FAC3764B2886915B00AD3647 /* ThemeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764A2886915B00AD3647 /* ThemeIcon.swift */; };
-		FAC3764E2887EAD800AD3647 /* SmeltingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764D2887EAD800AD3647 /* SmeltingView.swift */; };
-		FAC376502887EAE400AD3647 /* SmeltingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3764F2887EAE400AD3647 /* SmeltingViewModel.swift */; };
 		FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376512887ECC400AD3647 /* ItemRecipe.swift */; };
 		FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */; };
 		FAC376592887F07100AD3647 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376582887F07100AD3647 /* RecipeService.swift */; };
@@ -115,8 +118,6 @@
 		FAC376AD288A274700AD3647 /* SmeltingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AC288A274700AD3647 /* SmeltingActivity.swift */; };
 		FAC376AF288A2BE700AD3647 /* ActivityStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */; };
 		FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */; };
-		FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */; };
-		FAC376B5288A390700AD3647 /* SmithingActivityRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */; };
 		FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376B7288A4E8400AD3647 /* XPLevelCalculation.swift */; };
 		FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */; };
 		FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376BD288B42C800AD3647 /* SkillProgressView.swift */; };
@@ -190,6 +191,11 @@
 		FA738E1F28976F7400E1EC60 /* ActivityStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStore.swift; sourceTree = "<group>"; };
 		FA738E23289775D700E1EC60 /* OperationProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationProgressTests.swift; sourceTree = "<group>"; };
 		FA738E252897B50100E1EC60 /* ToastPresentationWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresentationWindow.swift; sourceTree = "<group>"; };
+		FA738E27289882C800E1EC60 /* AlloyActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlloyActivity.swift; sourceTree = "<group>"; };
+		FA738E292898C5A400E1EC60 /* SmithingActivityRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmithingActivityRowView.swift; sourceTree = "<group>"; };
+		FA738E2A2898C5A400E1EC60 /* SmeltingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmeltingViewModel.swift; sourceTree = "<group>"; };
+		FA738E2B2898C5A400E1EC60 /* SmeltingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmeltingView.swift; sourceTree = "<group>"; };
+		FA738E2C2898C5A400E1EC60 /* SmithingActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmithingActivityView.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -217,8 +223,6 @@
 		FAC376402885504600AD3647 /* Color+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Theme.swift"; sourceTree = "<group>"; };
 		FAC3764628868C6400AD3647 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		FAC3764A2886915B00AD3647 /* ThemeIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeIcon.swift; sourceTree = "<group>"; };
-		FAC3764D2887EAD800AD3647 /* SmeltingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmeltingView.swift; sourceTree = "<group>"; };
-		FAC3764F2887EAE400AD3647 /* SmeltingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmeltingViewModel.swift; sourceTree = "<group>"; };
 		FAC376512887ECC400AD3647 /* ItemRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecipe.swift; sourceTree = "<group>"; };
 		FAC376532887EE9800AD3647 /* ItemRecipeOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRecipeOperation.swift; sourceTree = "<group>"; };
 		FAC376582887F07100AD3647 /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
@@ -251,8 +255,6 @@
 		FAC376AC288A274700AD3647 /* SmeltingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmeltingActivity.swift; sourceTree = "<group>"; };
 		FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityStatsView.swift; sourceTree = "<group>"; };
 		FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageOutputView.swift; sourceTree = "<group>"; };
-		FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingActivityView.swift; sourceTree = "<group>"; };
-		FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingActivityRowView.swift; sourceTree = "<group>"; };
 		FAC376B7288A4E8400AD3647 /* XPLevelCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPLevelCalculation.swift; sourceTree = "<group>"; };
 		FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPLevelCalculationTests.swift; sourceTree = "<group>"; };
 		FAC376BD288B42C800AD3647 /* SkillProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressView.swift; sourceTree = "<group>"; };
@@ -540,7 +542,6 @@
 				FAC376832888AA0A00AD3647 /* Marketing */,
 				FAC376CF288E913A00AD3647 /* Metallurgy */,
 				FAC3760628839EFF00AD3647 /* Mining */,
-				FAC3764C2887EACC00AD3647 /* Smithing */,
 				FAC376352884B42F00AD3647 /* List */,
 			);
 			path = Operations;
@@ -657,17 +658,6 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		FAC3764C2887EACC00AD3647 /* Smithing */ = {
-			isa = PBXGroup;
-			children = (
-				FAC3764D2887EAD800AD3647 /* SmeltingView.swift */,
-				FAC3764F2887EAE400AD3647 /* SmeltingViewModel.swift */,
-				FAC376B2288A2CD200AD3647 /* SmithingActivityView.swift */,
-				FAC376B4288A390700AD3647 /* SmithingActivityRowView.swift */,
-			);
-			path = Smithing;
-			sourceTree = "<group>";
-		};
 		FAC376572887F06C00AD3647 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -767,6 +757,7 @@
 				FAC376AC288A274700AD3647 /* SmeltingActivity.swift */,
 				FA738DC728911C4600E1EC60 /* ConstructionContractActivity.swift */,
 				FA738DEC289385C100E1EC60 /* ConstructionMaterialActivity.swift */,
+				FA738E27289882C800E1EC60 /* AlloyActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -821,6 +812,10 @@
 			children = (
 				FAC376D0288E915A00AD3647 /* MetallurgyView.swift */,
 				FAC376D2288E916B00AD3647 /* MetallurgyViewModel.swift */,
+				FA738E2B2898C5A400E1EC60 /* SmeltingView.swift */,
+				FA738E2A2898C5A400E1EC60 /* SmeltingViewModel.swift */,
+				FA738E292898C5A400E1EC60 /* SmithingActivityRowView.swift */,
+				FA738E2C2898C5A400E1EC60 /* SmithingActivityView.swift */,
 			);
 			path = Metallurgy;
 			sourceTree = "<group>";
@@ -955,6 +950,7 @@
 				FAC376AB288A259100AD3647 /* MarketingActivity.swift in Sources */,
 				FAC376CA288BECF600AD3647 /* ToastPresentationService.swift in Sources */,
 				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
+				FA738E2E2898C5A400E1EC60 /* SmeltingViewModel.swift in Sources */,
 				FA738DDC28927A1C00E1EC60 /* CompanyModel.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
@@ -975,15 +971,15 @@
 				FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
-				FAC376B5288A390700AD3647 /* SmithingActivityRowView.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FA738DE928937F9200E1EC60 /* ConstructionMaterialsView.swift in Sources */,
 				FA738DC22890DBAB00E1EC60 /* ConstructionView.swift in Sources */,
+				FA738E302898C5A400E1EC60 /* SmithingActivityView.swift in Sources */,
 				FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */,
+				FA738E2D2898C5A400E1EC60 /* SmithingActivityRowView.swift in Sources */,
 				FAC376922888B0B800AD3647 /* DebugViewModel.swift in Sources */,
 				FA738DD02891231000E1EC60 /* ConstructionContractActivityView.swift in Sources */,
-				FAC3764E2887EAD800AD3647 /* SmeltingView.swift in Sources */,
 				FAC376412885504600AD3647 /* Color+Theme.swift in Sources */,
 				FA738DDA2892307600E1EC60 /* HQType.swift in Sources */,
 				FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */,
@@ -1002,6 +998,7 @@
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
+				FA738E28289882C800E1EC60 /* AlloyActivity.swift in Sources */,
 				FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */,
 				FA738E002894AE0200E1EC60 /* SmeltingActivity+Service.swift in Sources */,
 				FAC376002883947700AD3647 /* IOC.swift in Sources */,
@@ -1010,7 +1007,6 @@
 				FAC3767A2888985900AD3647 /* TimeProvider.swift in Sources */,
 				FA738E262897B50100E1EC60 /* ToastPresentationWindow.swift in Sources */,
 				FA738E0C289653AD00E1EC60 /* OfflineService.swift in Sources */,
-				FAC376B3288A2CD200AD3647 /* SmithingActivityView.swift in Sources */,
 				FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */,
 				FAC375FB2883943100AD3647 /* CompaniesApp.swift in Sources */,
 				FA738E1428972D5E00E1EC60 /* ChangeHistory.swift in Sources */,
@@ -1021,10 +1017,10 @@
 				FA738E0228951A5200E1EC60 /* SimpleRecipeView.swift in Sources */,
 				FA738DBD2890962600E1EC60 /* PCoordinator.swift in Sources */,
 				FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */,
-				FAC376502887EAE400AD3647 /* SmeltingViewModel.swift in Sources */,
 				FAC376852888AA2000AD3647 /* MarketingView.swift in Sources */,
 				FA738DBB288FE97C00E1EC60 /* GameCoordinator.swift in Sources */,
 				FA738DCE28911F2F00E1EC60 /* ConstructionContractsViewModel.swift in Sources */,
+				FA738E2F2898C5A400E1EC60 /* SmeltingView.swift in Sources */,
 				FA738E1728972DA200E1EC60 /* ChangeHistoryService.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,

@@ -6,8 +6,13 @@ import Foundation
 
 final class MetallurgyViewModel: CoordinatedViewModel, ObservableObject {
     
-    override init() {
-        
+    private let skillStore: SkillStore
+    let xpCalc: XPLevelCalculation
+    
+    init(skillStore: SkillStore, xpCalc: XPLevelCalculation) {
+        self.skillStore = skillStore
+        self.xpCalc = xpCalc
+        super.init()
     }
 }
 
@@ -17,6 +22,10 @@ extension MetallurgyViewModel {
     
     var options: [OperationPath] {
         return [.smelting]
+    }
+    
+    var xp: Int64 {
+        skillStore.xp(skill: .metallurgy)
     }
     
 }

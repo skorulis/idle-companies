@@ -26,6 +26,7 @@ extension SmeltingView: View {
     
     private func content() -> some View {
         VStack {
+            SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
             maybeRecipeDetails
             Divider()
             recipeList

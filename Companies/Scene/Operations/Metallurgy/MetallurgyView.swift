@@ -30,6 +30,7 @@ extension MetallurgyView: View {
     
     private func content() -> some View {
         VStack {
+            SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
             ForEach(viewModel.options) { dest in
                 navButton(dest)
             }

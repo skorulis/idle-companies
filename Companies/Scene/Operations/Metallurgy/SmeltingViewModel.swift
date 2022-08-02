@@ -9,14 +9,20 @@ final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
 
     private let operations: OperationService
     let inventory: InventoryStore
+    private let skillStore: SkillStore
+    let xpCalc: XPLevelCalculation
     
     @Published var selectedRecipe: SmeltingActivity?
     
     init(operations: OperationService,
-         inventory: InventoryStore
+         inventory: InventoryStore,
+         skillStore: SkillStore,
+         xpCalc: XPLevelCalculation
     ) {
         self.operations = operations
         self.inventory = inventory
+        self.skillStore = skillStore
+        self.xpCalc = xpCalc
         super.init()
         setupObservers()
     }
@@ -46,6 +52,10 @@ extension SmeltingViewModel {
     
     var maybeProgress: OperationProgress? {
         operations.store.maybeProgress(selectedRecipe)
+    }
+    
+    var xp: Int64 {
+        skillStore.xp(skill: .metallurgy)
     }
 }
 

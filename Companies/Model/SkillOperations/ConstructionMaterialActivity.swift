@@ -11,7 +11,6 @@ enum ConstructionMaterialActivity: String, POperation, Identifiable, CaseIterabl
     var id: String { rawValue }
 }
 
-
 // MARK: - Activity defintion
 
 extension ConstructionMaterialActivity {

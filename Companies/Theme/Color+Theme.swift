@@ -21,5 +21,6 @@ extension Color {
         static let tin: Color = Color(0xd3d4d5)
         static let copper: Color = Color(0xb87333)
         static let gold: Color = Color(0xFFD700)
+        static let bronze: Color = Color(0xCD7F32)
     }
 }

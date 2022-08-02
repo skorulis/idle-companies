@@ -60,6 +60,8 @@
 		FA738E302898C5A400E1EC60 /* SmeltingActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E2C2898C5A400E1EC60 /* SmeltingActivityView.swift */; };
 		FA738E322899098800E1EC60 /* RecipeOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E312899098800E1EC60 /* RecipeOutputView.swift */; };
 		FA738E3428990AB700E1EC60 /* RecipeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E3328990AB700E1EC60 /* RecipeCreateView.swift */; };
+		FA738E362899253200E1EC60 /* ShortNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */; };
+		FA738E382899257400E1EC60 /* ShortNumberFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -93,7 +95,6 @@
 		FAC376592887F07100AD3647 /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC376582887F07100AD3647 /* RecipeService.swift */; };
 		FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */; };
 		FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */; };
-		FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3766E288807E500AD3647 /* RecipeView.swift */; };
 		FAC3767328880FB900AD3647 /* ItemCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767228880FB900AD3647 /* ItemCountView.swift */; };
 		FAC37676288827D500AD3647 /* PKeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC37675288827D500AD3647 /* PKeyValueStore.swift */; };
 		FAC3767828882AC800AD3647 /* InMemoryDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */; };
@@ -198,6 +199,8 @@
 		FA738E2C2898C5A400E1EC60 /* SmeltingActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmeltingActivityView.swift; sourceTree = "<group>"; };
 		FA738E312899098800E1EC60 /* RecipeOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeOutputView.swift; sourceTree = "<group>"; };
 		FA738E3328990AB700E1EC60 /* RecipeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCreateView.swift; sourceTree = "<group>"; };
+		FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNumberFormatter.swift; sourceTree = "<group>"; };
+		FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNumberFormatterTests.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -231,7 +234,6 @@
 		FAC3765E2887F2F300AD3647 /* CompaniesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompaniesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC3766A2887F32600AD3647 /* RecipeServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeServiceTests.swift; sourceTree = "<group>"; };
 		FAC3766C288800CB00AD3647 /* SmithingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmithingServiceTests.swift; sourceTree = "<group>"; };
-		FAC3766E288807E500AD3647 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
 		FAC3767228880FB900AD3647 /* ItemCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCountView.swift; sourceTree = "<group>"; };
 		FAC37675288827D500AD3647 /* PKeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKeyValueStore.swift; sourceTree = "<group>"; };
 		FAC3767728882AC800AD3647 /* InMemoryDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryDefaults.swift; sourceTree = "<group>"; };
@@ -591,7 +593,6 @@
 				FAC3761C2883DEC400AD3647 /* DurationView.swift */,
 				FAC376A8288A1EE000AD3647 /* ExperienceView.swift */,
 				FAC3761E2883E3AA00AD3647 /* OperationProgressView.swift */,
-				FAC3766E288807E500AD3647 /* RecipeView.swift */,
 				FAC376AE288A2BE700AD3647 /* ActivityStatsView.swift */,
 				FAC376B0288A2C6100AD3647 /* PercentageOutputView.swift */,
 			);
@@ -770,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC376B7288A4E8400AD3647 /* XPLevelCalculation.swift */,
+				FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */,
 			);
 			path = Calculations;
 			sourceTree = "<group>";
@@ -778,6 +780,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */,
+				FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */,
 			);
 			path = Calculations;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
 				FA738E2E2898C5A400E1EC60 /* SmeltingViewModel.swift in Sources */,
 				FA738DDC28927A1C00E1EC60 /* CompanyModel.swift in Sources */,
+				FA738E362899253200E1EC60 /* ShortNumberFormatter.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
 				FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */,
@@ -996,7 +1000,6 @@
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FA738DE728929E2400E1EC60 /* IngredientsView.swift in Sources */,
 				FA738DE0289294A300E1EC60 /* HQUpgradeViewModel.swift in Sources */,
-				FAC3766F288807E500AD3647 /* RecipeView.swift in Sources */,
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,
@@ -1050,6 +1053,7 @@
 			files = (
 				FA738E24289775D700E1EC60 /* OperationProgressTests.swift in Sources */,
 				FAC376A2288976D300AD3647 /* SkillStoreTests.swift in Sources */,
+				FA738E382899257400E1EC60 /* ShortNumberFormatterTests.swift in Sources */,
 				FAC3768D2888B00600AD3647 /* MarketingServiceTests.swift in Sources */,
 				FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */,
 				FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */,

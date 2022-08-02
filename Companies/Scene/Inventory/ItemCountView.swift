@@ -44,9 +44,10 @@ extension ItemCountView: View {
     }
     
     private var text: some View {
-        Text("\(item.count)")
+        Text(item.shortCountText)
             .padding(.horizontal, 4)
             .background(Capsule().fill(Color.gray))
+            .foregroundColor(.black)
     }
 }
 

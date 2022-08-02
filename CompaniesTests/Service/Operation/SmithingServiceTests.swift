@@ -14,7 +14,7 @@ final class SmithingServiceTests: XCTestCase {
     func test_start() {
         XCTAssertThrowsError(try sut.tryStart(activity: SmeltingActivity.ironBar))
         
-        inv.add(item: .ironOre, count: 1)
+        inv.add(item: .ironOre, count: 2)
         
         XCTAssertNoThrow(try sut.tryStart(activity: SmeltingActivity.ironBar))
     }

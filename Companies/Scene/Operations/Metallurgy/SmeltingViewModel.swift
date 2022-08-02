@@ -10,19 +10,23 @@ final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
     private let operations: OperationService
     let inventory: InventoryStore
     private let skillStore: SkillStore
+    private let uiStore: UIHistoryStore
     let xpCalc: XPLevelCalculation
     
-    @Published var selectedRecipe: SmeltingActivity?
+    @Published var selectedRecipe: SmeltingActivity
     
     init(operations: OperationService,
          inventory: InventoryStore,
          skillStore: SkillStore,
+         uiStore: UIHistoryStore,
          xpCalc: XPLevelCalculation
     ) {
         self.operations = operations
         self.inventory = inventory
         self.skillStore = skillStore
+        self.uiStore = uiStore
         self.xpCalc = xpCalc
+        selectedRecipe =  uiStore.retrieve() ?? SmeltingActivity.allCases[0]
         super.init()
         setupObservers()
     }
@@ -66,12 +70,12 @@ extension SmeltingViewModel {
     func recipePressed(_ recipe: SmeltingActivity) -> () -> Void {
         return { [unowned self] in
             self.selectedRecipe = recipe
+            self.uiStore.store(selection: recipe)
         }
     }
     
     func startSmithing() {
-        guard let selected = selectedRecipe else { return }
-        operations.start(selected)
+        operations.start(selectedRecipe)
     }
     
 }

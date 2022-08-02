@@ -36,21 +36,11 @@ extension SmeltingView: View {
     
     @ViewBuilder
     private var maybeRecipeDetails: some View {
-        if let recipe = viewModel.selectedRecipe {
-            VStack {
-                SmithingActivityView(activity: recipe, progress: viewModel.maybeProgress)
-                startButton(recipe: recipe)
-            }
-        }
-    }
-    
-    private func startButton(recipe: SmeltingActivity) -> some View {
-        Button(action: viewModel.startSmithing) {
-            HStack {
-                Text("Create")
-                DurationView(time: recipe.baseTime)
-            }
-        }
+        SmeltingActivityView(activity: viewModel.selectedRecipe,
+                             progress: viewModel.maybeProgress,
+                             inv: viewModel.inventory,
+                             onStart: viewModel.startSmithing
+        )
     }
     
     private var recipeList: some View {
@@ -63,7 +53,7 @@ extension SmeltingView: View {
     
     private func recipeButton(_ recipe: SmeltingActivity) -> some View {
         Button(action: viewModel.recipePressed(recipe)) {
-            SmithingActivityRowView(activity: recipe)
+            SimpleRecipeView(output: recipe.output)
         }
     }
 }

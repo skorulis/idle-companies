@@ -30,65 +30,16 @@ extension ConstructionMaterialActivtyView: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            HStack {
-                outputCountView
-                rightTop
-            }
+            RecipeOutputView(item: activity.output, inv: inv)
             IngredientsView(ingredients: activity.inputs, inventory: inv)
                 .panelBackground()
             
-            bottomSection
+            RecipeCreateView(activity: activity,
+                             progress: progress,
+                             onStart: onStart)
         }
     }
-    
-    private var rightTop: some View {
-        VStack(alignment: .leading) {
-            Text("Create")
-            Spacer()
-                .layoutPriority(-1)
-            Text(activity.output.name)
-        }
-        .panelBackground()
-    }
-    
-    private var outputCountView: some View {
-        VStack {
-            ItemIconView(item: activity.output)
-            Text("\(outputCount)")
-        }
-        .padding(4)
-        .background(PanelBackground())
-    }
-    
-    private var bottomSection: some View {
-        VStack {
-            stats
-            Button(action: onStart) {
-                Text("Start")
-            }
-            
-            OperationProgressView(timing: progress?.timing)
-        }
-        .panelBackground()
-    }
-    
-    private var stats: some View {
-        HStack {
-            DurationView(time: activity.baseTime)
-            ExperienceView(xp: activity.baseXP)
-        }
-    }
-}
 
-// MARK: - Computed values
-
-private extension ConstructionMaterialActivtyView {
-    
-    var outputCount: Int {
-        inv.count(item: activity.output)
-    }
-    
-    
 }
 
 struct ConstructionMaterialActivtyView_Previews: PreviewProvider {

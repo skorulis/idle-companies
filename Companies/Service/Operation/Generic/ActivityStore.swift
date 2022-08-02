@@ -33,6 +33,10 @@ extension ActivityStore {
             return progress.operation.matches(op)
         }
     }
+    
+    func remove<T: POperation>(_ activity: T) {
+        self.active = self.active.filter { $0.operation.id != activity.id }
+    }
 }
 
 // MARK: - Logic (private)

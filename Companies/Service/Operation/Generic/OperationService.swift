@@ -133,6 +133,7 @@ extension OperationService {
         print("Finish task \(finishCount)")
         let service = factory.resolve(T.ServiceType.self)
         service.finish(activity: op)
+        store.remove(op)
     }
     
 }

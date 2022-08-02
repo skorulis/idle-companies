@@ -19,7 +19,7 @@ extension InventoryView: View {
     var body: some View {
         PageTemplate(nav: nav, content: content)
             .sheet(item: $viewModel.selectedItem) { item in
-                ItemDetailsView(item: item)
+                ItemDetailsView(item: item, inv: viewModel.inventoryStore)
             }
     }
     

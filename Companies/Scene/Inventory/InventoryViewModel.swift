@@ -7,7 +7,7 @@ import Foundation
 
 final class InventoryViewModel: ObservableObject {
     
-    private let inventoryStore: InventoryStore
+    let inventoryStore: InventoryStore
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var selectedItem: ItemType?

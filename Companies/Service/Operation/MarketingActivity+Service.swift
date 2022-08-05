@@ -21,8 +21,8 @@ extension MarketingActivity {
 
 extension MarketingActivity.Service {
     
-    func finish(activity: MarketingActivity) {
-        inventory.add(item: .credits, count: activity.baseProfit)
+    func finish(activity: MarketingActivity) throws {
+        try inventory.add(item: .credits, count: activity.baseProfit)
     }
     
     func stats(activity: MarketingActivity) -> BasicActivityStats {

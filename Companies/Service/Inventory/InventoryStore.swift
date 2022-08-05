@@ -15,14 +15,17 @@ final class InventoryStore: ObservableObject {
     private let toasts: ToastPresentationService
     private static let storageKey = "InventoryStore.storageKey"
     private let changeService: ChangeHistoryService
+    private let transientValues: TransientValuesStore
     
     init(store: PKeyValueStore,
          toasts: ToastPresentationService,
-         changeService: ChangeHistoryService
+         changeService: ChangeHistoryService,
+         transientValues: TransientValuesStore
     ) {
         self.store = store
         self.toasts = toasts
         self.changeService = changeService
+        self.transientValues = transientValues
         self.inventory = Self.readFromDisk(store: store)
     }
     
@@ -32,14 +35,33 @@ final class InventoryStore: ObservableObject {
 
 extension InventoryStore {
     
-    func add(item: ItemType, count: Int) {
+    func add(item: ItemType, count: Int) throws {
+        if inventory.count == transientValues.inventorySize && inventory[item] == nil {
+            toasts.add(text: "Your inventory is full", style: .negative)
+            throw ErrorType.full
+        }
         inventory[item] = self.count(item: item) + count
         toasts.add(text: "+\(count) \(item.name)", style: .positive)
         changeService.change(item: item, count: count)
     }
     
-    func add(item: ItemCount) {
-        add(item: item.type, count: item.count)
+    func addAll(items: [ItemCount]) throws {
+        var filledError: Error?
+        for item in items {
+            do {
+                try add(item: item)
+            } catch {
+                filledError = error
+            }
+        }
+        // Try to add all the items and throw if any couldn't be added
+        if let error = filledError {
+            throw error
+        }
+    }
+    
+    func add(item: ItemCount) throws {
+        try add(item: item.type, count: item.count)
     }
     
     func count(item: ItemType) -> Int {
@@ -98,4 +120,20 @@ private extension InventoryStore {
         return [:]
     }
     
+}
+
+// MARK: - Inner types
+
+extension InventoryStore {
+    
+    enum ErrorType: Error, LocalizedError {
+        case full
+        
+        var errorDescription: String? {
+            switch self {
+            case .full:
+                return "Your inventory is full"
+            }
+        }
+    }
 }

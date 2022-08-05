@@ -10,20 +10,22 @@ final class OperationService {
     @Published var finishCount: Int = 0
     private let factory: PFactory
     private let timeProvider: PTimeProvider
+    private let toastService: ToastPresentationService
     let skillStore: SkillStore
     let store: ActivityStore
     
     public init(factory: PFactory,
                 timeProvider: PTimeProvider,
                 skillStore: SkillStore,
-                store: ActivityStore
+                store: ActivityStore,
+                toastService: ToastPresentationService
     ) {
         self.factory = factory
         self.timeProvider = timeProvider
         self.skillStore = skillStore
         self.store = store
+        self.toastService = toastService
     }
-    
     
 }
 
@@ -54,8 +56,12 @@ extension OperationService {
         let remaining = prog.timing.remaining(timeProvider)
         let interval = max(remaining, 0.1)
         return Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] _ in
-            self?.finish(prog.operation)
-            self?.start(prog.operation) // Restart
+            do {
+                try self?.finish(prog.operation) // Finishing may fail
+                self?.start(prog.operation) // Restart
+            } catch {
+                self?.toastService.add(text: error.localizedDescription, style: .negative)
+            }
         }
     }
     
@@ -128,12 +134,12 @@ extension OperationService {
         return true
     }
     
-    internal func finish<T: POperation>(_ op: T) {
+    internal func finish<T: POperation>(_ op: T) throws {
         finishCount += 1
+        store.remove(op)
         print("Finish task \(finishCount)")
         let service = factory.resolve(T.ServiceType.self)
-        service.finish(activity: op)
-        store.remove(op)
+        try service.finish(activity: op)
     }
     
 }

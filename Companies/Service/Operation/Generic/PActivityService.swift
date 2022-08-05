@@ -9,7 +9,7 @@ protocol PActivityService {
     func stats(activity: ActivityType) -> StatsType
     
     func tryStart(activity: ActivityType) throws
-    func finish(activity: ActivityType)
+    func finish(activity: ActivityType) throws 
     
 }
 

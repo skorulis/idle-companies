@@ -30,8 +30,8 @@ extension SmeltingActivity.Service {
         return BasicActivityStats(duration: activity.baseTime)
     }
     
-    func finish(activity: SmeltingActivity) {
+    func finish(activity: SmeltingActivity) throws {
         let output = ItemCount(type: activity.output, count: 1)
-        inventory.add(item: output)
+        try inventory.add(item: output)
     }
 }

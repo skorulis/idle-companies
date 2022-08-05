@@ -13,11 +13,16 @@ final class IOC: IOCService {
         registerViewModels()
         registerServices()
         registerStores()
+        startup()
     }
     
 }
 
 private extension IOC {
+    
+    func startup() {
+        resolve(TransientValuesService.self).calculateValues() // Make sure all values are resolved at startup
+    }
     
     func registerViewModels() {
         container.autoregister(MiningViewModel.self, initializer: MiningViewModel.init)
@@ -53,6 +58,7 @@ private extension IOC {
                                initializer: ConstructionContractActivity.Service.init)
         container.autoregister(ChangeHistoryService.self, initializer: ChangeHistoryService.init)
             .inObjectScope(.container)
+        container.autoregister(TransientValuesService.self, initializer: TransientValuesService.init)
         
         #if DEBUG
         container.autoregister(DebugTimeProvider.self, initializer: DebugTimeProvider.init)
@@ -75,6 +81,8 @@ private extension IOC {
         container.autoregister(AppStateStore.self, initializer: AppStateStore.init)
             .inObjectScope(.container)
         container.autoregister(ActivityStore.self, initializer: ActivityStore.init)
+            .inObjectScope(.container)
+        container.autoregister(TransientValuesStore.self, initializer: TransientValuesStore.init)
             .inObjectScope(.container)
         
         switch purpose {

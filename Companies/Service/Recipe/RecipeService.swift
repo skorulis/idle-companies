@@ -25,9 +25,9 @@ extension RecipeService {
         inventory.removeAll(items: inputs)
     }
     
-    func finish(outputs: [ItemCount]) {
+    func finish(outputs: [ItemCount]) throws {
         for item in outputs {
-            inventory.add(item: item.type, count: item.count)
+            try inventory.add(item: item.type, count: item.count)
         }
     }
     

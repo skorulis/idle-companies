@@ -32,8 +32,12 @@ private extension OfflineService {
     func advanceTasks() {
         while let next = operationService.nextToFinish {
             let time = next.finishTime
-            operationService.finish(next.operation)
-            operationService.startBackground(next.operation, startTime: time)
+            do {
+                try operationService.finish(next.operation)
+                operationService.startBackground(next.operation, startTime: time)
+            } catch {
+                // Ignore errors
+            }
         }
         changeService.finish()
     }

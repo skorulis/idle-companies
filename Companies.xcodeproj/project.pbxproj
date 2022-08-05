@@ -62,6 +62,8 @@
 		FA738E3428990AB700E1EC60 /* RecipeCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E3328990AB700E1EC60 /* RecipeCreateView.swift */; };
 		FA738E362899253200E1EC60 /* ShortNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */; };
 		FA738E382899257400E1EC60 /* ShortNumberFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */; };
+		FA738E3B2899D38F00E1EC60 /* TransientValuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E3A2899D38F00E1EC60 /* TransientValuesService.swift */; };
+		FA738E3D2899D40700E1EC60 /* TransientValuesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E3C2899D40700E1EC60 /* TransientValuesStore.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -201,6 +203,8 @@
 		FA738E3328990AB700E1EC60 /* RecipeCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCreateView.swift; sourceTree = "<group>"; };
 		FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNumberFormatter.swift; sourceTree = "<group>"; };
 		FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortNumberFormatterTests.swift; sourceTree = "<group>"; };
+		FA738E3A2899D38F00E1EC60 /* TransientValuesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientValuesService.swift; sourceTree = "<group>"; };
+		FA738E3C2899D40700E1EC60 /* TransientValuesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientValuesStore.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -413,6 +417,15 @@
 			path = Operation;
 			sourceTree = "<group>";
 		};
+		FA738E392899D37F00E1EC60 /* Calculation */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E3A2899D38F00E1EC60 /* TransientValuesService.swift */,
+				FA738E3C2899D40700E1EC60 /* TransientValuesStore.swift */,
+			);
+			path = Calculation;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				FAC375FE2883945A00AD3647 /* App */,
+				FA738E392899D37F00E1EC60 /* Calculation */,
 				FA738E1528972D9400E1EC60 /* History */,
 				FAC376742888278800AD3647 /* Persistence */,
 				FAC3762428840B3D00AD3647 /* Inventory */,
@@ -979,6 +993,7 @@
 				FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
+				FA738E3B2899D38F00E1EC60 /* TransientValuesService.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FA738DE928937F9200E1EC60 /* ConstructionMaterialsView.swift in Sources */,
@@ -991,6 +1006,7 @@
 				FA738DDA2892307600E1EC60 /* HQType.swift in Sources */,
 				FAC3767C2888A58F00AD3647 /* DebugTimeProvider.swift in Sources */,
 				FA738DFA2894AAC200E1EC60 /* ConstructionContractActivity+Service.swift in Sources */,
+				FA738E3D2899D40700E1EC60 /* TransientValuesStore.swift in Sources */,
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC376902888B0A800AD3647 /* DebugView.swift in Sources */,
 				FA738DD52892295900E1EC60 /* HeadquartersViewModel.swift in Sources */,

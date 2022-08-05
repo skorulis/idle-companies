@@ -10,7 +10,7 @@ final class OfflineServiceTests: XCTestCase {
     private lazy var timeProvider = ioc.resolve(DebugTimeProvider.self)
     private lazy var operationService = ioc.resolve(OperationService.self)
     private lazy var sut = ioc.resolve(OfflineService.self)
- 
+    
     func test_next() {
         operationService.start(MiningActivity.beach)
         XCTAssertNil(operationService.nextToFinish)

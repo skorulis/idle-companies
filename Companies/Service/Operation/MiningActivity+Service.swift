@@ -27,8 +27,8 @@ extension MiningActivity.Service {
         return BasicActivityStats(duration: activity.baseTime)
     }
     
-    func finish(activity: MiningActivity) {
+    func finish(activity: MiningActivity) throws {
         let item = RecipeService.randomItem(percentages: activity.outputPercentages)
-        inventory.add(item: item, count: 1)
+        try inventory.add(item: item, count: 1)
     }
 }

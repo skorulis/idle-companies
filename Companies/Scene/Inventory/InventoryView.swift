@@ -71,8 +71,8 @@ struct InventoryView_Previews: PreviewProvider {
     static var previews: some View {
         let ioc = IOC()
         let store = ioc.resolve(InventoryStore.self)
-        store.add(item: .goldBar, count: 5)
-        store.add(item: .ironOre, count: 15)
+        try! store.add(item: .goldBar, count: 5)
+        try! store.add(item: .ironOre, count: 15)
         return InventoryView(viewModel: ioc.resolve())
     }
 }

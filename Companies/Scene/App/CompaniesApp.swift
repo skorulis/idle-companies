@@ -12,6 +12,7 @@ struct CompaniesApp: App {
     
     init() {
         SceneDelegate.factory = ioc
+        
     }
     
     var body: some Scene {

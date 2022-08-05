@@ -30,7 +30,7 @@ extension ConstructionMaterialActivity.Service {
         return BasicActivityStats(duration: activity.baseTime)
     }
     
-    func finish(activity: ConstructionMaterialActivity) {
-        inventory.add(item: activity.outputStack)
+    func finish(activity: ConstructionMaterialActivity) throws {
+        try inventory.add(item: activity.outputStack)
     }
 }

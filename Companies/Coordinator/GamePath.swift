@@ -4,12 +4,15 @@ import Foundation
 import SwiftUI
 
 enum GamePath: CoordinatorPath, Hashable {
+    case empty
     case operation(_ path: OperationPath)
     case hq(_ path: HQPath)
     
     @ViewBuilder
     func render(coordinator: GameCoordinator) -> some View {
         switch self {
+        case .empty:
+            EmptyView()
         case .operation(let path):
             path.render(coordinator: coordinator)
         case .hq(let path):

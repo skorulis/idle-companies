@@ -11,16 +11,23 @@ protocol PCoordinatedViewModel: AnyObject {
 }
 
 class CoordinatedViewModel: PCoordinatedViewModel {
-    weak var coordinator: GameCoordinator!
+    weak var coordinator: GameCoordinator! {
+        didSet {
+            onCoordinatorSet()
+        }
+    }
     var subscribers: Set<AnyCancellable> = []
     
     func back() {
         coordinator.pop()
     }
     
+    func onCoordinatorSet() { /* Overridden in children */ }
+    
     lazy var inventory: InventoryStore = coordinator.resolve()
     lazy var skillStore: SkillStore = coordinator.resolve()
     lazy var xpCalc: XPLevelCalculation = coordinator.resolve()
+    lazy var activityStore: ActivityStore = coordinator.resolve()
 }
 
 final class GameCoordinator: PCoordinator, ObservableObject {
@@ -30,7 +37,7 @@ final class GameCoordinator: PCoordinator, ObservableObject {
     let root: GamePath
     let factory: PFactory
     
-    init(factory: PFactory, root: GamePath) {
+    init(root: GamePath, factory: PFactory) {
         self.root = root
         self.factory = factory
     }

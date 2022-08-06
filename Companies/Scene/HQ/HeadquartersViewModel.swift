@@ -7,16 +7,17 @@ import Foundation
 final class HeadquartersViewModel: CoordinatedViewModel, ObservableObject {
  
     private let companyStore: CompanyStore
-    private let inventoryStore: InventoryStore
     
-    init(companyStore: CompanyStore,
-         inventoryStore: InventoryStore
+    init(companyStore: CompanyStore
     ) {
         self.companyStore = companyStore
-        self.inventoryStore = inventoryStore
         super.init()
         
-        inventoryStore.objectWillChange.sink { [unowned self] in
+        
+    }
+    
+    override func onCoordinatorSet() {
+        inventory.objectWillChange.sink { [unowned self] in
             self.objectWillChange.send()
         }
         .store(in: &subscribers)
@@ -38,7 +39,7 @@ extension HeadquartersViewModel {
     var hq: HQType { company.hqType }
     
     var networth: Int {
-        let values = inventoryStore.inventory.map { (key, value) in
+        let values = inventory.inventory.map { (key, value) in
             return key.creditValue * value
         }
         return values.reduce(0, +)
@@ -46,7 +47,7 @@ extension HeadquartersViewModel {
     
     var canUpgrade: Bool {
         guard let next = hq.next else { return false }
-        return inventoryStore.containsAll(items: next.requirements)
+        return inventory.containsAll(items: next.requirements)
     }
 }
 

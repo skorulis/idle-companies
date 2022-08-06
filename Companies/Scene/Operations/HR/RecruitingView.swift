@@ -27,7 +27,13 @@ extension RecruitingView: View {
     private func content() -> some View {
         VStack(spacing: 8) {
             SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
-            
+            ForEach(RecruitingActivity.allCases) { place in
+                Button(action: viewModel.onPress(place)) {
+                    RecruitingPlaceView(operation: place,
+                                    progress: viewModel.maybeProgress(place))
+                    .contentShape(Rectangle())
+                }
+            }
         }
         .padding(.horizontal, 16)
     }

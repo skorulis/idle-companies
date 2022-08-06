@@ -44,8 +44,6 @@ extension MiningView: View {
                                         progress: viewModel.maybeProgress(place))
                         .contentShape(Rectangle())
                     }
-
-                    
                 }
             }
             .padding(.horizontal, 16)

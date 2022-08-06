@@ -6,7 +6,9 @@ final class HumanResourcesViewModel: CoordinatedViewModel, ObservableObject {
     
     override init() {
         super.init()
-        
+    }
+    
+    override func onCoordinatorSet() {
         skillStore.objectWillChange.sink { [unowned self] in
             self.objectWillChange.send()
         }

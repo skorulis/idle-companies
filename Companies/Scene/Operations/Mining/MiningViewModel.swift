@@ -13,10 +13,9 @@ final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     ) {
         self.operations = operations
         super.init()
-        setupObservers()
     }
     
-    private func setupObservers() {
+    override func onCoordinatorSet() {
         operations.store.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
@@ -29,7 +28,6 @@ final class MiningViewModel: CoordinatedViewModel, ObservableObject {
             }
             .store(in: &subscribers)
     }
-    
     
 }
 

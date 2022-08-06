@@ -4,9 +4,25 @@ import Foundation
 
 final class RecruitingViewModel: CoordinatedViewModel, ObservableObject {
     
-    override init() {
+    let operations: OperationService
+    
+    init(operations: OperationService) {
+        self.operations = operations
         super.init()
-        self.inventory.objectWillChange.sink { _ in
+    }
+    
+    override func onCoordinatorSet() {
+        inventory.objectWillChange.sink { _ in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
+        
+        skillStore.objectWillChange.sink { [unowned self] _ in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
+        
+        activityStore.objectWillChange.sink { [unowned self] _ in
             self.objectWillChange.send()
         }
         .store(in: &subscribers)
@@ -19,5 +35,21 @@ extension RecruitingViewModel {
     
     var xp: Int64 {
         skillStore.xp(skill: .hr)
+    }
+    
+}
+
+// MARK: - Logic
+
+extension RecruitingViewModel {
+    
+    func onPress(_ type: RecruitingActivity) -> () -> Void {
+        return { [unowned self] in
+            self.operations.start(type)
+        }
+    }
+    
+    func maybeProgress(_ place: RecruitingActivity) -> OperationProgress? {
+        operations.store.maybeProgress(place)
     }
 }

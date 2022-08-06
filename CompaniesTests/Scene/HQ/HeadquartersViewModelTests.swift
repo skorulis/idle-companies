@@ -4,10 +4,9 @@ import Foundation
 @testable import Companies
 import XCTest
 
-final class HeadquartersViewModelTests: XCTestCase {
+final class HeadquartersViewModelTests: IOCTestCase {
     
-    private let ioc = IOC()
-    private lazy var sut = ioc.resolve(HeadquartersViewModel.self)
+    private lazy var sut = coordinator.resolve(HeadquartersViewModel.self)
     private lazy var inventoryStore = ioc.resolve(InventoryStore.self)
  
     func test_upgradeState() throws {

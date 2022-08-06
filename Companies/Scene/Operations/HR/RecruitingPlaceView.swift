@@ -1,18 +1,18 @@
-//  Created by Alexander Skorulis on 21/7/2022.
+//  Created by Alexander Skorulis on 6/8/2022.
 
 import Foundation
 import SwiftUI
 
 // MARK: - Memory footprint
 
-struct MiningPlaceView {
-    let operation: MiningActivity
+struct RecruitingPlaceView {
+    let operation: RecruitingActivity
     let progress: OperationProgress?
 }
 
 // MARK: - Rendering
 
-extension MiningPlaceView: View {
+extension RecruitingPlaceView: View {
     
     var body: some View {
         VStack {
@@ -38,14 +38,15 @@ extension MiningPlaceView: View {
 
 // MARK: - Previews
 
-struct MiningPlaceView_Previews: PreviewProvider {
+struct RecruitingPlaceView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            MiningPlaceView(operation: MiningActivity.iron, progress: nil)
+            RecruitingPlaceView(operation: RecruitingActivity.techPark, progress: nil)
         }
         .padding(12)
         
     }
 }
+
 

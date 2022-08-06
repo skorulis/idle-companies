@@ -54,14 +54,14 @@ extension ContentView {
     }
     
     private var operations: some View {
-        CoordinatorView(coordinator: .init(factory: factory, root: .operation(.list)))
+        CoordinatorView(coordinator: GameCoordinator(root: .operation(.list), factory: factory))
             .tabItem {
                 Label("Operations", systemImage: "power.circle.fill")
             }
     }
     
     private var headquarters: some View {
-        CoordinatorView(coordinator: .init(factory: factory, root: .hq(.home)))
+        CoordinatorView(coordinator: GameCoordinator(root: .hq(.home), factory: factory))
             .tabItem {
                 Label("Headquarters", systemImage: "flag.fill")
             }

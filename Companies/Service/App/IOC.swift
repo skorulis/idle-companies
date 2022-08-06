@@ -10,8 +10,10 @@ final class IOC: IOCService {
         super.init(purpose: purpose)
         registerBehaviors()
         registerCalculations()
+        registerCoordinators()
         registerViewModels()
         registerServices()
+        registerActivityServices()
         registerStores()
         
 // Prevent some things happening while running tests
@@ -32,6 +34,10 @@ private extension IOC {
     
     func startup() {
         resolve(TransientValuesService.self).calculateValues() // Make sure all values are resolved at startup
+    }
+    
+    func registerCoordinators() {
+        container.autoregister(GameCoordinator.self, argument: GamePath.self, initializer: GameCoordinator.init)
     }
     
     func registerViewModels() {
@@ -61,13 +67,7 @@ private extension IOC {
         container.autoregister(OfflineService.self, initializer: OfflineService.init)
             .inObjectScope(.container)
         container.autoregister(RecipeService.self, initializer: RecipeService.init)
-        container.autoregister(MiningActivity.Service.self, initializer: MiningActivity.Service.init)
-        container.autoregister(MarketingActivity.Service.self, initializer: MarketingActivity.Service.init)
-        container.autoregister(SmeltingActivity.Service.self, initializer: SmeltingActivity.Service.init)
-        container.autoregister(ConstructionMaterialActivity.Service.self,
-                               initializer: ConstructionMaterialActivity.Service.init)
-        container.autoregister(ConstructionContractActivity.Service.self,
-                               initializer: ConstructionContractActivity.Service.init)
+        
         container.autoregister(ChangeHistoryService.self, initializer: ChangeHistoryService.init)
             .inObjectScope(.container)
         container.autoregister(TransientValuesService.self, initializer: TransientValuesService.init)
@@ -80,6 +80,21 @@ private extension IOC {
         #else
         container.autoregister(PTimeProvider.self, initializer: TimeProvider.init)
         #endif
+    }
+    
+    func registerActivityServices() {
+        container.autoregister(MiningActivity.Service.self,
+                               initializer: MiningActivity.Service.init)
+        container.autoregister(MarketingActivity.Service.self,
+                               initializer: MarketingActivity.Service.init)
+        container.autoregister(SmeltingActivity.Service.self,
+                               initializer: SmeltingActivity.Service.init)
+        container.autoregister(ConstructionMaterialActivity.Service.self,
+                               initializer: ConstructionMaterialActivity.Service.init)
+        container.autoregister(ConstructionContractActivity.Service.self,
+                               initializer: ConstructionContractActivity.Service.init)
+        container.autoregister(RecruitingActivity.Service.self,
+                               initializer: RecruitingActivity.Service.init)
     }
     
     func registerStores() {

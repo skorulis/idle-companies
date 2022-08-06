@@ -23,7 +23,7 @@ extension ItemDetailsView: View {
     
     private func nav() -> some View {
         NavBar(left: EmptyView(),
-               mid: EmptyView(),
+               mid: BarButtonItem.title("Details"),
                right: closeButton)
     }
     

@@ -35,8 +35,13 @@ final class InventoryStore: ObservableObject {
 
 extension InventoryStore {
     
+    var itemCount: Int {
+        let offset = inventory[.credits] != nil ? -1 : 0
+        return inventory.count + offset
+    }
+    
     func add(item: ItemType, count: Int) throws {
-        if inventory.count == transientValues.inventorySize && inventory[item] == nil {
+        if itemCount == transientValues.inventorySize && inventory[item] == nil {
             toasts.add(text: "Your inventory is full", style: .negative)
             throw ErrorType.full
         }

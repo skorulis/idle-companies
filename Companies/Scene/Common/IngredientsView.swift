@@ -10,6 +10,7 @@ struct IngredientsView {
     private let ingredients: [ItemCount]
     @ObservedObject private var inventory: InventoryStore
     
+    @State private var presentedItem: ItemType?
     
     init(ingredients: [ItemCount], inventory: InventoryStore) {
         self.ingredients = ingredients
@@ -29,12 +30,17 @@ extension IngredientsView: View {
             Text("You have")
             neededCounts
         }
+        .sheet(item: $presentedItem) { item in
+            ItemDetailsView(item: item, inv: inventory)
+        }
     }
     
     private var needed: some View {
         HStack {
             ForEach(ingredients) { item in
-                ItemCountView(item: item, status: status(item))
+                Button(action: showDetails(item)) {
+                    ItemCountView(item: item, status: status(item))
+                }
             }
         }
     }
@@ -42,7 +48,9 @@ extension IngredientsView: View {
     private var neededCounts: some View {
         HStack {
             ForEach(inputCounts) { item in
-                ItemCountView(item: item)
+                Button(action: showDetails(item)) {
+                    ItemCountView(item: item)
+                }
             }
         }
     }
@@ -56,6 +64,18 @@ extension IngredientsView: View {
             return ItemCount(type: item.type, count: inventory.count(item: item.type))
         }
     }
+}
+
+// MARK: - Logic
+
+private extension IngredientsView {
+    
+    func showDetails(_ item: ItemCount) -> () -> Void {
+        return {
+            self.presentedItem = item.type
+        }
+    }
+    
 }
 
 // MARK: - Previews

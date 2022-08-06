@@ -29,6 +29,7 @@ extension InventoryView: View {
     
     private func content() -> some View {
         VStack {
+            space
             credits
             grid
         }
@@ -39,6 +40,15 @@ extension InventoryView: View {
             Text("Credits")
             Spacer()
             Text(ShortNumberFormatter.standard.format(viewModel.inventoryStore.credits))
+        }
+        .padding(.horizontal, 16)
+    }
+    
+    private var space: some View {
+        HStack {
+            Text("Space")
+            Spacer()
+            Text(viewModel.spaceString)
         }
         .padding(.horizontal, 16)
     }

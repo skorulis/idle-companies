@@ -41,13 +41,26 @@ extension HeadquartersView: View {
             
             if let next = viewModel.hq.next {
                 Button(action: viewModel.showUpgrade) {
-                    Text("Upgrade to \(next.name)")
+                    HStack {
+                        Text("Upgrade to \(next.name)")
+                        Spacer()
+                        upgradeIcon
+                    }
                 }
             }
         }
         .padding(4)
         .frame(maxWidth: .infinity)
         .background(PanelBackground())
+    }
+    
+    @ViewBuilder
+    private var upgradeIcon: some View {
+        if viewModel.canUpgrade {
+            Image(systemName: "checkmark.seal")
+        } else {
+            Image(systemName: "xmark.seal")
+        }
     }
     
     private var networth: some View {

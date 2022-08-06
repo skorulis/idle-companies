@@ -25,11 +25,17 @@ extension HeadquartersViewModel {
     var company: CompanyModel  { companyStore.company }
     var name: String { company.name }
     var hq: HQType { company.hqType }
+    
     var networth: Int {
         let values = inventoryStore.inventory.map { (key, value) in
             return key.creditValue * value
         }
         return values.reduce(0, +)
+    }
+    
+    var canUpgrade: Bool {
+        guard let next = hq.next else { return false }
+        return inventoryStore.containsAll(items: next.requirements)
     }
 }
 

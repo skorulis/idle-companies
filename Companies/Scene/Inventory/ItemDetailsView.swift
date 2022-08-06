@@ -30,6 +30,7 @@ extension ItemDetailsView: View {
     private func content() -> some View {
         VStack {
             RecipeOutputView(item: item, inv: inv)
+            maybeSellSection
         }
         .padding(.horizontal, 16)
     }
@@ -39,8 +40,25 @@ extension ItemDetailsView: View {
             Image(systemName: "xmark.circle.fill")
         }
     }
-        
-        
+    
+    @ViewBuilder
+    private var maybeSellSection: some View {
+        if count > 0 {
+            Button(action: sell) {
+                Text("Sell")
+            }
+        }
+    }
+
+}
+
+// MARK: - Computed values
+
+private extension ItemDetailsView {
+ 
+    var count: Int {
+        return inv.count(item: item)
+    }
 }
 
 // MARK: - Logic
@@ -49,6 +67,10 @@ private extension ItemDetailsView {
     
     func dismiss() {
         presentationMode.wrappedValue.dismiss()
+    }
+    
+    func sell() {
+        inv.sell(item: ItemCount(type: item, count: count))
     }
 }
 

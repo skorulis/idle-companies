@@ -1,7 +1,8 @@
 //  Created by Alexander Skorulis on 3/8/2022.
 
-import Foundation
 import ASKCore
+import Combine
+import Foundation
 
 // MARK: - Memory footprint
 
@@ -12,9 +13,18 @@ final class TransientValuesService {
     private let factory: PFactory
     private lazy var companyStore: CompanyStore = factory.resolve()
     
+    private var subscribers: Set<AnyCancellable> = []
+    
     init(store: TransientValuesStore, factory: PFactory) {
         self.store = store
         self.factory = factory
+        
+        companyStore.objectWillChange.sink { [unowned self] _ in
+            DispatchQueue.main.async {
+                self.calculateValues()
+            }
+        }
+        .store(in: &subscribers)
     }
 }
 
@@ -32,7 +42,9 @@ extension TransientValuesService {
 private extension TransientValuesService {
  
     var inventorySize: Int {
-        companyStore.company.hqType.inventorySpots
+        return companyStore.company.hqType.inventorySpots
     }
     
 }
+
+

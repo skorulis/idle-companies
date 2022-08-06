@@ -41,7 +41,7 @@ extension InventoryStore {
     }
     
     func add(item: ItemType, count: Int) throws {
-        if itemCount == transientValues.inventorySize && inventory[item] == nil {
+        if itemCount == transientValues.inventorySize && inventory[item] == nil && item != .credits {
             toasts.add(text: "Your inventory is full", style: .negative)
             throw ErrorType.full
         }
@@ -107,6 +107,12 @@ extension InventoryStore {
             throw RecipeError.missingIngredients
         }
         removeAll(items: inputs)
+    }
+    
+    func sell(item: ItemCount) {
+        remove(item: item)
+        let credits = item.count * item.type.creditValue
+        try! add(item: .credits, count: credits)
     }
     
     var credits: Int {

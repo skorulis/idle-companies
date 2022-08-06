@@ -13,7 +13,17 @@ final class IOC: IOCService {
         registerViewModels()
         registerServices()
         registerStores()
-        startup()
+        
+// Prevent some things happening while running tests
+#if DEBUG
+        if !Self.isTesting || purpose == .testing {
+            startup()
+        }
+#endif
+    }
+    
+    static var isTesting: Bool {
+        return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
     }
     
 }
@@ -59,6 +69,7 @@ private extension IOC {
         container.autoregister(ChangeHistoryService.self, initializer: ChangeHistoryService.init)
             .inObjectScope(.container)
         container.autoregister(TransientValuesService.self, initializer: TransientValuesService.init)
+            .inObjectScope(.container)
         
         #if DEBUG
         container.autoregister(DebugTimeProvider.self, initializer: DebugTimeProvider.init)

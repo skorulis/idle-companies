@@ -14,6 +14,17 @@ final class HeadquartersViewModel: CoordinatedViewModel, ObservableObject {
     ) {
         self.companyStore = companyStore
         self.inventoryStore = inventoryStore
+        super.init()
+        
+        inventoryStore.objectWillChange.sink { [unowned self] in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
+        
+        companyStore.objectWillChange.sink { [unowned self] in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
     }
     
 }

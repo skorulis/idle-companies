@@ -5,8 +5,12 @@ import Foundation
 import SwiftUI
 import ASKCore
 
+protocol PCoordinatedViewModel: AnyObject {
+    var coordinator: GameCoordinator! {get set}
+    var subscribers: Set<AnyCancellable> {get set}
+}
 
-class CoordinatedViewModel {
+class CoordinatedViewModel: PCoordinatedViewModel {
     weak var coordinator: GameCoordinator!
     var subscribers: Set<AnyCancellable> = []
     

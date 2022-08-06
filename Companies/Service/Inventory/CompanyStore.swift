@@ -7,7 +7,11 @@ final class CompanyStore: ObservableObject {
     private let store: PKeyValueStore
     private static let storageKey = "CompanyStore.storageKey"
     
-    @Published var company: CompanyModel
+    @Published var company: CompanyModel {
+        didSet {
+            try! self.store.set(codable: company, forKey: Self.storageKey)
+        }
+    }
     
     init(store: PKeyValueStore) {
         self.store = store

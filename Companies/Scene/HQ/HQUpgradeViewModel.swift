@@ -13,6 +13,10 @@ final class HQUpgradeViewModel: CoordinatedViewModel, ObservableObject {
         self.inventory = inventory
         self.company = company
         super.init()
+        company.objectWillChange.sink { [unowned self] in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
     }
     
 }

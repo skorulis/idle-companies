@@ -9,6 +9,7 @@ enum OperationPath: Hashable, Identifiable {
     
     case smelting
     case construction(_ type: ConstructionSubType)
+    case hr(_ type: HRSubType)
     
     var id: String {
         String(describing: self)
@@ -25,6 +26,8 @@ enum OperationPath: Hashable, Identifiable {
             SmeltingView(viewModel: coordinator.resolve())
         case .construction(let type):
             constructionView(coordinator: coordinator, type: type)
+        case .hr(let type):
+            hrView(coordinator: coordinator, type: type)
         }
     }
     
@@ -39,6 +42,8 @@ enum OperationPath: Hashable, Identifiable {
             MarketingView(viewModel: coordinator.resolve())
         case .construction:
             ConstructionView(viewModel: coordinator.resolve())
+        case .hr:
+            HumanResourcesView(viewModel: coordinator.resolve())
         }
     }
     
@@ -51,6 +56,16 @@ enum OperationPath: Hashable, Identifiable {
             EmptyView()
         case .contracts:
             ConstructionContractsView(viewModel: coordinator.resolve())
+        }
+    }
+    
+    @ViewBuilder
+    private func hrView(coordinator: GameCoordinator, type: HRSubType) -> some View {
+        switch type {
+        case .recruiting:
+            RecruitingView(viewModel: coordinator.resolve())
+        case .training:
+            EmptyView()
         }
     }
     

@@ -23,6 +23,7 @@ extension ConstructionContractActivity.Service {
     
     func finish(activity: ConstructionContractActivity) throws {
         try inventory.add(item: .credits, count: activity.baseProfit)
+        
     }
     
     func stats(activity: ConstructionContractActivity) -> BasicActivityStats {

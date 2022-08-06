@@ -8,13 +8,10 @@ import Foundation
 final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     
     private let operations: OperationService
-    let xpCalc: XPLevelCalculation
     
-    init(operations: OperationService,
-         xpCalc: XPLevelCalculation
+    init(operations: OperationService
     ) {
         self.operations = operations
-        self.xpCalc = xpCalc
         super.init()
         setupObservers()
     }

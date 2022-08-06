@@ -6,13 +6,13 @@ import Foundation
 
 final class ConstructionViewModel: CoordinatedViewModel, ObservableObject {
     
-    private let skillStore: SkillStore
-    let xpCalc: XPLevelCalculation
-    
-    init(skillStore: SkillStore, xpCalc: XPLevelCalculation) {
-        self.skillStore = skillStore
-        self.xpCalc = xpCalc
+    override init() {
         super.init()
+        
+        skillStore.objectWillChange.sink { [unowned self] in
+            self.objectWillChange.send()
+        }
+        .store(in: &subscribers)
     }
     
 }

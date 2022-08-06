@@ -68,6 +68,12 @@
 		FA738E43289DF17000E1EC60 /* HeadquartersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E42289DF17000E1EC60 /* HeadquartersViewModelTests.swift */; };
 		FA738E46289E021C00E1EC60 /* TransientValuesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E45289E021C00E1EC60 /* TransientValuesServiceTests.swift */; };
 		FA738E49289E05BA00E1EC60 /* PublisherExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E48289E05BA00E1EC60 /* PublisherExpectation.swift */; };
+		FA738E4B289E152100E1EC60 /* ForgingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E4A289E152100E1EC60 /* ForgingActivity.swift */; };
+		FA738E4F289E216600E1EC60 /* HumanResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E4E289E216600E1EC60 /* HumanResourcesView.swift */; };
+		FA738E51289E219500E1EC60 /* HumanResourcesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E50289E219500E1EC60 /* HumanResourcesViewModel.swift */; };
+		FA738E53289E22A700E1EC60 /* HRSubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E52289E22A700E1EC60 /* HRSubType.swift */; };
+		FA738E55289E257D00E1EC60 /* RecruitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E54289E257D00E1EC60 /* RecruitingView.swift */; };
+		FA738E57289E259200E1EC60 /* RecruitingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E56289E259200E1EC60 /* RecruitingViewModel.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -213,6 +219,12 @@
 		FA738E42289DF17000E1EC60 /* HeadquartersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadquartersViewModelTests.swift; sourceTree = "<group>"; };
 		FA738E45289E021C00E1EC60 /* TransientValuesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransientValuesServiceTests.swift; sourceTree = "<group>"; };
 		FA738E48289E05BA00E1EC60 /* PublisherExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherExpectation.swift; sourceTree = "<group>"; };
+		FA738E4A289E152100E1EC60 /* ForgingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgingActivity.swift; sourceTree = "<group>"; };
+		FA738E4E289E216600E1EC60 /* HumanResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanResourcesView.swift; sourceTree = "<group>"; };
+		FA738E50289E219500E1EC60 /* HumanResourcesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HumanResourcesViewModel.swift; sourceTree = "<group>"; };
+		FA738E52289E22A700E1EC60 /* HRSubType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRSubType.swift; sourceTree = "<group>"; };
+		FA738E54289E257D00E1EC60 /* RecruitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitingView.swift; sourceTree = "<group>"; };
+		FA738E56289E259200E1EC60 /* RecruitingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitingViewModel.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -466,6 +478,18 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		FA738E4D289E215D00E1EC60 /* HR */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E4E289E216600E1EC60 /* HumanResourcesView.swift */,
+				FA738E50289E219500E1EC60 /* HumanResourcesViewModel.swift */,
+				FA738E52289E22A700E1EC60 /* HRSubType.swift */,
+				FA738E54289E257D00E1EC60 /* RecruitingView.swift */,
+				FA738E56289E259200E1EC60 /* RecruitingViewModel.swift */,
+			);
+			path = HR;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -599,6 +623,7 @@
 			children = (
 				FA738DC02890DBA600E1EC60 /* Construction */,
 				FAC3761B2883DEBE00AD3647 /* Generic */,
+				FA738E4D289E215D00E1EC60 /* HR */,
 				FAC376832888AA0A00AD3647 /* Marketing */,
 				FAC376CF288E913A00AD3647 /* Metallurgy */,
 				FAC3760628839EFF00AD3647 /* Mining */,
@@ -821,6 +846,7 @@
 				FA738DC728911C4600E1EC60 /* ConstructionContractActivity.swift */,
 				FA738DEC289385C100E1EC60 /* ConstructionMaterialActivity.swift */,
 				FA738E27289882C800E1EC60 /* AlloyActivity.swift */,
+				FA738E4A289E152100E1EC60 /* ForgingActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -1000,6 +1026,8 @@
 				FA738DFE2894ADCC00E1EC60 /* MarketingActivity+Service.swift in Sources */,
 				FAC376A7288A16B500AD3647 /* MiningActivity.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
+				FA738E53289E22A700E1EC60 /* HRSubType.swift in Sources */,
+				FA738E4F289E216600E1EC60 /* HumanResourcesView.swift in Sources */,
 				FA738DD32892294400E1EC60 /* HeadquartersView.swift in Sources */,
 				FA738DFC2894ACBB00E1EC60 /* ConstructionMaterialActivity+Service.swift in Sources */,
 				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
@@ -1022,6 +1050,7 @@
 				FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */,
 				FAC376CE288DF89700AD3647 /* PanelBackground.swift in Sources */,
 				FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */,
+				FA738E57289E259200E1EC60 /* RecruitingViewModel.swift in Sources */,
 				FA738DC628910FF800E1EC60 /* ConstructionSubType.swift in Sources */,
 				FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */,
 				FA738DE4289297B700E1EC60 /* GamePath.swift in Sources */,
@@ -1061,9 +1090,11 @@
 				FA738DE728929E2400E1EC60 /* IngredientsView.swift in Sources */,
 				FA738DE0289294A300E1EC60 /* HQUpgradeViewModel.swift in Sources */,
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
+				FA738E4B289E152100E1EC60 /* ForgingActivity.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,
 				FAC3762928840BC000AD3647 /* ItemType.swift in Sources */,
+				FA738E55289E257D00E1EC60 /* RecruitingView.swift in Sources */,
 				FA738E28289882C800E1EC60 /* AlloyActivity.swift in Sources */,
 				FA738E0E28965C2700E1EC60 /* OperationService.swift in Sources */,
 				FA738E002894AE0200E1EC60 /* SmeltingActivity+Service.swift in Sources */,
@@ -1102,6 +1133,7 @@
 				FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */,
 				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
+				FA738E51289E219500E1EC60 /* HumanResourcesViewModel.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,
 				FA738E2028976F7400E1EC60 /* ActivityStore.swift in Sources */,
 			);

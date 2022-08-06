@@ -48,6 +48,8 @@ private extension IOC {
         container.autoregister(HQUpgradeViewModel.self, initializer: HQUpgradeViewModel.init)
         container.autoregister(ConstructionMaterialsViewModel.self, initializer: ConstructionMaterialsViewModel.init)
         container.autoregister(ChangeHistoryViewModel.self, initializer: ChangeHistoryViewModel.init)
+        container.autoregister(HumanResourcesViewModel.self, initializer: HumanResourcesViewModel.init)
+        container.autoregister(RecruitingViewModel.self, initializer: RecruitingViewModel.init)
         
         container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
             .inObjectScope(.container)

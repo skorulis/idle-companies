@@ -7,25 +7,16 @@ import Foundation
 
 final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObject {
     
-    let inventory: InventoryStore
     private let operations: OperationService
     private let uiStore: UIHistoryStore
-    private let skillStore: SkillStore
-    let xpCalc: XPLevelCalculation
     
     @Published var selected: ConstructionMaterialActivity
     
-    init(inventory: InventoryStore,
-         operations: OperationService,
-         uiStore: UIHistoryStore,
-         skillStore: SkillStore,
-         xpCalc: XPLevelCalculation
+    init(operations: OperationService,
+         uiStore: UIHistoryStore
     ) {
-        self.inventory = inventory
         self.operations = operations
         self.uiStore = uiStore
-        self.skillStore = skillStore
-        self.xpCalc = xpCalc
         selected =  uiStore.retrieve() ?? ConstructionMaterialActivity.allCases[0]
         super .init()
         setupObservers()

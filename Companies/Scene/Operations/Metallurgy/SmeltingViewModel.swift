@@ -8,24 +8,15 @@ import Foundation
 final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
 
     private let operations: OperationService
-    let inventory: InventoryStore
-    private let skillStore: SkillStore
     private let uiStore: UIHistoryStore
-    let xpCalc: XPLevelCalculation
     
     @Published var selectedRecipe: SmeltingActivity
     
     init(operations: OperationService,
-         inventory: InventoryStore,
-         skillStore: SkillStore,
-         uiStore: UIHistoryStore,
-         xpCalc: XPLevelCalculation
+         uiStore: UIHistoryStore
     ) {
         self.operations = operations
-        self.inventory = inventory
-        self.skillStore = skillStore
         self.uiStore = uiStore
-        self.xpCalc = xpCalc
         selectedRecipe =  uiStore.retrieve() ?? SmeltingActivity.allCases[0]
         super.init()
         setupObservers()

@@ -140,6 +140,8 @@ extension OperationService {
         print("Finish task \(finishCount)")
         let service = factory.resolve(T.ServiceType.self)
         try service.finish(activity: op)
+        // TODO: Upgrade skill operations
+        skillStore.addXP(skill: op.skill, xp: op.baseXP, operationID: nil)
     }
     
 }

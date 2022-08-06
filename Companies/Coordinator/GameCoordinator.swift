@@ -17,6 +17,10 @@ class CoordinatedViewModel: PCoordinatedViewModel {
     func back() {
         coordinator.pop()
     }
+    
+    lazy var inventory: InventoryStore = coordinator.resolve()
+    lazy var skillStore: SkillStore = coordinator.resolve()
+    lazy var xpCalc: XPLevelCalculation = coordinator.resolve()
 }
 
 final class GameCoordinator: PCoordinator, ObservableObject {

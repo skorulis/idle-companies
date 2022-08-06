@@ -1,6 +1,7 @@
 //  Created by Alexander Skorulis on 27/7/2022.
 
 import Foundation
+
 enum ConstructionSubType: String, CaseIterable, Identifiable {
     case contracts, materials, buildings
     

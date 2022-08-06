@@ -6,11 +6,9 @@ import Foundation
 
 final class HQUpgradeViewModel: CoordinatedViewModel, ObservableObject {
     
-    let inventory: InventoryStore
     private let company: CompanyStore
     
-    init(inventory: InventoryStore, company: CompanyStore) {
-        self.inventory = inventory
+    init(company: CompanyStore) {
         self.company = company
         super.init()
         company.objectWillChange.sink { [unowned self] in

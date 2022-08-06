@@ -26,6 +26,13 @@ public enum ItemType: String, Codable {
     case goldBar
     case bronzeBar
     
+    // Cogs
+    case copperCog
+    case tinCog
+    case ironCog
+    case goldCog
+    case bronzeCog
+    
     // Materials
     case brick
     case concrete
@@ -34,6 +41,14 @@ public enum ItemType: String, Codable {
     
     case quartz
     case diamond
+    
+    // Workers
+    
+    case dropout
+    case laborer
+    case teacher
+    case manager
+    case engineer
     
 }
 
@@ -51,6 +66,8 @@ extension ItemType: Identifiable {
             return .stonePile
         case .ironBar, .goldBar, .tinBar, .copperBar, .bronzeBar:
             return .metalBar
+        case .ironCog, .goldCog, .tinCog, .copperCog, .bronzeCog:
+            return .cog
         case .stone:
             return .stonePile
         case.brick:
@@ -65,6 +82,16 @@ extension ItemType: Identifiable {
             return .saphir
         case .diamond:
             return .cutDiamond
+        case .dropout:
+            return .dunceCap
+        case .laborer:
+            return .person
+        case .teacher:
+            return .graduateCap
+        case .manager:
+            return .humanPyramid
+        case .engineer:
+            return .computing
         }
     }
     
@@ -74,17 +101,22 @@ extension ItemType: Identifiable {
         case .stone: return .gray
         case .limestone: return .white
         case .coal: return .black
-        case .copperOre, .copperBar: return .Item.copper
-        case .tinOre, .tinBar: return .Item.tin
-        case .ironOre, .ironBar: return .Item.iron
-        case .goldOre, .goldBar: return .Item.gold
-        case .bronzeBar: return .Item.bronze
+        case .copperOre, .copperBar, .copperCog: return .Item.copper
+        case .tinOre, .tinBar, .tinCog: return .Item.tin
+        case .ironOre, .ironBar, .ironCog: return .Item.iron
+        case .goldOre, .goldBar, .goldCog: return .Item.gold
+        case .bronzeBar, .bronzeCog: return .Item.bronze
         case .brick: return .red
         case .concrete: return .brown
         case .oil: return .black
         case .sand: return .yellow
         case .diamond: return .blue
         case .quartz: return .white
+        case .dropout: return .black
+        case .laborer: return .black
+        case .teacher: return .black
+        case .manager: return .black
+        case .engineer: return .black
         }
     }
     

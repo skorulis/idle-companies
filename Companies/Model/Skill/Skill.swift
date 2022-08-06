@@ -8,6 +8,7 @@ public enum Skill: String, Hashable, Identifiable, Codable {
     case metallurgy
     case marketing
     case construction
+    case hr
     
     public var id: String { rawValue }
 }
@@ -20,6 +21,7 @@ extension Skill {
         case .metallurgy: return "Metallurgy"
         case .marketing: return "Marketing"
         case .construction: return "Construction"
+        case .hr: return "Human resources"
         }
     }
     
@@ -29,6 +31,7 @@ extension Skill {
         case .metallurgy: return .anvil
         case .marketing: return .virtualMarker
         case .construction: return .hammerNails
+        case .hr: return .person
         }
     }
     

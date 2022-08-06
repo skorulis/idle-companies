@@ -65,7 +65,7 @@ enum OperationPath: Hashable, Identifiable {
         case .recruiting:
             RecruitingView(viewModel: coordinator.resolve())
         case .training:
-            EmptyView()
+            EducationView(viewModel: coordinator.resolve())
         }
     }
     

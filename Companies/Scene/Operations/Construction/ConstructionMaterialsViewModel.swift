@@ -7,23 +7,18 @@ import Foundation
 
 final class ConstructionMaterialsViewModel: CoordinatedViewModel, ObservableObject {
     
-    private let operations: OperationService
     private let uiStore: UIHistoryStore
     
     @Published var selected: ConstructionMaterialActivity
     
-    init(operations: OperationService,
-         uiStore: UIHistoryStore
-    ) {
-        self.operations = operations
+    init(uiStore: UIHistoryStore) {
         self.uiStore = uiStore
-        selected =  uiStore.retrieve() ?? ConstructionMaterialActivity.allCases[0]
+        selected = uiStore.retrieve() ?? ConstructionMaterialActivity.allCases[0]
         super .init()
-        setupObservers()
     }
     
-    private func setupObservers() {
-        operations.store.objectWillChange
+    override func onCoordinatorSet() {
+        activityStore.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }

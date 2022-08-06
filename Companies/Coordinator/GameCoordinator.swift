@@ -28,6 +28,7 @@ class CoordinatedViewModel: PCoordinatedViewModel {
     lazy var skillStore: SkillStore = coordinator.resolve()
     lazy var xpCalc: XPLevelCalculation = coordinator.resolve()
     lazy var activityStore: ActivityStore = coordinator.resolve()
+    lazy var operations: OperationService = coordinator.resolve()
 }
 
 final class GameCoordinator: PCoordinator, ObservableObject {

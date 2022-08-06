@@ -78,6 +78,11 @@
 		FA738E5B289E2DFA00E1EC60 /* RecruitingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E5A289E2DFA00E1EC60 /* RecruitingActivity.swift */; };
 		FA738E5D289E30B300E1EC60 /* RecruitingActivity+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E5C289E30B300E1EC60 /* RecruitingActivity+Service.swift */; };
 		FA738E5F289E3A6A00E1EC60 /* IOCTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E5E289E3A6A00E1EC60 /* IOCTestCase.swift */; };
+		FA738E61289E402100E1EC60 /* EducationActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E60289E402100E1EC60 /* EducationActivity.swift */; };
+		FA738E63289E42E700E1EC60 /* EducationActivity+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E62289E42E700E1EC60 /* EducationActivity+Service.swift */; };
+		FA738E65289E476500E1EC60 /* EducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E64289E476500E1EC60 /* EducationView.swift */; };
+		FA738E67289E479F00E1EC60 /* EducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E66289E479F00E1EC60 /* EducationViewModel.swift */; };
+		FA738E69289E5ADF00E1EC60 /* EducationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -233,6 +238,11 @@
 		FA738E5A289E2DFA00E1EC60 /* RecruitingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecruitingActivity.swift; sourceTree = "<group>"; };
 		FA738E5C289E30B300E1EC60 /* RecruitingActivity+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecruitingActivity+Service.swift"; sourceTree = "<group>"; };
 		FA738E5E289E3A6A00E1EC60 /* IOCTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOCTestCase.swift; sourceTree = "<group>"; };
+		FA738E60289E402100E1EC60 /* EducationActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationActivity.swift; sourceTree = "<group>"; };
+		FA738E62289E42E700E1EC60 /* EducationActivity+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EducationActivity+Service.swift"; sourceTree = "<group>"; };
+		FA738E64289E476500E1EC60 /* EducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationView.swift; sourceTree = "<group>"; };
+		FA738E66289E479F00E1EC60 /* EducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModel.swift; sourceTree = "<group>"; };
+		FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationActivityView.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -496,6 +506,9 @@
 				FA738E54289E257D00E1EC60 /* RecruitingView.swift */,
 				FA738E56289E259200E1EC60 /* RecruitingViewModel.swift */,
 				FA738E58289E2D8F00E1EC60 /* RecruitingPlaceView.swift */,
+				FA738E64289E476500E1EC60 /* EducationView.swift */,
+				FA738E66289E479F00E1EC60 /* EducationViewModel.swift */,
+				FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */,
 			);
 			path = HR;
 			sourceTree = "<group>";
@@ -662,6 +675,7 @@
 				FA738DF72894A90000E1EC60 /* MiningActivity+Service.swift */,
 				FA738DFF2894AE0200E1EC60 /* SmeltingActivity+Service.swift */,
 				FA738E5C289E30B300E1EC60 /* RecruitingActivity+Service.swift */,
+				FA738E62289E42E700E1EC60 /* EducationActivity+Service.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -859,6 +873,7 @@
 				FA738E27289882C800E1EC60 /* AlloyActivity.swift */,
 				FA738E4A289E152100E1EC60 /* ForgingActivity.swift */,
 				FA738E5A289E2DFA00E1EC60 /* RecruitingActivity.swift */,
+				FA738E60289E402100E1EC60 /* EducationActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -1035,12 +1050,14 @@
 				FA738DF82894A90000E1EC60 /* MiningActivity+Service.swift in Sources */,
 				FA738DC828911C4600E1EC60 /* ConstructionContractActivity.swift in Sources */,
 				FA738E5B289E2DFA00E1EC60 /* RecruitingActivity.swift in Sources */,
+				FA738E67289E479F00E1EC60 /* EducationViewModel.swift in Sources */,
 				FAC376AF288A2BE700AD3647 /* ActivityStatsView.swift in Sources */,
 				FA738DFE2894ADCC00E1EC60 /* MarketingActivity+Service.swift in Sources */,
 				FAC376A7288A16B500AD3647 /* MiningActivity.swift in Sources */,
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FA738E53289E22A700E1EC60 /* HRSubType.swift in Sources */,
 				FA738E4F289E216600E1EC60 /* HumanResourcesView.swift in Sources */,
+				FA738E61289E402100E1EC60 /* EducationActivity.swift in Sources */,
 				FA738DD32892294400E1EC60 /* HeadquartersView.swift in Sources */,
 				FA738DFC2894ACBB00E1EC60 /* ConstructionMaterialActivity+Service.swift in Sources */,
 				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
@@ -1056,10 +1073,12 @@
 				FAC376CA288BECF600AD3647 /* ToastPresentationService.swift in Sources */,
 				FAC3769628891A6C00AD3647 /* ItemPercentage.swift in Sources */,
 				FA738E2E2898C5A400E1EC60 /* SmeltingViewModel.swift in Sources */,
+				FA738E69289E5ADF00E1EC60 /* EducationActivityView.swift in Sources */,
 				FA738DDC28927A1C00E1EC60 /* CompanyModel.swift in Sources */,
 				FA738E362899253200E1EC60 /* ShortNumberFormatter.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
+				FA738E63289E42E700E1EC60 /* EducationActivity+Service.swift in Sources */,
 				FA738E5D289E30B300E1EC60 /* RecruitingActivity+Service.swift in Sources */,
 				FAC376C5288BE6F700AD3647 /* ToastView.swift in Sources */,
 				FAC376CE288DF89700AD3647 /* PanelBackground.swift in Sources */,
@@ -1145,6 +1164,7 @@
 				FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */,
 				FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
+				FA738E65289E476500E1EC60 /* EducationView.swift in Sources */,
 				FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */,
 				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,

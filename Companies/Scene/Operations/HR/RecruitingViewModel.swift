@@ -4,25 +4,14 @@ import Foundation
 
 final class RecruitingViewModel: CoordinatedViewModel, ObservableObject {
     
-    let operations: OperationService
-    
-    init(operations: OperationService) {
-        self.operations = operations
-        super.init()
+    override func onCoordinatorSet() {
+        listen(inventory)
+        listen(skillStore)
+        listen(activityStore)
     }
     
-    override func onCoordinatorSet() {
-        inventory.objectWillChange.sink { _ in
-            self.objectWillChange.send()
-        }
-        .store(in: &subscribers)
-        
-        skillStore.objectWillChange.sink { [unowned self] _ in
-            self.objectWillChange.send()
-        }
-        .store(in: &subscribers)
-        
-        activityStore.objectWillChange.sink { [unowned self] _ in
+    func listen<T: ObservableObject>(_ obj: T) {
+        obj.objectWillChange.sink { [unowned self] _ in
             self.objectWillChange.send()
         }
         .store(in: &subscribers)

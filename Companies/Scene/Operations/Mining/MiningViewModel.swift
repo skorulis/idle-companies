@@ -7,16 +7,8 @@ import Foundation
 
 final class MiningViewModel: CoordinatedViewModel, ObservableObject {
     
-    private let operations: OperationService
-    
-    init(operations: OperationService
-    ) {
-        self.operations = operations
-        super.init()
-    }
-    
     override func onCoordinatorSet() {
-        operations.store.objectWillChange
+        activityStore.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }

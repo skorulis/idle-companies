@@ -56,6 +56,7 @@ private extension IOC {
         container.autoregister(ChangeHistoryViewModel.self, initializer: ChangeHistoryViewModel.init)
         container.autoregister(HumanResourcesViewModel.self, initializer: HumanResourcesViewModel.init)
         container.autoregister(RecruitingViewModel.self, initializer: RecruitingViewModel.init)
+        container.autoregister(EducationViewModel.self, initializer: EducationViewModel.init)
         
         container.autoregister(ToastPresentationService.self, initializer: ToastPresentationService.init)
             .inObjectScope(.container)
@@ -83,18 +84,13 @@ private extension IOC {
     }
     
     func registerActivityServices() {
-        container.autoregister(MiningActivity.Service.self,
-                               initializer: MiningActivity.Service.init)
-        container.autoregister(MarketingActivity.Service.self,
-                               initializer: MarketingActivity.Service.init)
-        container.autoregister(SmeltingActivity.Service.self,
-                               initializer: SmeltingActivity.Service.init)
-        container.autoregister(ConstructionMaterialActivity.Service.self,
-                               initializer: ConstructionMaterialActivity.Service.init)
-        container.autoregister(ConstructionContractActivity.Service.self,
-                               initializer: ConstructionContractActivity.Service.init)
-        container.autoregister(RecruitingActivity.Service.self,
-                               initializer: RecruitingActivity.Service.init)
+        container.autoregister(MiningActivity.Service.self, initializer: MiningActivity.Service.init)
+        container.autoregister(MarketingActivity.Service.self, initializer: MarketingActivity.Service.init)
+        container.autoregister(SmeltingActivity.Service.self, initializer: SmeltingActivity.Service.init)
+        container.autoregister(ConstructionMaterialActivity.Service.self, initializer: ConstructionMaterialActivity.Service.init)
+        container.autoregister(ConstructionContractActivity.Service.self, initializer: ConstructionContractActivity.Service.init)
+        container.autoregister(RecruitingActivity.Service.self, initializer: RecruitingActivity.Service.init)
+        container.autoregister(EducationActivity.Service.self, initializer: EducationActivity.Service.init)
     }
     
     func registerStores() {

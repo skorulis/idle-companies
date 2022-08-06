@@ -7,22 +7,19 @@ import Foundation
 
 final class SmeltingViewModel: CoordinatedViewModel, ObservableObject {
 
-    private let operations: OperationService
     private let uiStore: UIHistoryStore
     
     @Published var selectedRecipe: SmeltingActivity
     
-    init(operations: OperationService,
-         uiStore: UIHistoryStore
+    init(uiStore: UIHistoryStore
     ) {
-        self.operations = operations
         self.uiStore = uiStore
         selectedRecipe =  uiStore.retrieve() ?? SmeltingActivity.allCases[0]
         super.init()
     }
     
     override func onCoordinatorSet() {
-        operations.store.objectWillChange
+        activityStore.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }

@@ -7,12 +7,8 @@ import Foundation
 
 final class MarketingViewModel: CoordinatedViewModel, ObservableObject {
     
-    private let operations: OperationService
-    
-    init(operations: OperationService) {
-        self.operations = operations
-        super.init()
-        operations.store.objectWillChange
+    override func onCoordinatorSet() {
+        activityStore.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }

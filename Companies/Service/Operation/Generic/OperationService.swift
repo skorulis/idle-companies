@@ -128,6 +128,7 @@ extension OperationService {
         do {
             try service.tryStart(activity: op)
         } catch {
+            toastService.add(text: error.localizedDescription, style: .negative)
             return false
         }
         

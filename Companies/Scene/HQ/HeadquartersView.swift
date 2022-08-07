@@ -27,9 +27,12 @@ extension HeadquartersView: View {
         VStack {
             Text(viewModel.name)
             networth
-            Text("Headquarters")
+            Text("Company HQ")
+                .font(.title)
             hqBuilding
-            
+            Text("Enhancements")
+                .font(.title)
+            enhancements
         }
         .padding(.horizontal, 16)
     }
@@ -49,9 +52,7 @@ extension HeadquartersView: View {
                 }
             }
         }
-        .padding(4)
-        .frame(maxWidth: .infinity)
-        .background(PanelBackground())
+        .panelBackground()
     }
     
     @ViewBuilder
@@ -61,6 +62,23 @@ extension HeadquartersView: View {
         } else {
             Image(systemName: "xmark.seal")
         }
+    }
+    
+    private var enhancements: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Slots")
+                Spacer()
+                Text("\(viewModel.availableEnhancementSlots) / \(viewModel.totalEnhancementSlots)")
+            }
+            Button(action: viewModel.buyEnhancement) {
+                Text("Purchase for \(viewModel.nextCostString)")
+            }
+            Button(action: viewModel.manageEnhancements) {
+                Text("Manage")
+            }
+        }
+        .panelBackground()
     }
     
     private var networth: some View {

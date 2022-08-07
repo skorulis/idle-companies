@@ -24,7 +24,7 @@ extension ToastPresentationView: View {
         }
         .padding(.bottom, 8)
         .frame(maxHeight: .infinity)
-        .ignoresSafeArea()
+        .ignoresSafeArea(.all, edges: .top)
         .animation(.easeInOut, value: viewModel.toasts)
         .allowsHitTesting(false)
     }

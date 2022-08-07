@@ -83,6 +83,8 @@
 		FA738E65289E476500E1EC60 /* EducationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E64289E476500E1EC60 /* EducationView.swift */; };
 		FA738E67289E479F00E1EC60 /* EducationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E66289E479F00E1EC60 /* EducationViewModel.swift */; };
 		FA738E69289E5ADF00E1EC60 /* EducationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */; };
+		FA738E6B289F33B100E1EC60 /* EnhancementCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6A289F33B100E1EC60 /* EnhancementCalculation.swift */; };
+		FA738E6D289F46C100E1EC60 /* EnhancementCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -243,6 +245,8 @@
 		FA738E64289E476500E1EC60 /* EducationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationView.swift; sourceTree = "<group>"; };
 		FA738E66289E479F00E1EC60 /* EducationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationViewModel.swift; sourceTree = "<group>"; };
 		FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationActivityView.swift; sourceTree = "<group>"; };
+		FA738E6A289F33B100E1EC60 /* EnhancementCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementCalculation.swift; sourceTree = "<group>"; };
+		FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementCalculationTests.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -883,6 +887,7 @@
 			children = (
 				FAC376B7288A4E8400AD3647 /* XPLevelCalculation.swift */,
 				FA738E352899253200E1EC60 /* ShortNumberFormatter.swift */,
+				FA738E6A289F33B100E1EC60 /* EnhancementCalculation.swift */,
 			);
 			path = Calculations;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 			children = (
 				FAC376BA288A4EFE00AD3647 /* XPLevelCalculationTests.swift */,
 				FA738E372899257400E1EC60 /* ShortNumberFormatterTests.swift */,
+				FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */,
 			);
 			path = Calculations;
 			sourceTree = "<group>";
@@ -1154,6 +1160,7 @@
 				FA738DCE28911F2F00E1EC60 /* ConstructionContractsViewModel.swift in Sources */,
 				FA738E2F2898C5A400E1EC60 /* SmeltingView.swift in Sources */,
 				FA738E1728972DA200E1EC60 /* ChangeHistoryService.swift in Sources */,
+				FA738E6B289F33B100E1EC60 /* EnhancementCalculation.swift in Sources */,
 				FAC376872888AA2700AD3647 /* MarketingViewModel.swift in Sources */,
 				FAC376B8288A4E8400AD3647 /* XPLevelCalculation.swift in Sources */,
 				FA738E0A2895F9CE00E1EC60 /* PBackgroundListener.swift in Sources */,
@@ -1186,6 +1193,7 @@
 				FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */,
 				FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */,
 				FA738E49289E05BA00E1EC60 /* PublisherExpectation.swift in Sources */,
+				FA738E6D289F46C100E1EC60 /* EnhancementCalculationTests.swift in Sources */,
 				FA738E5F289E3A6A00E1EC60 /* IOCTestCase.swift in Sources */,
 				FAC3766B2887F32600AD3647 /* RecipeServiceTests.swift in Sources */,
 				FA738E46289E021C00E1EC60 /* TransientValuesServiceTests.swift in Sources */,

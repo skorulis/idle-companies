@@ -7,13 +7,17 @@ import Foundation
 final class HeadquartersViewModel: CoordinatedViewModel, ObservableObject {
  
     private let companyStore: CompanyStore
+    private let enhancementCalc: EnhancementCalculation
+    private let toastService: ToastPresentationService
     
-    init(companyStore: CompanyStore
+    init(companyStore: CompanyStore,
+         enhancementCalc: EnhancementCalculation,
+         toastService: ToastPresentationService
     ) {
         self.companyStore = companyStore
+        self.enhancementCalc = enhancementCalc
+        self.toastService = toastService
         super.init()
-        
-        
     }
     
     override func onCoordinatorSet() {
@@ -49,6 +53,26 @@ extension HeadquartersViewModel {
         guard let next = hq.next else { return false }
         return inventory.containsAll(items: next.requirements)
     }
+    
+    var availableEnhancementSlots: Int {
+        totalEnhancementSlots
+    }
+    
+    var totalEnhancementSlots: Int {
+        company.enhancementSlots
+    }
+    
+    var nextEnhancementCost: Int {
+        enhancementCalc.cost(totalEnhancementSlots + 1)
+    }
+    
+    var nextCostString: String {
+        ShortNumberFormatter.standard.format(nextEnhancementCost)
+    }
+    
+    var canBuyEnhancement: Bool {
+        return inventory.contains(item: ItemCount(type: .credits, count: nextEnhancementCost))
+    }
 }
 
 // MARK: - Logic
@@ -57,5 +81,18 @@ extension HeadquartersViewModel {
     
     func showUpgrade() {
         coordinator.push(.hq(.upgrade))
+    }
+    
+    func manageEnhancements() {
+        
+    }
+    
+    func buyEnhancement() {
+        do {
+            try inventory.consume(inputs: [ItemCount(type: .credits, count: nextEnhancementCost)])
+            companyStore.company.enhancementSlots += 1
+        } catch {
+            toastService.add(text: error.localizedDescription, style: .negative)
+        }
     }
 }

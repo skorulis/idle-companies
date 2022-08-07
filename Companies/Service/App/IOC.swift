@@ -121,7 +121,7 @@ private extension IOC {
     
     func registerCalculations() {
         container.autoregister(XPLevelCalculation.self, initializer: XPLevelCalculation.init)
-
+        container.autoregister(EnhancementCalculation.self, initializer: EnhancementCalculation.init)
     }
     
     func registerBehaviors() {

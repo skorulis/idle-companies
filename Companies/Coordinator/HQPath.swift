@@ -6,6 +6,7 @@ import SwiftUI
 enum HQPath: Hashable, Identifiable {
     case home
     case upgrade
+    case manageEnhancements
     
     var id: String {
         String(describing: self)
@@ -18,6 +19,8 @@ enum HQPath: Hashable, Identifiable {
             HeadquartersView(viewModel: coordinator.resolve())
         case .upgrade:
             HQUpgradeView(viewModel: coordinator.resolve())
+        case .manageEnhancements:
+            ManageEnhancementsView(viewModel: coordinator.resolve())
         }
     }
 }

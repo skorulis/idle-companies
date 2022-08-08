@@ -52,6 +52,7 @@ private extension IOC {
         container.autoregister(ConstructionContractsViewModel.self, initializer: ConstructionContractsViewModel.init)
         container.autoregister(HeadquartersViewModel.self, initializer: HeadquartersViewModel.init)
         container.autoregister(HQUpgradeViewModel.self, initializer: HQUpgradeViewModel.init)
+        container.autoregister(ManageEnhancementsViewModel.self, initializer: ManageEnhancementsViewModel.init)
         container.autoregister(ConstructionMaterialsViewModel.self, initializer: ConstructionMaterialsViewModel.init)
         container.autoregister(ChangeHistoryViewModel.self, initializer: ChangeHistoryViewModel.init)
         container.autoregister(HumanResourcesViewModel.self, initializer: HumanResourcesViewModel.init)

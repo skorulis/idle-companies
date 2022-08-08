@@ -84,7 +84,7 @@ extension HeadquartersViewModel {
     }
     
     func manageEnhancements() {
-        
+        coordinator.push(.hq(.manageEnhancements))
     }
     
     func buyEnhancement() {

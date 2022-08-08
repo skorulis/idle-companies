@@ -85,6 +85,8 @@
 		FA738E69289E5ADF00E1EC60 /* EducationActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */; };
 		FA738E6B289F33B100E1EC60 /* EnhancementCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6A289F33B100E1EC60 /* EnhancementCalculation.swift */; };
 		FA738E6D289F46C100E1EC60 /* EnhancementCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */; };
+		FA738E7028A0F86C00E1EC60 /* ManageEnhancementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6F28A0F86C00E1EC60 /* ManageEnhancementsView.swift */; };
+		FA738E7228A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7128A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -247,6 +249,8 @@
 		FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationActivityView.swift; sourceTree = "<group>"; };
 		FA738E6A289F33B100E1EC60 /* EnhancementCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementCalculation.swift; sourceTree = "<group>"; };
 		FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementCalculationTests.swift; sourceTree = "<group>"; };
+		FA738E6F28A0F86C00E1EC60 /* ManageEnhancementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEnhancementsView.swift; sourceTree = "<group>"; };
+		FA738E7128A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEnhancementsViewModel.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -371,6 +375,7 @@
 		FA738DD12892293B00E1EC60 /* HQ */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E6E28A0F86600E1EC60 /* Enhancements */,
 				FA738DD22892294400E1EC60 /* HeadquartersView.swift */,
 				FA738DD42892295900E1EC60 /* HeadquartersViewModel.swift */,
 				FA738DDD2892948100E1EC60 /* HQUpgradeView.swift */,
@@ -515,6 +520,15 @@
 				FA738E68289E5ADF00E1EC60 /* EducationActivityView.swift */,
 			);
 			path = HR;
+			sourceTree = "<group>";
+		};
+		FA738E6E28A0F86600E1EC60 /* Enhancements */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E6F28A0F86C00E1EC60 /* ManageEnhancementsView.swift */,
+				FA738E7128A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift */,
+			);
+			path = Enhancements;
 			sourceTree = "<group>";
 		};
 		FAC375D12883888F00AD3647 = {
@@ -1103,6 +1117,7 @@
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */,
 				FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */,
+				FA738E7028A0F86C00E1EC60 /* ManageEnhancementsView.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
 				FA738E3B2899D38F00E1EC60 /* TransientValuesService.swift in Sources */,
@@ -1130,6 +1145,7 @@
 				FA738DE0289294A300E1EC60 /* HQUpgradeViewModel.swift in Sources */,
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FA738E4B289E152100E1EC60 /* ForgingActivity.swift in Sources */,
+				FA738E7228A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FA738E59289E2D8F00E1EC60 /* RecruitingPlaceView.swift in Sources */,
 				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,

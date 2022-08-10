@@ -9,8 +9,12 @@ struct CompanyModel: Codable {
     /// Total upgrades purchased
     var enhancementSlots: Int
     
+    /// Applied enhancements
+    var enhancements: [Enhancement: Int]
+    
     init(hqType: HQType) {
         self.hqType = hqType
         self.enhancementSlots = 0
+        enhancements = [:]
     }
 }

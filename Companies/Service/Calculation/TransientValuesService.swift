@@ -42,7 +42,10 @@ extension TransientValuesService {
 private extension TransientValuesService {
  
     var inventorySize: Int {
-        return companyStore.company.hqType.inventorySpots
+        let mods = companyStore.allModifiers
+        let invMods = StatModifier.total(type: .inventorySize, mods: mods)
+        
+        return companyStore.company.hqType.inventorySpots + Int(invMods.0)
     }
     
 }

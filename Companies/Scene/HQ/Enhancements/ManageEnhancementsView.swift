@@ -25,9 +25,28 @@ extension ManageEnhancementsView: View {
     
     private func content() -> some View {
         VStack {
-            
+            list
         }
         .padding(.horizontal, 16)
+    }
+    
+    private var list: some View {
+        ForEach(viewModel.available) { enhancement in
+            listItem(enhancement)
+        }
+    }
+    
+    private func listItem(_ enhancement: Enhancement) -> some View {
+        VStack {
+            HStack {
+                Text(enhancement.name)
+                Spacer()
+                Text(viewModel.levelsString(enhancement))
+            }
+            Button(action: { viewModel.purchase(enhancement) }) {
+                Text("Buy")
+            }
+        }
     }
 }
 

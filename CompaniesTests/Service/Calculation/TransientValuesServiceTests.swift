@@ -11,6 +11,7 @@ final class TransientValuesServiceTests: XCTestCase {
     
     private lazy var store = ioc.resolve(TransientValuesStore.self)
     private lazy var companyStore = ioc.resolve(CompanyStore.self)
+    private lazy var sut = ioc.resolve(TransientValuesService.self)
  
     func test_upgradeChange() throws {
         XCTAssertEqual(store.inventorySize, 10)
@@ -20,6 +21,13 @@ final class TransientValuesServiceTests: XCTestCase {
         wait(for: [exp], timeout: 10)
         
         XCTAssertEqual(store.inventorySize, 20)
+    }
+    
+    func test_enhancement() throws {
+        companyStore.company.enhancements[.warehouse] = 1
+        sut.calculateValues()
+        XCTAssertEqual(store.inventorySize, 11)
+        
     }
     
 }

@@ -87,6 +87,9 @@
 		FA738E6D289F46C100E1EC60 /* EnhancementCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */; };
 		FA738E7028A0F86C00E1EC60 /* ManageEnhancementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E6F28A0F86C00E1EC60 /* ManageEnhancementsView.swift */; };
 		FA738E7228A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7128A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift */; };
+		FA738E7428A0FA7300E1EC60 /* Enhancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7328A0FA7300E1EC60 /* Enhancement.swift */; };
+		FA738E7728A101EF00E1EC60 /* EnhancementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7628A101EF00E1EC60 /* EnhancementService.swift */; };
+		FA738E7928A273E900E1EC60 /* StatModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7828A273E900E1EC60 /* StatModifier.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -251,6 +254,9 @@
 		FA738E6C289F46C100E1EC60 /* EnhancementCalculationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementCalculationTests.swift; sourceTree = "<group>"; };
 		FA738E6F28A0F86C00E1EC60 /* ManageEnhancementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEnhancementsView.swift; sourceTree = "<group>"; };
 		FA738E7128A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageEnhancementsViewModel.swift; sourceTree = "<group>"; };
+		FA738E7328A0FA7300E1EC60 /* Enhancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enhancement.swift; sourceTree = "<group>"; };
+		FA738E7628A101EF00E1EC60 /* EnhancementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementService.swift; sourceTree = "<group>"; };
+		FA738E7828A273E900E1EC60 /* StatModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatModifier.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -389,6 +395,7 @@
 			children = (
 				FA738DD92892307600E1EC60 /* HQType.swift */,
 				FA738DDB28927A1C00E1EC60 /* CompanyModel.swift */,
+				FA738E7328A0FA7300E1EC60 /* Enhancement.swift */,
 			);
 			path = Company;
 			sourceTree = "<group>";
@@ -531,6 +538,14 @@
 			path = Enhancements;
 			sourceTree = "<group>";
 		};
+		FA738E7528A101E700E1EC60 /* Enhancements */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E7628A101EF00E1EC60 /* EnhancementService.swift */,
+			);
+			path = Enhancements;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -637,6 +652,7 @@
 			children = (
 				FAC375FE2883945A00AD3647 /* App */,
 				FA738E392899D37F00E1EC60 /* Calculation */,
+				FA738E7528A101E700E1EC60 /* Enhancements */,
 				FA738E1528972D9400E1EC60 /* History */,
 				FAC376742888278800AD3647 /* Persistence */,
 				FAC3762428840B3D00AD3647 /* Inventory */,
@@ -867,6 +883,7 @@
 			children = (
 				FAC3769C2889665700AD3647 /* Skill.swift */,
 				FAC3769E2889666200AD3647 /* SkillExperience.swift */,
+				FA738E7828A273E900E1EC60 /* StatModifier.swift */,
 			);
 			path = Skill;
 			sourceTree = "<group>";
@@ -1077,9 +1094,11 @@
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FA738E53289E22A700E1EC60 /* HRSubType.swift in Sources */,
 				FA738E4F289E216600E1EC60 /* HumanResourcesView.swift in Sources */,
+				FA738E7928A273E900E1EC60 /* StatModifier.swift in Sources */,
 				FA738E61289E402100E1EC60 /* EducationActivity.swift in Sources */,
 				FA738DD32892294400E1EC60 /* HeadquartersView.swift in Sources */,
 				FA738DFC2894ACBB00E1EC60 /* ConstructionMaterialActivity+Service.swift in Sources */,
+				FA738E7728A101EF00E1EC60 /* EnhancementService.swift in Sources */,
 				FAC376A4288A15D200AD3647 /* POperation.swift in Sources */,
 				FAC3762E2884227200AD3647 /* InventoryView.swift in Sources */,
 				FAC376C1288B82CD00AD3647 /* LinearProgressView.swift in Sources */,
@@ -1137,6 +1156,7 @@
 				FAC3761F2883E3AA00AD3647 /* OperationProgressView.swift in Sources */,
 				FAC376902888B0A800AD3647 /* DebugView.swift in Sources */,
 				FA738DD52892295900E1EC60 /* HeadquartersViewModel.swift in Sources */,
+				FA738E7428A0FA7300E1EC60 /* Enhancement.swift in Sources */,
 				FA738DCC28911F1F00E1EC60 /* ConstructionContractsView.swift in Sources */,
 				FAC375FA2883943100AD3647 /* ContentView.swift in Sources */,
 				FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */,

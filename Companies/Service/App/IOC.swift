@@ -74,6 +74,7 @@ private extension IOC {
             .inObjectScope(.container)
         container.autoregister(TransientValuesService.self, initializer: TransientValuesService.init)
             .inObjectScope(.container)
+        container.autoregister(EnhancementService.self, initializer: EnhancementService.init)
         
         #if DEBUG
         container.autoregister(DebugTimeProvider.self, initializer: DebugTimeProvider.init)

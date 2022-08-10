@@ -20,6 +20,31 @@ final class CompanyStore: ObservableObject {
     
 }
 
+extension CompanyStore {
+    
+    var allModifiers: [StatModifier] {
+        var all = [StatModifier]()
+        for (key, value) in company.enhancements {
+            let mods = key.modifiers.map { $0 * Double(value) }
+            all.append(contentsOf: mods)
+        }
+        return all
+    }
+    
+}
+
+
+// MARK: - Logic
+
+extension CompanyStore {
+    
+    func level(enhancement: Enhancement) -> Int {
+        return company.enhancements[enhancement] ?? 0
+    }
+    
+}
+
+
 // MARK: - Private logic
 
 private extension CompanyStore {

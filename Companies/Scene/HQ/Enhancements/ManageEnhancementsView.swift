@@ -25,6 +25,8 @@ extension ManageEnhancementsView: View {
     
     private func content() -> some View {
         VStack {
+            detailItem
+                .panelBackground()
             list
         }
         .padding(.horizontal, 16)
@@ -37,15 +39,34 @@ extension ManageEnhancementsView: View {
     }
     
     private func listItem(_ enhancement: Enhancement) -> some View {
+        Button(action: viewModel.select(enhancement)) {
+            Text(enhancement.name)
+            Spacer()
+            Text(viewModel.levelsString(enhancement))
+        }
+        
+    }
+    
+    private var detailItem: some View {
         VStack {
-            HStack {
-                Text(enhancement.name)
-                Spacer()
-                Text(viewModel.levelsString(enhancement))
+            listItem(viewModel.selected)
+            IngredientsView(ingredients: viewModel.currentCost,
+                            inventory: viewModel.inventory)
+            detailButtons
+        }
+    }
+    
+    private var detailButtons: some View {
+        HStack {
+            Button(action: viewModel.downgrade) {
+                Text("Downgrade")
             }
-            Button(action: { viewModel.purchase(enhancement) }) {
+            .disabled(viewModel.selectedLevel == 0)
+            Spacer()
+            Button(action: { viewModel.purchase(viewModel.selected) }) {
                 Text("Buy")
             }
+            .disabled(viewModel.selectedLevel >= viewModel.selected.maxLevel)
         }
     }
 }
@@ -56,7 +77,8 @@ struct ManageEnhancementsView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        ManageEnhancementsView(viewModel: ioc.resolve())
+        let coord = ioc.resolve(GameCoordinator.self, argument: GamePath.hq(.manageEnhancements))
+        return CoordinatorView(coordinator: coord)
     }
 }
 

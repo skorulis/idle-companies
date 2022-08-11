@@ -45,6 +45,13 @@ extension DebugViewModel {
         }
     }
     
+    func addItems(_ count: Int) {
+        let items = inventory.inventory
+        for (key, _) in items {
+            try? inventory.add(item: ItemCount(type: key, count: count))
+        }
+    }
+    
 }
 
 #endif

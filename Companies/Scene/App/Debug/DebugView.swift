@@ -21,8 +21,11 @@ extension DebugView: View {
             VStack {
                 speed
                 clearButton
+                plus100Button
             }
         }
+        .padding(.horizontal, 16)
+        
         .navigationTitle("Debug")
     }
     
@@ -33,6 +36,12 @@ extension DebugView: View {
     private var clearButton: some View {
         Button(action: viewModel.clearInventory) {
             Text("Clear inventory")
+        }
+    }
+    
+    private var plus100Button: some View {
+        Button(action: {viewModel.addItems(100) }) {
+            Text("Add 100 items")
         }
     }
 }

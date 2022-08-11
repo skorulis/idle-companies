@@ -21,6 +21,8 @@ extension Enhancement {
     
     var name: String {
         switch self {
+        case .warehouse:
+            return "Storage nooks"
         default:
             return self.rawValue.capitalized
         }
@@ -47,7 +49,7 @@ extension Enhancement {
     func cost(level: Int) -> [ItemCount] {
         // TODO: Define cost
         return [
-            ItemCount(type: .brick, count: 50)
+            ItemCount(type: .brick, count: 50 * level)
         ]
     }
     

@@ -33,6 +33,11 @@ extension EnhancementService {
         companyStore.company.enhancements[enhancement] = level
     }
     
+    func cost(_ enhancement: Enhancement) -> [ItemCount] {
+        let level = companyStore.level(enhancement: enhancement) + 1
+        return enhancement.cost(level: level)
+    }
+    
     func canPurchase(_ enhancement: Enhancement) -> Bool {
         let level = companyStore.level(enhancement: enhancement)
         if level >= enhancement.maxLevel {

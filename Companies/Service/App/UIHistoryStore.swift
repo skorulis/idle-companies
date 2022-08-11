@@ -17,13 +17,18 @@ final class UIHistoryStore: ObservableObject {
 
 extension UIHistoryStore {
     
-    func retrieve<T: POperation>() -> T? where T: RawRepresentable, T.RawValue == String {
-        guard let stringValue = lastSelection[T.typeID] else { return nil }
+    func retrieve<T: RawRepresentable>() -> T? where T.RawValue == String {
+        let tid = String(describing: T.self)
+        guard let stringValue = lastSelection[tid] else { return nil }
         return T(rawValue: stringValue)
     }
     
-    func store<T: POperation>(selection: T) {
-        lastSelection[T.typeID] = selection.id
+    func store<T: RawRepresentable>(selection: T) where T.RawValue == String {
+        lastSelection[typeID(item: selection)] = selection.rawValue
+    }
+    
+    private func typeID<T>(item: T) -> String {
+        return String(describing: type(of: item))
     }
     
 }

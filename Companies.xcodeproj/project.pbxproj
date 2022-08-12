@@ -90,6 +90,10 @@
 		FA738E7428A0FA7300E1EC60 /* Enhancement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7328A0FA7300E1EC60 /* Enhancement.swift */; };
 		FA738E7728A101EF00E1EC60 /* EnhancementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7628A101EF00E1EC60 /* EnhancementService.swift */; };
 		FA738E7928A273E900E1EC60 /* StatModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7828A273E900E1EC60 /* StatModifier.swift */; };
+		FA738E7C28A4E75900E1EC60 /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7B28A4E75900E1EC60 /* Soldier.swift */; };
+		FA738E7E28A4EA9500E1EC60 /* Battalion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7D28A4EA9500E1EC60 /* Battalion.swift */; };
+		FA738E8128A4EAEC00E1EC60 /* BattalionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8028A4EAEC00E1EC60 /* BattalionTests.swift */; };
+		FA738E8328A4F2EB00E1EC60 /* SoldierStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8228A4F2EB00E1EC60 /* SoldierStat.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -257,6 +261,10 @@
 		FA738E7328A0FA7300E1EC60 /* Enhancement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enhancement.swift; sourceTree = "<group>"; };
 		FA738E7628A101EF00E1EC60 /* EnhancementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancementService.swift; sourceTree = "<group>"; };
 		FA738E7828A273E900E1EC60 /* StatModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatModifier.swift; sourceTree = "<group>"; };
+		FA738E7B28A4E75900E1EC60 /* Soldier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
+		FA738E7D28A4EA9500E1EC60 /* Battalion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battalion.swift; sourceTree = "<group>"; };
+		FA738E8028A4EAEC00E1EC60 /* BattalionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionTests.swift; sourceTree = "<group>"; };
+		FA738E8228A4F2EB00E1EC60 /* SoldierStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierStat.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -458,6 +466,7 @@
 		FA738E21289775C700E1EC60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FA738E7F28A4EACF00E1EC60 /* Battle */,
 				FA738E22289775C700E1EC60 /* Operation */,
 			);
 			path = Model;
@@ -546,6 +555,24 @@
 			path = Enhancements;
 			sourceTree = "<group>";
 		};
+		FA738E7A28A4E74D00E1EC60 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E7B28A4E75900E1EC60 /* Soldier.swift */,
+				FA738E7D28A4EA9500E1EC60 /* Battalion.swift */,
+				FA738E8228A4F2EB00E1EC60 /* SoldierStat.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
+		FA738E7F28A4EACF00E1EC60 /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E8028A4EAEC00E1EC60 /* BattalionTests.swift */,
+			);
+			path = Battle;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -618,8 +645,9 @@
 		FAC375F42883943100AD3647 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FA738E1228972D2400E1EC60 /* History */,
+				FA738E7A28A4E74D00E1EC60 /* Battle */,
 				FA738DD82892307000E1EC60 /* Company */,
+				FA738E1228972D2400E1EC60 /* History */,
 				FAC3762728840BB600AD3647 /* Item */,
 				FAC376142883CB8000AD3647 /* Operation */,
 				FAC3769B2889665700AD3647 /* Skill */,
@@ -1124,6 +1152,7 @@
 				FAC3769828891B5500AD3647 /* ItemPercentageView.swift in Sources */,
 				FA738E57289E259200E1EC60 /* RecruitingViewModel.swift in Sources */,
 				FA738DC628910FF800E1EC60 /* ConstructionSubType.swift in Sources */,
+				FA738E7E28A4EA9500E1EC60 /* Battalion.swift in Sources */,
 				FA738E082895F6C200E1EC60 /* SceneDelegate.swift in Sources */,
 				FA738DE4289297B700E1EC60 /* GamePath.swift in Sources */,
 				FAC376522887ECC400AD3647 /* ItemRecipe.swift in Sources */,
@@ -1136,6 +1165,7 @@
 				FAC3762628840B4C00AD3647 /* InventoryStore.swift in Sources */,
 				FAC376BE288B42C800AD3647 /* SkillProgressView.swift in Sources */,
 				FA738DEB28937FA100E1EC60 /* ConstructionMaterialsViewModel.swift in Sources */,
+				FA738E8328A4F2EB00E1EC60 /* SoldierStat.swift in Sources */,
 				FA738E7028A0F86C00E1EC60 /* ManageEnhancementsView.swift in Sources */,
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
@@ -1166,6 +1196,7 @@
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FA738E4B289E152100E1EC60 /* ForgingActivity.swift in Sources */,
 				FA738E7228A0F8A900E1EC60 /* ManageEnhancementsViewModel.swift in Sources */,
+				FA738E7C28A4E75900E1EC60 /* Soldier.swift in Sources */,
 				FAC3763F28854B6F00AD3647 /* Fonts.swift in Sources */,
 				FA738E59289E2D8F00E1EC60 /* RecruitingPlaceView.swift in Sources */,
 				FA738E1C2897384A00E1EC60 /* ChangeHistoryViewModel.swift in Sources */,
@@ -1228,6 +1259,7 @@
 				FA738E43289DF17000E1EC60 /* HeadquartersViewModelTests.swift in Sources */,
 				FAC376BB288A4EFE00AD3647 /* XPLevelCalculationTests.swift in Sources */,
 				FAC3766D288800CB00AD3647 /* SmithingServiceTests.swift in Sources */,
+				FA738E8128A4EAEC00E1EC60 /* BattalionTests.swift in Sources */,
 				FA738E49289E05BA00E1EC60 /* PublisherExpectation.swift in Sources */,
 				FA738E6D289F46C100E1EC60 /* EnhancementCalculationTests.swift in Sources */,
 				FA738E5F289E3A6A00E1EC60 /* IOCTestCase.swift in Sources */,

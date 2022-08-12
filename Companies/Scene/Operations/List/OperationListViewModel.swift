@@ -25,7 +25,7 @@ final class OperationListViewModel: CoordinatedViewModel, ObservableObject {
 extension OperationListViewModel {
     
     var available: [Skill] {
-        return [.mining, .marketing, .metallurgy, .construction, .hr]
+        return [.mining, .marketing, .metallurgy, .construction, .hr, .military]
     }
     
 }

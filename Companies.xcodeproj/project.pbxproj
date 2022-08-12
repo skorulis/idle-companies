@@ -94,6 +94,12 @@
 		FA738E7E28A4EA9500E1EC60 /* Battalion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E7D28A4EA9500E1EC60 /* Battalion.swift */; };
 		FA738E8128A4EAEC00E1EC60 /* BattalionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8028A4EAEC00E1EC60 /* BattalionTests.swift */; };
 		FA738E8328A4F2EB00E1EC60 /* SoldierStat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8228A4F2EB00E1EC60 /* SoldierStat.swift */; };
+		FA738E8F28A643D600E1EC60 /* MilitarySubType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8C28A643D600E1EC60 /* MilitarySubType.swift */; };
+		FA738E9028A643D600E1EC60 /* MilitaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8D28A643D600E1EC60 /* MilitaryViewModel.swift */; };
+		FA738E9128A643D600E1EC60 /* MilitaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E8E28A643D600E1EC60 /* MilitaryView.swift */; };
+		FA738E9428A64D8A00E1EC60 /* BasicMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9328A64D8A00E1EC60 /* BasicMenuButton.swift */; };
+		FA738E9628A6515B00E1EC60 /* MilitaryTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */; };
+		FA738E9828A6517400E1EC60 /* MilitaryTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -265,6 +271,12 @@
 		FA738E7D28A4EA9500E1EC60 /* Battalion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battalion.swift; sourceTree = "<group>"; };
 		FA738E8028A4EAEC00E1EC60 /* BattalionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionTests.swift; sourceTree = "<group>"; };
 		FA738E8228A4F2EB00E1EC60 /* SoldierStat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierStat.swift; sourceTree = "<group>"; };
+		FA738E8C28A643D600E1EC60 /* MilitarySubType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilitarySubType.swift; sourceTree = "<group>"; };
+		FA738E8D28A643D600E1EC60 /* MilitaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilitaryViewModel.swift; sourceTree = "<group>"; };
+		FA738E8E28A643D600E1EC60 /* MilitaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MilitaryView.swift; sourceTree = "<group>"; };
+		FA738E9328A64D8A00E1EC60 /* BasicMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMenuButton.swift; sourceTree = "<group>"; };
+		FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingView.swift; sourceTree = "<group>"; };
+		FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingViewModel.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -573,6 +585,26 @@
 			path = Battle;
 			sourceTree = "<group>";
 		};
+		FA738E8B28A643D600E1EC60 /* Military */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E8C28A643D600E1EC60 /* MilitarySubType.swift */,
+				FA738E8D28A643D600E1EC60 /* MilitaryViewModel.swift */,
+				FA738E8E28A643D600E1EC60 /* MilitaryView.swift */,
+				FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */,
+				FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */,
+			);
+			path = Military;
+			sourceTree = "<group>";
+		};
+		FA738E9228A64D0600E1EC60 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA738E9328A64D8A00E1EC60 /* BasicMenuButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		FAC375D12883888F00AD3647 = {
 			isa = PBXGroup;
 			children = (
@@ -595,8 +627,9 @@
 		FAC375DC2883888F00AD3647 /* Companies */ = {
 			isa = PBXGroup;
 			children = (
-				FA738DB9288FE97300E1EC60 /* Coordinator */,
 				FAC376B6288A4E7D00AD3647 /* Calculations */,
+				FA738E9228A64D0600E1EC60 /* Components */,
+				FA738DB9288FE97300E1EC60 /* Coordinator */,
 				FAC375F42883943100AD3647 /* Model */,
 				FAC375F52883943100AD3647 /* Resource */,
 				FAC375F02883943100AD3647 /* Scene */,
@@ -711,6 +744,7 @@
 				FA738E4D289E215D00E1EC60 /* HR */,
 				FAC376832888AA0A00AD3647 /* Marketing */,
 				FAC376CF288E913A00AD3647 /* Metallurgy */,
+				FA738E8B28A643D600E1EC60 /* Military */,
 				FAC3760628839EFF00AD3647 /* Mining */,
 				FAC376352884B42F00AD3647 /* List */,
 			);
@@ -1177,6 +1211,7 @@
 				FA738E302898C5A400E1EC60 /* SmeltingActivityView.swift in Sources */,
 				FAC3768B2888AC7200AD3647 /* AgencyMarketingTypeView.swift in Sources */,
 				FAC376922888B0B800AD3647 /* DebugViewModel.swift in Sources */,
+				FA738E9128A643D600E1EC60 /* MilitaryView.swift in Sources */,
 				FA738DD02891231000E1EC60 /* ConstructionContractActivityView.swift in Sources */,
 				FAC376412885504600AD3647 /* Color+Theme.swift in Sources */,
 				FA738DDA2892307600E1EC60 /* HQType.swift in Sources */,
@@ -1219,6 +1254,8 @@
 				FAC37634288428D600AD3647 /* ItemIconView.swift in Sources */,
 				FA738E042895428800E1EC60 /* UIHistoryStore.swift in Sources */,
 				FA738E0228951A5200E1EC60 /* SimpleRecipeView.swift in Sources */,
+				FA738E9028A643D600E1EC60 /* MilitaryViewModel.swift in Sources */,
+				FA738E9428A64D8A00E1EC60 /* BasicMenuButton.swift in Sources */,
 				FA738DBD2890962600E1EC60 /* PCoordinator.swift in Sources */,
 				FA738E3428990AB700E1EC60 /* RecipeCreateView.swift in Sources */,
 				FAC376942889195E00AD3647 /* MiningPlaceView.swift in Sources */,
@@ -1237,13 +1274,16 @@
 				FA738DED289385C100E1EC60 /* ConstructionMaterialActivity.swift in Sources */,
 				FAC376D3288E916B00AD3647 /* MetallurgyViewModel.swift in Sources */,
 				FA738DBF289096ED00E1EC60 /* OperationPath.swift in Sources */,
+				FA738E8F28A643D600E1EC60 /* MilitarySubType.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 				FA738E65289E476500E1EC60 /* EducationView.swift in Sources */,
 				FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */,
 				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
+				FA738E9628A6515B00E1EC60 /* MilitaryTrainingView.swift in Sources */,
 				FAC376B1288A2C6100AD3647 /* PercentageOutputView.swift in Sources */,
 				FA738E51289E219500E1EC60 /* HumanResourcesViewModel.swift in Sources */,
 				FAC3769D2889665700AD3647 /* Skill.swift in Sources */,
+				FA738E9828A6517400E1EC60 /* MilitaryTrainingViewModel.swift in Sources */,
 				FA738E2028976F7400E1EC60 /* ActivityStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

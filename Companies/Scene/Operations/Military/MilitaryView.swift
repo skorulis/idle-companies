@@ -1,4 +1,4 @@
-//  Created by Alexander Skorulis on 27/7/2022.
+//  Created by Alexander Skorulis on 12/8/2022.
 
 import ASSwiftUI
 import Foundation
@@ -6,43 +6,43 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct ConstructionView {
+struct MilitaryView {
     
-    @StateObject var viewModel: ConstructionViewModel
+    @StateObject var viewModel: MilitaryViewModel
 }
 
 // MARK: - Rendering
 
-extension ConstructionView: View {
+extension MilitaryView: View {
     
     var body: some View {
         PageTemplate(nav: nav, content: content)
     }
-            
+    
     private func nav() -> some View {
         NavBar(left: BarButtonItem.back(viewModel.back),
-               mid: BarButtonItem.title("Construction"))
+               mid: BarButtonItem.title("Military")
+        )
     }
     
     private func content() -> some View {
-        VStack(spacing: 8) {
+        VStack {
             SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
-            ForEach(ConstructionSubType.allCases) { type in
+            ForEach(MilitarySubType.allCases) { type in
                 BasicMenuButton(item: type, action: viewModel.show(type))
             }
         }
         .padding(.horizontal, 16)
     }
-    
 }
 
 // MARK: - Previews
 
-struct ConstructionView_Previews: PreviewProvider {
+struct MilitaryView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        ConstructionView(viewModel: ioc.resolve())
+        MilitaryView(viewModel: ioc.resolve())
     }
 }
 

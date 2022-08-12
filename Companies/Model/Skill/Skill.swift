@@ -9,6 +9,7 @@ public enum Skill: String, Hashable, Identifiable, Codable {
     case marketing
     case construction
     case hr
+    case military
     
     public var id: String { rawValue }
 }
@@ -22,6 +23,7 @@ extension Skill {
         case .marketing: return "Marketing"
         case .construction: return "Construction"
         case .hr: return "Human resources"
+        default: return rawValue.capitalized
         }
     }
     
@@ -32,6 +34,7 @@ extension Skill {
         case .marketing: return .virtualMarker
         case .construction: return .hammerNails
         case .hr: return .person
+        case .military: return .targetArrows
         }
     }
     

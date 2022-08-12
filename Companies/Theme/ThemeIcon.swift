@@ -27,6 +27,7 @@ enum ThemeIcon: String {
 	case blockHouse = "block-house"
 	case digDug = "dig-dug"
 	case hammerNails = "hammer-nails"
+	case targetArrows = "target-arrows"
 	case virtualMarker = "virtual-marker"
 	case factory = "factory"
 	case woodenCrate = "wooden-crate"

@@ -2,7 +2,7 @@
 
 import Foundation
 
-enum ConstructionSubType: String, CaseIterable, Identifiable {
+enum ConstructionSubType: String, CaseIterable, Identifiable, MenuButtonItem {
     case contracts, materials, buildings
     
     var name: String {

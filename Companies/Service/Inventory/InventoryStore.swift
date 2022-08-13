@@ -11,9 +11,17 @@ final class InventoryStore: ObservableObject {
             try! self.store.set(codable: inventory, forKey: Self.storageKey)
         }
     }
+    
+    @Published private(set) var battalions: [Int: Battalion] {
+        didSet {
+            try! self.store.set(codable: inventory, forKey: Self.battalionsKey)
+        }
+    }
+    
     private let store: PKeyValueStore
     private let toasts: ToastPresentationService
     private static let storageKey = "InventoryStore.storageKey"
+    private static let battalionsKey = "InventoryStore.battalions"
     private let changeService: ChangeHistoryService
     private let transientValues: TransientValuesStore
     
@@ -27,6 +35,7 @@ final class InventoryStore: ObservableObject {
         self.changeService = changeService
         self.transientValues = transientValues
         self.inventory = Self.readFromDisk(store: store)
+        self.battalions = Self.readBattalions(store: store)
     }
     
 }
@@ -126,6 +135,13 @@ private extension InventoryStore {
     
     static func readFromDisk(store: PKeyValueStore) -> [ItemType: Int] {
         if let inventory: [ItemType: Int] = try? store.codable(forKey: Self.storageKey) {
+            return inventory
+        }
+        return [:]
+    }
+    
+    static func readBattalions(store: PKeyValueStore) -> [Int: Battalion] {
+        if let inventory: [Int: Battalion] = try? store.codable(forKey: Self.battalionsKey) {
             return inventory
         }
         return [:]

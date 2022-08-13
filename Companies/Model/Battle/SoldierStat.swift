@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum SoldierStat: CaseIterable {
+enum SoldierStat: String, CaseIterable, Codable, Identifiable {
     case accuracy, damage, armor, range, speed
+    
+    var id: String { rawValue }
 }
 
 extension SoldierStat {
@@ -20,5 +22,23 @@ extension SoldierStat {
             .armor: 0,
             .range: 0
         ]
+    }
+}
+
+extension SoldierStat {
+    
+    var icon: ThemeIcon {
+        switch self {
+        case .accuracy:
+            return .onTarget
+        case .damage:
+            return .backPain
+        case .armor:
+            return .armorVest
+        case .range:
+            return .bowman
+        case .speed:
+            return .runningShoe
+        }
     }
 }

@@ -28,12 +28,15 @@ extension MilitaryView: View {
     private func content() -> some View {
         VStack {
             SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
+            Text("Battalions")
+            BattalionList(inventory: viewModel.inventory)
             ForEach(MilitarySubType.allCases) { type in
                 BasicMenuButton(item: type, action: viewModel.show(type))
             }
         }
         .padding(.horizontal, 16)
     }
+    
 }
 
 // MARK: - Previews
@@ -42,7 +45,8 @@ struct MilitaryView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        MilitaryView(viewModel: ioc.resolve())
+        let coordinator = ioc.emptyCoordinator
+        MilitaryView(viewModel: coordinator.resolve())
     }
 }
 

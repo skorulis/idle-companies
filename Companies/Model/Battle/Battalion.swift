@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Battalion {
+struct Battalion: Codable {
     let baseStats: [SoldierStat: Double]
     let count: Int
     
@@ -39,6 +39,10 @@ struct Battalion {
     
     func value(_ stat: SoldierStat) -> Int {
         return Int(round(doubleValue(stat)))
+    }
+    
+    static var empty: Battalion {
+        return Battalion(stats: SoldierStat.emptyDict, count: 0)
     }
     
 }

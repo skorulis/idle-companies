@@ -132,3 +132,12 @@ private extension IOC {
     }
     
 }
+
+// MARK: Testing
+
+extension IOC {
+    
+    var emptyCoordinator: GameCoordinator {
+        resolve(GameCoordinator.self, argument: GamePath.empty)
+    }
+}

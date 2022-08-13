@@ -100,6 +100,8 @@
 		FA738E9428A64D8A00E1EC60 /* BasicMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9328A64D8A00E1EC60 /* BasicMenuButton.swift */; };
 		FA738E9628A6515B00E1EC60 /* MilitaryTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */; };
 		FA738E9828A6517400E1EC60 /* MilitaryTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */; };
+		FA738E9A28A65E7B00E1EC60 /* BattalionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9928A65E7B00E1EC60 /* BattalionSummaryView.swift */; };
+		FA738E9C28A7243100E1EC60 /* BattalionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9B28A7243100E1EC60 /* BattalionList.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -277,6 +279,8 @@
 		FA738E9328A64D8A00E1EC60 /* BasicMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicMenuButton.swift; sourceTree = "<group>"; };
 		FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingView.swift; sourceTree = "<group>"; };
 		FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingViewModel.swift; sourceTree = "<group>"; };
+		FA738E9928A65E7B00E1EC60 /* BattalionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionSummaryView.swift; sourceTree = "<group>"; };
+		FA738E9B28A7243100E1EC60 /* BattalionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionList.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 				FA738E8E28A643D600E1EC60 /* MilitaryView.swift */,
 				FA738E9528A6515B00E1EC60 /* MilitaryTrainingView.swift */,
 				FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */,
+				FA738E9928A65E7B00E1EC60 /* BattalionSummaryView.swift */,
+				FA738E9B28A7243100E1EC60 /* BattalionList.swift */,
 			);
 			path = Military;
 			sourceTree = "<group>";
@@ -1156,6 +1162,7 @@
 				FAC376232883F4B700AD3647 /* TaskTiming.swift in Sources */,
 				FA738E53289E22A700E1EC60 /* HRSubType.swift in Sources */,
 				FA738E4F289E216600E1EC60 /* HumanResourcesView.swift in Sources */,
+				FA738E9C28A7243100E1EC60 /* BattalionList.swift in Sources */,
 				FA738E7928A273E900E1EC60 /* StatModifier.swift in Sources */,
 				FA738E61289E402100E1EC60 /* EducationActivity.swift in Sources */,
 				FA738DD32892294400E1EC60 /* HeadquartersView.swift in Sources */,
@@ -1277,6 +1284,7 @@
 				FA738E8F28A643D600E1EC60 /* MilitarySubType.swift in Sources */,
 				FAC3760A28839FA100AD3647 /* MiningViewModel.swift in Sources */,
 				FA738E65289E476500E1EC60 /* EducationView.swift in Sources */,
+				FA738E9A28A65E7B00E1EC60 /* BattalionSummaryView.swift in Sources */,
 				FA738E1A2897383400E1EC60 /* ChangeHistoryView.swift in Sources */,
 				FA738E1E28974E2000E1EC60 /* AppStateStore.swift in Sources */,
 				FA738E9628A6515B00E1EC60 /* MilitaryTrainingView.swift in Sources */,

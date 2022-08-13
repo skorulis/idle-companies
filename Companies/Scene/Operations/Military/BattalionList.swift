@@ -8,7 +8,7 @@ import SwiftUI
 struct BattalionList {
     
     @ObservedObject var inventory: InventoryStore
-    
+    @Binding var selectedIndex: Int
 }
 
 // MARK: - Rendering
@@ -18,7 +18,18 @@ extension BattalionList: View {
     var body: some View {
         HStack {
             ForEach(0..<3) { index in
-                BattalionSummaryView(battalion: battalion(index: index))
+                BattalionSummaryView(battalion: battalion(index: index),
+                                     selected: selectedBinding(index))
+            }
+        }
+    }
+    
+    func selectedBinding(_ index: Int) -> Binding<Bool> {
+        return Binding {
+            return selectedIndex == index
+        } set: { newValue in
+            if newValue {
+                selectedIndex = index
             }
         }
     }
@@ -34,7 +45,7 @@ struct BattalionList_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        BattalionList(inventory: ioc.resolve())
+        BattalionList(inventory: ioc.resolve(), selectedIndex: .constant(0))
     }
 }
 

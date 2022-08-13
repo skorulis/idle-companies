@@ -29,7 +29,7 @@ extension MilitaryView: View {
         VStack {
             SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
             Text("Battalions")
-            BattalionList(inventory: viewModel.inventory)
+            BattalionList(inventory: viewModel.inventory, selectedIndex: .constant(99))
             ForEach(MilitarySubType.allCases) { type in
                 BasicMenuButton(item: type, action: viewModel.show(type))
             }

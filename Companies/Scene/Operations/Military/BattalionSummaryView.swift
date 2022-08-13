@@ -8,6 +8,12 @@ import SwiftUI
 struct BattalionSummaryView {
     
     let battalion: Battalion
+    @Binding var selected: Bool
+    
+    init(battalion: Battalion, selected: Binding<Bool>) {
+        self.battalion = battalion
+        _selected = selected
+    }
 }
 
 // MARK: - Rendering
@@ -15,14 +21,21 @@ struct BattalionSummaryView {
 extension BattalionSummaryView: View {
     
     var body: some View {
+        Button(action: {selected = true}) {
+            content
+        }
+    }
+    
+    private var content: some View {
         VStack {
             ForEach(SoldierStat.allCases) { stat in
                 statInfo(stat)
             }
             countRow
         }
-        .panelBackground()
-        //.frame(width: 100)
+        .panelBackground(selected: selected)
+        .frame(maxWidth: 140)
+        .foregroundColor(.black)
     }
     
     private var countRow: some View {
@@ -56,7 +69,16 @@ struct BattalionSummaryView_Previews: PreviewProvider {
     static var previews: some View {
         let bat = Battalion(stats: [.damage: 30,
             .accuracy: 1000], count: 5)
-        return BattalionSummaryView(battalion: bat)
+        
+        return HStack {
+            BattalionSummaryView(battalion: bat,
+                                 selected: .constant(false)
+            )
+            BattalionSummaryView(battalion: bat,
+                                 selected: .constant(true)
+            )
+        }
+        .padding(.horizontal, 16)
     }
 }
 

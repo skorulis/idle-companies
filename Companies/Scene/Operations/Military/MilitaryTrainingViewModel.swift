@@ -6,7 +6,15 @@ import Foundation
 
 final class MilitaryTrainingViewModel: CoordinatedViewModel, ObservableObject {
     
-    @Published var selectedIndex: Int = 0
+    @Published var selectedIndex: Int = 0 {
+        didSet {
+            if operations.store.isDoing(MilitaryTrainingActivity.self) {
+                start()
+            }
+        }
+    }
+    @Published var inputType: ItemType = .dropout
+    @Published var isSelectingInput: Bool = false
     
     override func onCoordinatorSet() {
         inventory.objectWillChange.sink { _ in
@@ -34,7 +42,15 @@ extension MilitaryTrainingViewModel {
     }
     
     var operation: MilitaryTrainingActivity {
-        MilitaryTrainingActivity(targetBattalion: selectedIndex)
+        MilitaryTrainingActivity(targetBattalion: selectedIndex, inputType: inputType)
+    }
+    
+    var selectedInputCount: ItemCount {
+        return ItemCount(type: inputType, count: count(inputType))
+    }
+    
+    var inputOptions: [ItemType] {
+        return [.dropout, .laborer, .teacher, .manager, .engineer]
     }
     
 }
@@ -45,6 +61,18 @@ extension MilitaryTrainingViewModel {
     
     func start() {
         operations.start(operation)
+    }
+    
+    func selectInput() {
+        isSelectingInput = true
+    }
+    
+    func selectInput(_ input: ItemType) {
+        isSelectingInput = false
+        inputType = input
+        if operations.store.isDoing(MilitaryTrainingActivity.self) {
+            start()
+        }
     }
     
 }

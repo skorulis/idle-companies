@@ -28,7 +28,11 @@ class CoordinatedViewModel: PCoordinatedViewModel {
     lazy var skillStore: SkillStore = coordinator.resolve()
     lazy var xpCalc: XPLevelCalculation = coordinator.resolve()
     lazy var activityStore: ActivityStore = coordinator.resolve()
-    lazy var operations: OperationService = coordinator.resolve()
+    var operations: OperationService { coordinator.resolve() }
+    
+    func count(_ item: ItemType) -> Int {
+        inventory.count(item: item)
+    }
 }
 
 final class GameCoordinator: PCoordinator, ObservableObject {

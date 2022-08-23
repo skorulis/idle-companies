@@ -5,13 +5,15 @@ import Foundation
 struct MilitaryTrainingActivity: POperation {
     
     let targetBattalion: Int
+    let inputType: ItemType
     
-    init(targetBattalion: Int) {
+    init(targetBattalion: Int, inputType: ItemType) {
         self.targetBattalion = targetBattalion
+        self.inputType = inputType
     }
     
     var id: String {
-        return "MilitaryTrainingActivity-\(targetBattalion)"
+        return "MilitaryTrainingActivity\(inputType)-\(targetBattalion)"
     }
     
     var name: String {
@@ -30,7 +32,7 @@ struct MilitaryTrainingActivity: POperation {
     }
     
     var inputs: [ItemCount] {
-        return [.init(type: .laborer, count: 1)]
+        return [.init(type: inputType, count: 1)]
     }
     
     var soldier: Soldier {

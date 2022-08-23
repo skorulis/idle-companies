@@ -37,6 +37,10 @@ extension ActivityStore {
     func remove<T: POperation>(_ activity: T) {
         self.active = self.active.filter { $0.operation.id != activity.id }
     }
+    
+    func isDoing<T: POperation>(_ type: T.Type) -> Bool {
+        return active.first(where: {$0.operation as? T != nil }) != nil
+    }
 }
 
 // MARK: - Logic (private)

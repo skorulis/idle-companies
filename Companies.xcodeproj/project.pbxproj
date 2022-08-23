@@ -104,6 +104,7 @@
 		FA738E9C28A7243100E1EC60 /* BattalionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9B28A7243100E1EC60 /* BattalionList.swift */; };
 		FA738E9E28A72F2500E1EC60 /* MilitaryTrainingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9D28A72F2500E1EC60 /* MilitaryTrainingActivity.swift */; };
 		FA738EA028A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9F28A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift */; };
+		FAAF573C28B490740049DBE0 /* CenterPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF573B28B490740049DBE0 /* CenterPicker.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -285,6 +286,7 @@
 		FA738E9B28A7243100E1EC60 /* BattalionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionList.swift; sourceTree = "<group>"; };
 		FA738E9D28A72F2500E1EC60 /* MilitaryTrainingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingActivity.swift; sourceTree = "<group>"; };
 		FA738E9F28A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryTrainingActivity+Service.swift"; sourceTree = "<group>"; };
+		FAAF573B28B490740049DBE0 /* CenterPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterPicker.swift; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				FA738E0128951A5200E1EC60 /* SimpleRecipeView.swift */,
 				FA738E312899098800E1EC60 /* RecipeOutputView.swift */,
 				FA738E3328990AB700E1EC60 /* RecipeCreateView.swift */,
+				FAAF573B28B490740049DBE0 /* CenterPicker.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1242,6 +1245,7 @@
 				FA738E062895F69600E1EC60 /* AppDelegate.swift in Sources */,
 				FAC376592887F07100AD3647 /* RecipeService.swift in Sources */,
 				FA738DE728929E2400E1EC60 /* IngredientsView.swift in Sources */,
+				FAAF573C28B490740049DBE0 /* CenterPicker.swift in Sources */,
 				FA738DE0289294A300E1EC60 /* HQUpgradeViewModel.swift in Sources */,
 				FAC376CC288D38D900AD3647 /* Palette.swift in Sources */,
 				FA738E4B289E152100E1EC60 /* ForgingActivity.swift in Sources */,

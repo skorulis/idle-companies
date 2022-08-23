@@ -37,10 +37,16 @@ extension OperationListView: View {
     
     private func operationButton(skill: Skill) -> some View {
         Button(action: viewModel.show(skill)) {
-            skill.icon.image(24)
-            Text(skill.name)
-            Spacer()
-            Image(systemName: "chevron.right")
+            VStack(alignment: .leading) {
+                HStack {
+                    skill.icon.image(24)
+                    Text(skill.name)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                }
+                Text("Level \(viewModel.level(skill))")
+            }
+            
         }
         .foregroundColor(viewModel.isActive(skill) ? Palette.green.step(600) : Color.label)
     }
@@ -53,7 +59,8 @@ struct OperationListView_Previews: PreviewProvider {
     
     static var previews: some View {
         let ioc = IOC()
-        OperationListView(viewModel: ioc.resolve())
+        let coordinator = ioc.emptyCoordinator
+        OperationListView(viewModel: coordinator.resolve())
     }
 }
 

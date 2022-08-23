@@ -34,6 +34,11 @@ extension OperationListViewModel {
 
 extension OperationListViewModel {
     
+    func level(_ skill: Skill) -> Int {
+        let xp = skillStore.xp(skill: skill)
+        return xpCalc.level(xp)
+    }
+    
     func show(_ skill: Skill) -> () -> Void {
         return { [unowned self] in
             coordinator.push(OperationPath.skillRoot(skill))

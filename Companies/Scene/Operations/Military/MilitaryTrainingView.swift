@@ -28,8 +28,16 @@ extension MilitaryTrainingView: View {
             SkillProgressView(xp: viewModel.xp, calc: viewModel.xpCalc)
             Text("Battalions")
             BattalionList(inventory: viewModel.inventory, selectedIndex: $viewModel.selectedIndex)
+            OperationProgressView(timing: viewModel.maybeProgress?.timing)
+            startButton
         }
         .padding(.horizontal, 16)
+    }
+    
+    private var startButton: some View {
+        Button(action: viewModel.start) {
+            Text("Start")
+        }
     }
 }
 

@@ -14,7 +14,7 @@ final class InventoryStore: ObservableObject {
     
     @Published private(set) var battalions: [Int: Battalion] {
         didSet {
-            try! self.store.set(codable: inventory, forKey: Self.battalionsKey)
+            try! self.store.set(codable: battalions, forKey: Self.battalionsKey)
         }
     }
     
@@ -126,6 +126,11 @@ extension InventoryStore {
     
     var credits: Int {
         return inventory[.credits] ?? 0
+    }
+    
+    func updateBatallion(index: Int, battalion: Battalion) {
+        toasts.add(text: "+1 Soldier", style: .positive)
+        self.battalions[index] = battalion
     }
 }
 

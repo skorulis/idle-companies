@@ -102,6 +102,8 @@
 		FA738E9828A6517400E1EC60 /* MilitaryTrainingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */; };
 		FA738E9A28A65E7B00E1EC60 /* BattalionSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9928A65E7B00E1EC60 /* BattalionSummaryView.swift */; };
 		FA738E9C28A7243100E1EC60 /* BattalionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9B28A7243100E1EC60 /* BattalionList.swift */; };
+		FA738E9E28A72F2500E1EC60 /* MilitaryTrainingActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9D28A72F2500E1EC60 /* MilitaryTrainingActivity.swift */; };
+		FA738EA028A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA738E9F28A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift */; };
 		FAC375EE2883890200AD3647 /* ASKCore in Resources */ = {isa = PBXBuildFile; fileRef = FAC375EC2883890200AD3647 /* ASKCore */; };
 		FAC375EF2883890200AD3647 /* ASSwiftUI in Resources */ = {isa = PBXBuildFile; fileRef = FAC375ED2883890200AD3647 /* ASSwiftUI */; };
 		FAC375FA2883943100AD3647 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC375F22883943100AD3647 /* ContentView.swift */; };
@@ -281,6 +283,8 @@
 		FA738E9728A6517400E1EC60 /* MilitaryTrainingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingViewModel.swift; sourceTree = "<group>"; };
 		FA738E9928A65E7B00E1EC60 /* BattalionSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionSummaryView.swift; sourceTree = "<group>"; };
 		FA738E9B28A7243100E1EC60 /* BattalionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattalionList.swift; sourceTree = "<group>"; };
+		FA738E9D28A72F2500E1EC60 /* MilitaryTrainingActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilitaryTrainingActivity.swift; sourceTree = "<group>"; };
+		FA738E9F28A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MilitaryTrainingActivity+Service.swift"; sourceTree = "<group>"; };
 		FAC375DA2883888F00AD3647 /* Companies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Companies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC375EC2883890200AD3647 /* ASKCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASKCore; sourceTree = "<group>"; };
 		FAC375ED2883890200AD3647 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ASSwiftUI; sourceTree = "<group>"; };
@@ -778,6 +782,7 @@
 				FA738DFF2894AE0200E1EC60 /* SmeltingActivity+Service.swift */,
 				FA738E5C289E30B300E1EC60 /* RecruitingActivity+Service.swift */,
 				FA738E62289E42E700E1EC60 /* EducationActivity+Service.swift */,
+				FA738E9F28A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -977,6 +982,7 @@
 				FA738E4A289E152100E1EC60 /* ForgingActivity.swift */,
 				FA738E5A289E2DFA00E1EC60 /* RecruitingActivity.swift */,
 				FA738E60289E402100E1EC60 /* EducationActivity.swift */,
+				FA738E9D28A72F2500E1EC60 /* MilitaryTrainingActivity.swift */,
 			);
 			path = SkillOperations;
 			sourceTree = "<group>";
@@ -1183,6 +1189,7 @@
 				FA738E2E2898C5A400E1EC60 /* SmeltingViewModel.swift in Sources */,
 				FA738E69289E5ADF00E1EC60 /* EducationActivityView.swift in Sources */,
 				FA738DDC28927A1C00E1EC60 /* CompanyModel.swift in Sources */,
+				FA738EA028A7319100E1EC60 /* MilitaryTrainingActivity+Service.swift in Sources */,
 				FA738E362899253200E1EC60 /* ShortNumberFormatter.swift in Sources */,
 				FAC376392884B44C00AD3647 /* OperationListViewModel.swift in Sources */,
 				FAC376A9288A1EE000AD3647 /* ExperienceView.swift in Sources */,
@@ -1211,6 +1218,7 @@
 				FAC376302884227B00AD3647 /* InventoryViewModel.swift in Sources */,
 				FA738DE2289296A500E1EC60 /* HQPath.swift in Sources */,
 				FA738E3B2899D38F00E1EC60 /* TransientValuesService.swift in Sources */,
+				FA738E9E28A72F2500E1EC60 /* MilitaryTrainingActivity.swift in Sources */,
 				FAC376542887EE9800AD3647 /* ItemRecipeOperation.swift in Sources */,
 				FAC37632288424C600AD3647 /* ItemCount.swift in Sources */,
 				FA738DE928937F9200E1EC60 /* ConstructionMaterialsView.swift in Sources */,

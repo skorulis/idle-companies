@@ -56,6 +56,8 @@ private extension OperationProgress {
             return try container.decode(ConstructionMaterialActivity.self, forKey: .operation)
         case "RecruitingActivity":
             return try container.decode(RecruitingActivity.self, forKey: .operation)
+        case "MilitaryTrainingActivity":
+            return try container.decode(MilitaryTrainingActivity.self, forKey: .operation)
         default:
             fatalError("Could not decode \(operationType)")
         }

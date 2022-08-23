@@ -95,6 +95,7 @@ private extension IOC {
         container.autoregister(ConstructionContractActivity.Service.self, initializer: ConstructionContractActivity.Service.init)
         container.autoregister(RecruitingActivity.Service.self, initializer: RecruitingActivity.Service.init)
         container.autoregister(EducationActivity.Service.self, initializer: EducationActivity.Service.init)
+        container.autoregister(MilitaryTrainingActivity.Service.self, initializer: MilitaryTrainingActivity.Service.init)
     }
     
     func registerStores() {
